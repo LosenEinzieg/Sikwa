@@ -145,7 +145,7 @@ public class hlmnawalKs extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-        new regisUw().setVisible(true);
+        new RegisUw().setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**

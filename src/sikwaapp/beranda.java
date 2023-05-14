@@ -91,6 +91,11 @@ public class beranda extends javax.swing.JFrame {
                 jMenu3MouseClicked(evt);
             }
         });
+        jMenu3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu3ActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenu3);
 
         jMenu2.setText("Exit");
@@ -134,6 +139,10 @@ public class beranda extends javax.swing.JFrame {
         new login().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu3ActionPerformed
 
     /**
      * @param args the command line arguments
