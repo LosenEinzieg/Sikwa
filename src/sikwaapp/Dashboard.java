@@ -18,6 +18,8 @@ import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 import java.util.Scanner;
 import java.awt.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.sql.SQLException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -826,6 +828,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         jButtonEdit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButtonEdit.setText("Edit");
+        jButtonEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonEditMouseClicked(evt);
+            }
+        });
         jButtonEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEditActionPerformed(evt);
@@ -1487,6 +1494,30 @@ public class Dashboard extends javax.swing.JFrame {
         Main_Panel.repaint();
         Main_Panel.revalidate();
     }//GEN-LAST:event_btn_laporanMouseClicked
+
+    private void jButtonEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEditMouseClicked
+        // TODO add your handling code here:
+        int bar = jTablePndk.getSelectedRow();
+        String nik = tabModel.getValueAt(bar, 0).toString();
+        Edit_Data form = new Edit_Data();
+        form.setVisible(true);
+//        form.addPropertyChangeListener(new PropertyChangeListener() {
+//
+//            public void propertyChange(PropertyChangeEvent pce) {
+//                // Handle the change here
+//
+//                jTextNIK.setText(nik);
+//            }
+//
+//        });
+        
+//        try{
+//            new Edit_Data(nik).setVisible(true);
+//        } catch(Exception e){
+//            JOptionPane.showMessageDialog(this,e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+//        }
+//        new Edit_Data().jTextNIK.setText(tabModel.getValueAt(jTablePndk.getSelectedRow(),0)+"");
+    }//GEN-LAST:event_jButtonEditMouseClicked
 
     /**
      * @param args the command line arguments
