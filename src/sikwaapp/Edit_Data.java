@@ -25,32 +25,31 @@ public class Edit_Data extends javax.swing.JFrame {
      */
     public Edit_Data() {
         initComponents();
-        datatable();
+//        datatable();
     }
     
-    protected void datatable(){
-        String sql = "select * from dft_penduduk";
-        try{
-            Connection conn=(Connection)Koneksi.koneksiDB();
-            Statement stt=conn.createStatement();
-            
-            stt.executeQuery("SELECT * from dft_penduduk ");  
-            hasil=stt.executeQuery(sql);
-            while(hasil.next()){
-                String namapnd = hasil.getString("namapnd");
-                String unit = hasil.getString("unit");
-                String blok = hasil.getString("blok");
-                String tahunmasuk = hasil.getString("tahunmasuk");
-                
-                jTextNmPnd.setText(namapnd);
-                jComboUnit.setText(unit);
-                jComboBlok.setText(blok);
-                jTextThnMsk.setText(tahunmasuk);
-            }
-        }catch(Exception e){
-            System.out.println(e);
-        }
-    }
+//    protected void datatable(){
+//        String nik = jTextNIK.getText();
+//        String sql = "select * from dft_penduduk WHERE nik='"+nik+"'";
+//        try{
+//            Connection conn=(Connection)Koneksi.koneksiDB();
+//            Statement stt=conn.createStatement();  
+//            hasil=stt.executeQuery(sql);
+////            while(hasil.next()){
+//                String namapnd = hasil.getString("namapnd");
+//                String unit = hasil.getString("unit");
+//                String blok = hasil.getString("blok");
+//                String tahunmasuk = hasil.getString("tahunmasuk");
+//                
+//                jTextNmPnd.setText(namapnd);
+//                jComboUnit.setText(unit);
+//                jComboBlok.setText(blok);
+//                jTextThnMsk.setText(tahunmasuk);
+////            }
+//        }catch(Exception e){
+//            System.out.println(e);
+//        }
+//    }
 //    Edit_Data(String nik) {
 ////        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //        jTextNIK.setText(nik);
@@ -329,8 +328,8 @@ public class Edit_Data extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBatal;
     private javax.swing.JButton jButtonSimpan;
-    private javax.swing.JTextField jComboBlok;
-    private javax.swing.JTextField jComboUnit;
+    public javax.swing.JTextField jComboBlok;
+    public javax.swing.JTextField jComboUnit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel25;
@@ -342,7 +341,7 @@ public class Edit_Data extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     public javax.swing.JTextField jTextNIK;
-    private javax.swing.JTextField jTextNmPnd;
-    private javax.swing.JTextField jTextThnMsk;
+    public javax.swing.JTextField jTextNmPnd;
+    public javax.swing.JTextField jTextThnMsk;
     // End of variables declaration//GEN-END:variables
 }

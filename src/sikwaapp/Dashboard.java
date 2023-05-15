@@ -1506,10 +1506,18 @@ public class Dashboard extends javax.swing.JFrame {
         try{
             int bar = jTablePndk.getSelectedRow();
             String nik = tabModel.getValueAt(bar, 0).toString();
+            String namapnd = tabModel.getValueAt(bar, 1).toString();
+            String unit = tabModel.getValueAt(bar, 2).toString();
+            String blok = tabModel.getValueAt(bar, 3).toString();
+            String tahunmasuk = tabModel.getValueAt(bar, 4).toString();
             jdata.setVisible(true);
             jdata.pack();
             jdata.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             jdata.jTextNIK.setText(nik);
+            jdata.jTextNmPnd.setText(namapnd);
+            jdata.jComboUnit.setText(unit);
+            jdata.jComboBlok.setText(blok);
+            jdata.jTextThnMsk.setText(tahunmasuk);
         }catch(Exception e){
             JOptionPane.showMessageDialog(this,e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
