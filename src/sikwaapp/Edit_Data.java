@@ -6,24 +6,51 @@
 package sikwaapp;
 import config.Koneksi;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Ade Arif R
  */
 public class Edit_Data extends javax.swing.JFrame {
+    ResultSet hasil=null;
 
     /**
      * Creates new form Edit_Data
      */
     public Edit_Data() {
         initComponents();
+        datatable();
     }
-
+    
+    protected void datatable(){
+        String sql = "select * from dft_penduduk";
+        try{
+            Connection conn=(Connection)Koneksi.koneksiDB();
+            Statement stt=conn.createStatement();
+            
+            stt.executeQuery("SELECT * from dft_penduduk ");  
+            hasil=stt.executeQuery(sql);
+            while(hasil.next()){
+                String namapnd = hasil.getString("namapnd");
+                String unit = hasil.getString("unit");
+                String blok = hasil.getString("blok");
+                String tahunmasuk = hasil.getString("tahunmasuk");
+                
+                jTextNmPnd.setText(namapnd);
+                jComboUnit.setText(unit);
+                jComboBlok.setText(blok);
+                jTextThnMsk.setText(tahunmasuk);
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+    }
 //    Edit_Data(String nik) {
 ////        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //        jTextNIK.setText(nik);
@@ -96,6 +123,11 @@ public class Edit_Data extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, 30));
 
         jTextNIK.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
+        jTextNIK.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextNIKKeyTyped(evt);
+            }
+        });
         jPanel2.add(jTextNIK, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 157, 30));
 
         jLabel2.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
@@ -255,6 +287,10 @@ public class Edit_Data extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButtonBatalActionPerformed
 
+    private void jTextNIKKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextNIKKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNIKKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -305,7 +341,7 @@ public class Edit_Data extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextNIK;
+    public javax.swing.JTextField jTextNIK;
     private javax.swing.JTextField jTextNmPnd;
     private javax.swing.JTextField jTextThnMsk;
     // End of variables declaration//GEN-END:variables

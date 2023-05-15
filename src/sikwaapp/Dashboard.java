@@ -116,6 +116,7 @@ public class Dashboard extends javax.swing.JFrame {
         Tanggal6.setText(tanggal);
     }
 
+    Edit_Data jdata = new Edit_Data();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -221,6 +222,11 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel47 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -1497,27 +1503,22 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jButtonEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEditMouseClicked
         // TODO add your handling code here:
-        int bar = jTablePndk.getSelectedRow();
-        String nik = tabModel.getValueAt(bar, 0).toString();
-        Edit_Data form = new Edit_Data();
-        form.setVisible(true);
-//        form.addPropertyChangeListener(new PropertyChangeListener() {
-//
-//            public void propertyChange(PropertyChangeEvent pce) {
-//                // Handle the change here
-//
-//                jTextNIK.setText(nik);
-//            }
-//
-//        });
-        
-//        try{
-//            new Edit_Data(nik).setVisible(true);
-//        } catch(Exception e){
-//            JOptionPane.showMessageDialog(this,e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
-//        }
-//        new Edit_Data().jTextNIK.setText(tabModel.getValueAt(jTablePndk.getSelectedRow(),0)+"");
+        try{
+            int bar = jTablePndk.getSelectedRow();
+            String nik = tabModel.getValueAt(bar, 0).toString();
+            jdata.setVisible(true);
+            jdata.pack();
+            jdata.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            jdata.jTextNIK.setText(nik);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this,e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonEditMouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        tampilData();
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
