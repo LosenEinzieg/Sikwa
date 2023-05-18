@@ -263,7 +263,7 @@ public class Edit_Data extends javax.swing.JFrame {
             try{
                 Connection conn=(Connection)Koneksi.koneksiDB();
                 Dashboard dashboard = new Dashboard();
-                dashboard.tampilData();
+                dashboard.tampilDataPndk();
                 //                Dashboard tampildata = tampilData;
                 Statement stt=conn.createStatement();
                 stt.executeUpdate("UPDATE dft_penduduk SET namapnd='"+namapnd+"', unit='"+unit+"', blok='"+blok+"',"+
@@ -272,7 +272,7 @@ public class Edit_Data extends javax.swing.JFrame {
                 //                tampilData();
                 //                SetEditOff();
                 JOptionPane.showMessageDialog(this,"Data berhasil diubah","Success",JOptionPane.INFORMATION_MESSAGE);
-                dashboard.tampilData();
+                dashboard.tampilDataPndk();
                 this.dispose();
 
                 //                new Dashboard().tampilData();

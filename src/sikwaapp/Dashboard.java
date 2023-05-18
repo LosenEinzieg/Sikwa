@@ -33,13 +33,13 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
-        tampilData();
-//        SetEditOff();
+        tampilDataPndk();
+        tampilDataTamu();
         Tampil_Jam();
         Tampil_Tanggal();
     }
     
-    public void tampilData(){
+    public void tampilDataPndk(){
         try{
             Object[] judul_kolom = {"NIK Penduduk", "Nama Penduduk", "Unit", "Blok", "Tahun Masuk", "Create Date"};
             tabModel=new DefaultTableModel(null,judul_kolom);
@@ -50,6 +50,33 @@ public class Dashboard extends javax.swing.JFrame {
             tabModel.getDataVector().removeAllElements();
             
             RsDashboard=stt.executeQuery("SELECT * from dft_penduduk ");  
+            while(RsDashboard.next()){
+                Object[] data={
+                    RsDashboard.getString("nik"),
+                    RsDashboard.getString("namapnd"),
+                    RsDashboard.getString("unit"),
+                    RsDashboard.getString("blok"),
+                    RsDashboard.getString("tahunmasuk"),
+                    RsDashboard.getString("CreateDate")         
+                };
+               tabModel.addRow(data);
+            }                
+        } catch (Exception ex) {
+        System.err.println(ex.getMessage());
+        }
+    }
+    
+    public void tampilDataTamu(){
+        try{
+            Object[] judul_kolom = {"No", "Nama Tamu", "Jenis Kelamin", "Alamat", "", "Create Date"};
+            tabModel=new DefaultTableModel(null,judul_kolom);
+            jTableTamu.setModel(tabModel);
+            
+            Connection conn=(Connection)Koneksi.koneksiDB();
+            Statement stt=conn.createStatement();
+            tabModel.getDataVector().removeAllElements();
+            
+            RsDashboard=stt.executeQuery("SELECT * from dft_tamu ");  
             while(RsDashboard.next()){
                 Object[] data={
                     RsDashboard.getString("nik"),
@@ -165,7 +192,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         Filter1 = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTablePndk1 = new javax.swing.JTable();
+        jTableTamu = new javax.swing.JTable();
         jLabel49 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         panel_berita = new javax.swing.JPanel();
@@ -883,7 +910,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
         panel_tamu.add(Filter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 165, 130, 20));
 
-        jTablePndk1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableTamu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -894,7 +921,7 @@ public class Dashboard extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTablePndk1);
+        jScrollPane3.setViewportView(jTableTamu);
 
         panel_tamu.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 960, 400));
 
@@ -1384,7 +1411,7 @@ public class Dashboard extends javax.swing.JFrame {
             Koneksi.koneksiDB();
             Statement stt=conn.createStatement();
             stt.executeUpdate("DELETE FROM dft_penduduk WHERE nik='"+nik+"'");
-            tampilData();
+            tampilDataPndk();
             JOptionPane.showMessageDialog(this,"Data berhasil di hapus","Success",JOptionPane.INFORMATION_MESSAGE);
         } catch(SQLException e){
             JOptionPane.showMessageDialog(this,"Delete data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
@@ -1398,7 +1425,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-        tampilData();
+        tampilDataPndk();
     }//GEN-LAST:event_formWindowActivated
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
@@ -1727,7 +1754,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTablePndk;
-    private javax.swing.JTable jTablePndk1;
+    private javax.swing.JTable jTableTamu;
     private javax.swing.JPanel panel_berita;
     private javax.swing.JPanel panel_dashboard;
     private javax.swing.JPanel panel_iuran;

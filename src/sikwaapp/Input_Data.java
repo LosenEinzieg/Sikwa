@@ -233,7 +233,7 @@ public class Input_Data extends javax.swing.JFrame {
             try{
                 Connection conn=(Connection)Koneksi.koneksiDB();
                 Dashboard dashboard = new Dashboard();
-                dashboard.tampilData();
+                dashboard.tampilDataPndk();
 //                Dashboard tampildata = tampilData;
                 Statement stt=conn.createStatement();
                 stt.executeUpdate("insert into dft_penduduk(nik,namapnd,blok,unit,tahunmasuk,CreateDate)"+
@@ -242,7 +242,7 @@ public class Input_Data extends javax.swing.JFrame {
 //                tampilData();
 //                SetEditOff();
                 JOptionPane.showMessageDialog(this,"Data berhasil disimpan","Success",JOptionPane.INFORMATION_MESSAGE);
-                dashboard.tampilData();
+                dashboard.tampilDataPndk();
                 this.dispose();
                 
 //                new Dashboard().tampilData();
