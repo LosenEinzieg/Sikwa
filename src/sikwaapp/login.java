@@ -9,11 +9,22 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 import static sikwaapp.Dashboard.btn_laporan;
 import static sikwaapp.Dashboard.btn_kas;
-import static sikwaapp.Dashboard.btn_home;
 import static sikwaapp.Dashboard.btn_tamu;
 import static sikwaapp.Dashboard.btn_berita;
 import static sikwaapp.Dashboard.btn_iuran;
 import static sikwaapp.Dashboard.btn_home;
+import static sikwaapp.Dashboard.Icon_Daftar_Akun;
+import static sikwaapp.Dashboard.Label_Daftar_Akun;
+import static sikwaapp.Dashboard.Label_Role;
+import static sikwaapp.Dashboard.Label_Role1;
+import static sikwaapp.Dashboard.Label_Role2;
+import static sikwaapp.Dashboard.Label_Role3;
+import static sikwaapp.Dashboard.Label_Role4;
+import static sikwaapp.Dashboard.Label_Role5;
+import static sikwaapp.Dashboard.Label_Role6;
+import static sikwaapp.Dashboard.btn_edit;
+import static sikwaapp.Dashboard.btn_hapus;
+import static sikwaapp.Dashboard.btn_tambah;
 
 /**
  *
@@ -43,10 +54,10 @@ public class login extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         txtuser = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         txtpass = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         cbuser = new javax.swing.JComboBox<>();
@@ -76,10 +87,11 @@ public class login extends javax.swing.JFrame {
         jLabel2.setText("Username");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 113, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_users_20px.png"))); // NOI18N
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 30, 30));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_users_20px.png"))); // NOI18N
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 30, 30));
 
-        txtuser.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        txtuser.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         txtuser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtuserActionPerformed(evt);
@@ -92,10 +104,11 @@ public class login extends javax.swing.JFrame {
         jLabel3.setText("Password");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 180, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_password_20px.png"))); // NOI18N
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 30, 30));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_password_20px.png"))); // NOI18N
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 30, 30));
 
-        txtpass.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        txtpass.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         txtpass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtpassActionPerformed(evt);
@@ -194,8 +207,17 @@ public class login extends javax.swing.JFrame {
             Statement st = (Statement) con.createStatement();
             String query = "SELECT * FROM login WHERE user='"+user+"'AND pass='"+pass+"'AND role='"+role+"'";
             ResultSet rs = st.executeQuery(query);
+            
 
             if (rs.next()) {
+                //membuat label sesuai login role
+                Label_Role.setText(rs.getString(4));
+                Label_Role1.setText(rs.getString(4));
+                Label_Role2.setText(rs.getString(4));
+                Label_Role3.setText(rs.getString(4));
+                Label_Role4.setText(rs.getString(4));
+                Label_Role5.setText(rs.getString(4));
+                Label_Role6.setText(rs.getString(4));               
                 // Memeriksa role yang dipilih pada combo box
                 if (role.equals("Kepala Security")) {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
@@ -206,7 +228,7 @@ public class login extends javax.swing.JFrame {
                     btn_berita.setEnabled(true);
                     btn_kas.setEnabled(true);
                     btn_iuran.setEnabled(true);
-                    btn_laporan.setEnabled(true);
+                    btn_laporan.setEnabled(true);                   
                     this.dispose();
                 } else if (role.equals("Security")) {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
@@ -240,6 +262,12 @@ public class login extends javax.swing.JFrame {
                     btn_kas.setEnabled(false);
                     btn_iuran.setEnabled(true);
                     btn_laporan.setEnabled(false);
+                    Label_Daftar_Akun.setVisible(false);
+                    Icon_Daftar_Akun.setVisible(false);
+                    btn_tambah.setEnabled(false);
+                    btn_edit.setEnabled(false);
+                    btn_hapus.setEnabled(false);
+                    
                     this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Username atau password salah");
@@ -309,7 +337,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField txtpass;

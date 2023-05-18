@@ -154,7 +154,7 @@ public class RegisUw extends javax.swing.JFrame {
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, -1, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pngwing.com (2).png"))); // NOI18N
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -185,6 +185,7 @@ public class RegisUw extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -226,7 +227,7 @@ public class RegisUw extends javax.swing.JFrame {
                 String pesan3 = "Akun Berhasil Terdaftar";
                 JOptionPane.showMessageDialog(null, pesan3,"Berhasil",JOptionPane.INFORMATION_MESSAGE);
                 dispose();
-                new hlmnawalKs().show();
+                new login().show();
             }catch (SQLException e) {
 
             }
