@@ -7,17 +7,27 @@ package sikwaapp;
 import config.Koneksi;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import static sikwaapp.Dashboard.btn_laporan;
+import static sikwaapp.Dashboard.btn_kas;
+import static sikwaapp.Dashboard.btn_home;
+import static sikwaapp.Dashboard.btn_tamu;
+import static sikwaapp.Dashboard.btn_berita;
+import static sikwaapp.Dashboard.btn_iuran;
+import static sikwaapp.Dashboard.btn_home;
+
 /**
  *
  * @author Ade Arif R
  */
 public class login extends javax.swing.JFrame {
-
+    Dashboard a;
     /**
      * Creates new form login1
      */
     public login() {
         initComponents();
+        a = new Dashboard();
+        a.setVisible(false);
     }
 
     /**
@@ -34,12 +44,12 @@ public class login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextUser = new javax.swing.JTextField();
+        txtuser = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextPass = new javax.swing.JTextField();
+        txtpass = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jComborole = new javax.swing.JComboBox<>();
+        cbuser = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -69,13 +79,13 @@ public class login extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_users_20px.png"))); // NOI18N
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 30, 30));
 
-        jTextUser.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
-        jTextUser.addActionListener(new java.awt.event.ActionListener() {
+        txtuser.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        txtuser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextUserActionPerformed(evt);
+                txtuserActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 181, 30));
+        jPanel3.add(txtuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 181, 30));
 
         jLabel3.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,28 +95,28 @@ public class login extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_password_20px.png"))); // NOI18N
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 30, 30));
 
-        jTextPass.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
-        jTextPass.addActionListener(new java.awt.event.ActionListener() {
+        txtpass.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        txtpass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextPassActionPerformed(evt);
+                txtpassActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 208, 181, 30));
+        jPanel3.add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 208, 181, 30));
 
         jLabel4.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Role");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 247, -1, -1));
 
-        jComborole.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
-        jComborole.setForeground(new java.awt.Color(0, 51, 51));
-        jComborole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Login Sebagai", "Warga", "Security", "Kepala Security", "RT" }));
-        jComborole.addActionListener(new java.awt.event.ActionListener() {
+        cbuser.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        cbuser.setForeground(new java.awt.Color(0, 51, 51));
+        cbuser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Login Sebagai", "Kepala Security", "Security", "RT/RW", "Warga" }));
+        cbuser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboroleActionPerformed(evt);
+                cbuserActionPerformed(evt);
             }
         });
-        jPanel3.add(jComborole, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 275, 181, 30));
+        jPanel3.add(cbuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 275, 181, 30));
 
         jButton1.setBackground(new java.awt.Color(0, 51, 51));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -176,9 +186,9 @@ public class login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String user = jTextUser.getText();
-        String pass = jTextPass.getText();
-        String role = jComborole.getSelectedItem().toString();
+        String user = txtuser.getText();
+        String pass = txtpass.getText();
+        String role = cbuser.getSelectedItem().toString();
         try {
             Connection con = Koneksi.koneksiDB();
             Statement st = (Statement) con.createStatement();
@@ -187,46 +197,70 @@ public class login extends javax.swing.JFrame {
 
             if (rs.next()) {
                 // Memeriksa role yang dipilih pada combo box
-                if (role.equals("Warga")) {
-                    hlmnawalW hlmnawalW = new hlmnawalW();
+                if (role.equals("Kepala Security")) {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
-                    hlmnawalW.setVisible(true);
+                    a.setVisible(true);
+                    btn_home.setEnabled(true);
+                    btn_home.setEnabled(true);
+                    btn_tamu.setEnabled(true);
+                    btn_berita.setEnabled(true);
+                    btn_kas.setEnabled(true);
+                    btn_iuran.setEnabled(true);
+                    btn_laporan.setEnabled(true);
                     this.dispose();
                 } else if (role.equals("Security")) {
-                    hlmnawalS hlmnawalS = new hlmnawalS();
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
-                    hlmnawalS.setVisible(true);
+                    a.setVisible(true);
+                    btn_home.setEnabled(true);
+                    btn_home.setEnabled(true);
+                    btn_tamu.setEnabled(true);
+                    btn_berita.setEnabled(true);
+                    btn_kas.setEnabled(true);
+                    btn_iuran.setEnabled(true);
+                    btn_laporan.setEnabled(true);
                     this.dispose();
-                } else if (role.equals("Kepala Security")) {
-                    hlmnawalKs hlmnawalKs = new hlmnawalKs();
+                } else if (role.equals("RT/RW")) {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
-                    hlmnawalKs.setVisible(true);
+                    a.setVisible(true);
+                    btn_home.setEnabled(true);
+                    btn_home.setEnabled(true);
+                    btn_tamu.setEnabled(true);
+                    btn_berita.setEnabled(true);
+                    btn_kas.setEnabled(true);
+                    btn_iuran.setEnabled(true);
+                    btn_laporan.setEnabled(false);
                     this.dispose();
-                }else if (role.equals("RT")) {
-                    hlmnRt hlmnRt = new hlmnRt();
+                }else if (role.equals("Warga")) {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
-                    hlmnRt.setVisible(true);
+                    a.setVisible(true);
+                    btn_home.setEnabled(true);
+                    btn_home.setEnabled(true);
+                    btn_tamu.setEnabled(false);
+                    btn_berita.setEnabled(true);
+                    btn_kas.setEnabled(false);
+                    btn_iuran.setEnabled(true);
+                    btn_laporan.setEnabled(false);
                     this.dispose();
-                }
             } else {
                 JOptionPane.showMessageDialog(null, "Username atau password salah");
+            }
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jComboroleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboroleActionPerformed
+    private void cbuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbuserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboroleActionPerformed
+    }//GEN-LAST:event_cbuserActionPerformed
 
-    private void jTextPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPassActionPerformed
+    private void txtpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpassActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextPassActionPerformed
+    }//GEN-LAST:event_txtpassActionPerformed
 
-    private void jTextUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextUserActionPerformed
+    private void txtuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtuserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextUserActionPerformed
+    }//GEN-LAST:event_txtuserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,9 +299,9 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbuser;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComborole;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -278,7 +312,7 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextPass;
-    private javax.swing.JTextField jTextUser;
+    private javax.swing.JTextField txtpass;
+    private javax.swing.JTextField txtuser;
     // End of variables declaration//GEN-END:variables
 }

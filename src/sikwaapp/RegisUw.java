@@ -252,7 +252,7 @@ public class RegisUw extends javax.swing.JFrame {
         String retypePassword = new String (jPuw2.getPassword());
 
         if (registerPassword.equals(retypePassword)) {
-            labelcek.setText("Password Cccok");
+            labelcek.setText("Pass Cccok");
         }else if (!registerPassword.equals(retypePassword)) {
             labelcek.setText("Tidak Cocok");
         }
