@@ -68,8 +68,8 @@ public class Dashboard extends javax.swing.JFrame {
     
     public void tampilDataTamu(){
         try{
-            Object[] judul_kolom = {"No", "Nama Tamu", "Jenis Kelamin", "Alamat", "", "Create Date"};
-            tabModel=new DefaultTableModel(null,judul_kolom);
+            Object[] judul_kolom1 = {"No", "Nama Tamu", "Jenis Kelamin", "Alamat", "No. HP", "Keterangan", "Waktu Masuk"};
+            tabModel=new DefaultTableModel(null,judul_kolom1);
             jTableTamu.setModel(tabModel);
             
             Connection conn=(Connection)Koneksi.koneksiDB();
@@ -79,12 +79,13 @@ public class Dashboard extends javax.swing.JFrame {
             RsDashboard=stt.executeQuery("SELECT * from dft_tamu ");  
             while(RsDashboard.next()){
                 Object[] data={
-                    RsDashboard.getString("nik"),
-                    RsDashboard.getString("namapnd"),
-                    RsDashboard.getString("unit"),
-                    RsDashboard.getString("blok"),
-                    RsDashboard.getString("tahunmasuk"),
-                    RsDashboard.getString("CreateDate")         
+                    RsDashboard.getString("id"),
+                    RsDashboard.getString("nama"),
+                    RsDashboard.getString("jk"),
+                    RsDashboard.getString("alamat"),
+                    RsDashboard.getString("hp"),
+                    RsDashboard.getString("keperluan"),
+                    RsDashboard.getString("waktumasuk")
                 };
                tabModel.addRow(data);
             }                
@@ -178,9 +179,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         Filter = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
         panel_tamu = new javax.swing.JPanel();
         header_tamu = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
@@ -190,11 +191,11 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         Filter1 = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableTamu = new javax.swing.JTable();
         jLabel49 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         panel_berita = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         header_berita = new javax.swing.JPanel();
@@ -240,18 +241,22 @@ public class Dashboard extends javax.swing.JFrame {
 
         Menu_Panel.setBackground(new java.awt.Color(0, 153, 153));
         Menu_Panel.setPreferredSize(new java.awt.Dimension(250, 804));
+        Menu_Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_neighbour_120px.png"))); // NOI18N
+        Menu_Panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 7, -1, 100));
 
         jLabel1.setFont(new java.awt.Font("Palatino Linotype", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("SIKWA");
+        Menu_Panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 113, -1, 28));
 
         jLabel3.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Sistem Aplikasi Keamanan Warga");
+        Menu_Panel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 145, -1, 14));
 
         List_Menu.setBackground(new java.awt.Color(0, 51, 51));
         List_Menu.setForeground(new java.awt.Color(255, 255, 255));
@@ -452,18 +457,17 @@ public class Dashboard extends javax.swing.JFrame {
         List_MenuLayout.setHorizontalGroup(
             List_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(List_MenuLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addGroup(List_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_iuran, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_laporan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_berita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_tamu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_kas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_penduduk, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(btn_home, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_penduduk, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_tamu, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_berita, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_kas, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_iuran, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_laporan, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         List_MenuLayout.setVerticalGroup(
             List_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,46 +486,13 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btn_kas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_iuran, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel19)
                 .addGap(18, 18, 18)
-                .addComponent(btn_laporan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addComponent(btn_laporan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        javax.swing.GroupLayout Menu_PanelLayout = new javax.swing.GroupLayout(Menu_Panel);
-        Menu_Panel.setLayout(Menu_PanelLayout);
-        Menu_PanelLayout.setHorizontalGroup(
-            Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Menu_PanelLayout.createSequentialGroup()
-                .addGroup(Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Menu_PanelLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel2))
-                    .addGroup(Menu_PanelLayout.createSequentialGroup()
-                        .addGap(83, 83, 83)
-                        .addComponent(jLabel1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(List_Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(Menu_PanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3)))
-                .addContainerGap())
-        );
-        Menu_PanelLayout.setVerticalGroup(
-            Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Menu_PanelLayout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(List_Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        Menu_Panel.add(List_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 177, 225, 510));
 
         Main_Panel.setBackground(new java.awt.Color(0, 153, 153));
         Main_Panel.setLayout(new java.awt.CardLayout());
@@ -751,6 +722,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel28.setText("Daftar Penduduk");
         panel_penduduk.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
+        panel_penduduk.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
+
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("___________________");
@@ -758,7 +732,7 @@ public class Dashboard extends javax.swing.JFrame {
         panel_penduduk.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, -1, -1));
 
         Filter.setBackground(new java.awt.Color(0, 153, 153));
-        Filter.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        Filter.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
         Filter.setForeground(new java.awt.Color(255, 255, 255));
         Filter.setBorder(null);
         Filter.setOpaque(false);
@@ -806,9 +780,6 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
         panel_penduduk.add(btn_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 100, -1));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
-        panel_penduduk.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
 
         Main_Panel.add(panel_penduduk, "card3");
 
@@ -898,8 +869,11 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel22.setText("Cari / Filter :");
         panel_tamu.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, -1, -1));
 
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
+        panel_tamu.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
+
         Filter1.setBackground(new java.awt.Color(0, 153, 153));
-        Filter1.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        Filter1.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
         Filter1.setForeground(new java.awt.Color(255, 255, 255));
         Filter1.setBorder(null);
         Filter1.setOpaque(false);
@@ -930,9 +904,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel49.setText("___________________");
         jLabel49.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         panel_tamu.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, -1, -1));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
-        panel_tamu.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
 
         Main_Panel.add(panel_tamu, "card4");
 
@@ -1271,20 +1242,18 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
                 .addComponent(Menu_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Main_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 996, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addComponent(Main_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 996, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Menu_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Main_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(Main_Panel, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1391,8 +1360,8 @@ public class Dashboard extends javax.swing.JFrame {
             jdata.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             jdata.jTextNIK.setText(nik);
             jdata.jTextNmPnd.setText(namapnd);
-            jdata.jComboUnit.setText(unit);
-            jdata.jComboBlok.setText(blok);
+            jdata.jComboUnit.setSelectedItem(unit);
+            jdata.jComboBlok.setSelectedItem(blok);
             jdata.jTextThnMsk.setText(tahunmasuk);
         }catch(Exception e){
             JOptionPane.showMessageDialog(this,e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);

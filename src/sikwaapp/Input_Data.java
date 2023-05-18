@@ -12,16 +12,6 @@ import java.sql.Statement;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Ade Arif R
- */
-//public class tampilDataDashboard{
-//    public static void main(String[]args){
-//    Dashboard objA = new Dashboard();
-//    objA.tampilData();
-//    }
-//}
 
 public class Input_Data extends javax.swing.JFrame {
     
@@ -30,7 +20,7 @@ public class Input_Data extends javax.swing.JFrame {
      * Creates new form Input_Data
      */
     public Input_Data() {
-        initComponents();
+        initComponents();  
     }
 
     /**
@@ -51,14 +41,14 @@ public class Input_Data extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextNmPnd = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jComboUnit = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jComboBlok = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTextThnMsk = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jButtonSimpan = new javax.swing.JButton();
         jButtonBatal = new javax.swing.JButton();
+        jComboUnit = new javax.swing.JComboBox<>();
+        jComboBlok = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(460, 680));
@@ -81,16 +71,16 @@ public class Input_Data extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(101, Short.MAX_VALUE)
                 .addComponent(jLabel25)
-                .addGap(82, 82, 82))
+                .addGap(98, 98, 98))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
                 .addComponent(jLabel25)
-                .addGap(25, 25, 25))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 479, -1));
@@ -100,7 +90,7 @@ public class Input_Data extends javax.swing.JFrame {
         jLabel1.setText("NIK");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, 30));
 
-        jTextNIK.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
+        jTextNIK.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         jPanel2.add(jTextNIK, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 157, 30));
 
         jLabel2.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
@@ -108,7 +98,7 @@ public class Input_Data extends javax.swing.JFrame {
         jLabel2.setText("Nama");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, 30));
 
-        jTextNmPnd.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
+        jTextNmPnd.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         jPanel2.add(jTextNmPnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 157, 30));
 
         jLabel3.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
@@ -116,28 +106,17 @@ public class Input_Data extends javax.swing.JFrame {
         jLabel3.setText("Unit");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, 30));
 
-        jComboUnit.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
-        jPanel2.add(jComboUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 157, 30));
-
         jLabel4.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Blok");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, -1, 30));
-
-        jComboBlok.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
-        jComboBlok.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBlokActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jComboBlok, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 157, 30));
 
         jLabel5.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Tahun Masuk");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, 30));
 
-        jTextThnMsk.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
+        jTextThnMsk.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         jPanel2.add(jTextThnMsk, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 157, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Please-enter-a-title_-001 (1).png"))); // NOI18N
@@ -164,6 +143,19 @@ public class Input_Data extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButtonBatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 100, -1));
+
+        jComboUnit.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jComboUnit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pillih Unit-", "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3" }));
+        jComboUnit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboUnitActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jComboUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 157, 30));
+
+        jComboBlok.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jComboBlok.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Blok-", "Anggrek", "Mawar", "Tulip", "Teratai", "Edelweiss" }));
+        jPanel2.add(jComboBlok, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 157, 30));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -203,10 +195,8 @@ public class Input_Data extends javax.swing.JFrame {
         // TODO add your handling code here:
         String nik=jTextNIK.getText();
         String namapnd=jTextNmPnd.getText();
-//        String unit=jComboUnit.getSelectedItem().toString();
-        String unit=jComboUnit.getText();
-        String blok=jComboBlok.getText();
-//        String blok=jComboBlok.getSelectedItem().toString();
+        String unit=jComboUnit.getSelectedItem().toString();
+        String blok=jComboBlok.getSelectedItem().toString();
         String tahunmasuk=jTextThnMsk.getText();
         
         java.util.Date tanggal = new java.util.Date();
@@ -234,39 +224,32 @@ public class Input_Data extends javax.swing.JFrame {
                 Connection conn=(Connection)Koneksi.koneksiDB();
                 Dashboard dashboard = new Dashboard();
                 dashboard.tampilDataPndk();
-//                Dashboard tampildata = tampilData;
                 Statement stt=conn.createStatement();
-                stt.executeUpdate("insert into dft_penduduk(nik,namapnd,blok,unit,tahunmasuk,CreateDate)"+
+                stt.executeUpdate("insert into dft_penduduk(nik,namapnd,unit,blok,tahunmasuk,CreateDate)"+
                         "VALUES('"+nik+"','"+namapnd+"','"+unit+"','"+blok+"','"+tahunmasuk+"','"+CreateDate+"')");
-//                BersihData();
-//                tampilData();
-//                SetEditOff();
                 JOptionPane.showMessageDialog(this,"Data berhasil disimpan","Success",JOptionPane.INFORMATION_MESSAGE);
                 dashboard.tampilDataPndk();
                 this.dispose();
                 
-//                new Dashboard().tampilData();
         }catch(SQLException e) {
             JOptionPane.showMessageDialog(this,"Simpan data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
         }
     }//GEN-LAST:event_jButtonSimpanActionPerformed
 
-    private void jComboBlokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBlokActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBlokActionPerformed
-
     private void jButtonBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBatalActionPerformed
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButtonBatalActionPerformed
 
+    private void jComboUnitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboUnitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboUnitActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-//        Dashboard dashboard = new Dashboard();
-//        dashboard.tampilData();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -301,8 +284,8 @@ public class Input_Data extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBatal;
     private javax.swing.JButton jButtonSimpan;
-    private javax.swing.JTextField jComboBlok;
-    private javax.swing.JTextField jComboUnit;
+    private javax.swing.JComboBox<String> jComboBlok;
+    private javax.swing.JComboBox<String> jComboUnit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel25;
