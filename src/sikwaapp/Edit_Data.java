@@ -11,7 +11,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -52,6 +51,8 @@ public class Edit_Data extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jButtonSimpan = new javax.swing.JButton();
         jButtonBatal = new javax.swing.JButton();
+        jComboUnit = new javax.swing.JComboBox<>();
+        jComboBlok = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -153,6 +154,11 @@ public class Edit_Data extends javax.swing.JFrame {
 
         jComboUnit.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         jComboUnit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pillih Unit-", "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3" }));
+        jComboUnit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboUnitActionPerformed(evt);
+            }
+        });
         jPanel2.add(jComboUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 157, 30));
 
         jComboBlok.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
@@ -247,6 +253,10 @@ public class Edit_Data extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextNIKKeyTyped
 
+    private void jComboUnitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboUnitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboUnitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -285,8 +295,8 @@ public class Edit_Data extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBatal;
     private javax.swing.JButton jButtonSimpan;
-    public static final javax.swing.JComboBox<String> jComboBlok = new javax.swing.JComboBox<>();
-    public static final javax.swing.JComboBox<String> jComboUnit = new javax.swing.JComboBox<>();
+    public javax.swing.JComboBox<String> jComboBlok;
+    public javax.swing.JComboBox<String> jComboUnit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel25;
