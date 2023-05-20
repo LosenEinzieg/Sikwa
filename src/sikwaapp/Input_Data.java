@@ -6,10 +6,12 @@
 package sikwaapp;
 
 import config.Koneksi;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
@@ -21,6 +23,10 @@ public class Input_Data extends javax.swing.JFrame {
      */
     public Input_Data() {
         initComponents();  
+        
+        //Menambahkan Icon Aplikasi
+        Image icon = new ImageIcon(this.getClass().getResource("/img/icon.png")).getImage();
+        this.setIconImage(icon);
     }
 
     /**
@@ -51,6 +57,7 @@ public class Input_Data extends javax.swing.JFrame {
         jComboBlok = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tambah Data Penduduk");
         setPreferredSize(new java.awt.Dimension(460, 680));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));

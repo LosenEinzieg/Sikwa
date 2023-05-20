@@ -5,11 +5,12 @@
  */
 package sikwaapp;
 import config.Koneksi;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 /**
  *
@@ -22,6 +23,10 @@ public class Edit_DataTamu extends javax.swing.JFrame {
      */
     public Edit_DataTamu() {
         initComponents();
+        
+        //Menambahkan Icon Aplikasi
+        Image icon = new ImageIcon(this.getClass().getResource("/img/icon.png")).getImage();
+        this.setIconImage(icon);
     }
 
     /**
@@ -54,6 +59,7 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         jTextAlmTamu = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Edit Data Tamu");
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(460, 680));

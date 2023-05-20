@@ -5,7 +5,6 @@
  */
 package sikwaapp;
 
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -38,6 +37,7 @@ public class beranda extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("SIKWA");
         setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
@@ -75,7 +75,7 @@ public class beranda extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 696, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

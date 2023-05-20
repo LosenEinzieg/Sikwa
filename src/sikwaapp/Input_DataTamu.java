@@ -6,10 +6,12 @@
 package sikwaapp;
 
 import config.Koneksi;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -22,6 +24,10 @@ public class Input_DataTamu extends javax.swing.JFrame {
      */
     public Input_DataTamu() {
         initComponents();
+        
+        //Menambahkan Icon Aplikasi
+        Image icon = new ImageIcon(this.getClass().getResource("/img/icon.png")).getImage();
+        this.setIconImage(icon);
     }
 
     /**
@@ -54,7 +60,7 @@ public class Input_DataTamu extends javax.swing.JFrame {
         jTextAlmTamu = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(480, 640));
+        setTitle("Tambah Data Tamu");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
@@ -334,7 +340,6 @@ public class Input_DataTamu extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBatal;
     private javax.swing.JButton jButtonSimpan;
@@ -357,3 +362,4 @@ public class Input_DataTamu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextNoTamu;
     // End of variables declaration//GEN-END:variables
 }
+    
