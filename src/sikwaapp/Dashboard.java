@@ -26,6 +26,7 @@ import javax.swing.JOptionPane;
  */
 public class Dashboard extends javax.swing.JFrame {
     DefaultTableModel tabModel;
+    DefaultTableModel tabModel1;
     ResultSet RsDashboard=null;
 
     /**
@@ -70,12 +71,12 @@ public class Dashboard extends javax.swing.JFrame {
     public void tampilDataTamu(){
         try{
             Object[] judul_kolom1 = {"No", "Nama Tamu", "Jenis Kelamin", "Alamat", "No. HP", "Keterangan", "Waktu Masuk"};
-            tabModel=new DefaultTableModel(null,judul_kolom1);
-            jTableTamu.setModel(tabModel);
+            tabModel1=new DefaultTableModel(null,judul_kolom1);
+            jTableTamu.setModel(tabModel1);
             
             Connection conn=(Connection)Koneksi.koneksiDB();
             Statement stt=conn.createStatement();
-            tabModel.getDataVector().removeAllElements();
+            tabModel1.getDataVector().removeAllElements();
             
             RsDashboard=stt.executeQuery("SELECT * from dft_tamu ");  
             while(RsDashboard.next()){
@@ -88,7 +89,7 @@ public class Dashboard extends javax.swing.JFrame {
                     RsDashboard.getString("keperluan"),
                     RsDashboard.getString("waktumasuk")
                 };
-               tabModel.addRow(data1);
+               tabModel1.addRow(data1);
             }                
         } catch (Exception ex) {
         System.err.println(ex.getMessage());
@@ -1674,12 +1675,12 @@ public class Dashboard extends javax.swing.JFrame {
         try{
             String key = Filter_Tamu.getText();
             Object[] judul_kolom1 = {"No", "Nama Tamu", "Jenis Kelamin", "Alamat", "No. HP", "Keterangan", "Waktu Masuk"};
-            tabModel=new DefaultTableModel(null,judul_kolom1);
-            jTableTamu.setModel(tabModel);
+            tabModel1=new DefaultTableModel(null,judul_kolom1);
+            jTableTamu.setModel(tabModel1);
             
             Connection conn=(Connection)Koneksi.koneksiDB();
             Statement stt=conn.createStatement();
-            tabModel.getDataVector().removeAllElements();
+            tabModel1.getDataVector().removeAllElements();
             
             RsDashboard=stt.executeQuery("SELECT * from dft_tamu WHERE nama LIKE '%"+key+"%'");  
             while(RsDashboard.next()){
@@ -1692,7 +1693,7 @@ public class Dashboard extends javax.swing.JFrame {
                     RsDashboard.getString("keperluan"),
                     RsDashboard.getString("waktumasuk")         
                 };
-               tabModel.addRow(data1);
+               tabModel1.addRow(data1);
             }                
         } catch (Exception ex) {
         System.err.println(ex.getMessage());
@@ -1723,12 +1724,12 @@ public class Dashboard extends javax.swing.JFrame {
             Edit_DataTamu jdata1 = new Edit_DataTamu();
         try{
             int bar1 = jTableTamu.getSelectedRow();
-            String id = tabModel.getValueAt(bar1, 0).toString();
-            String nama = tabModel.getValueAt(bar1, 1).toString();
-            String jk = tabModel.getValueAt(bar1, 2).toString();
-            String alamat = tabModel.getValueAt(bar1, 3).toString();
-            String nohp = tabModel.getValueAt(bar1, 4).toString();
-            String keperluan = tabModel.getValueAt(bar1, 5).toString();
+            String id = tabModel1.getValueAt(bar1, 0).toString();
+            String nama = tabModel1.getValueAt(bar1, 1).toString();
+            String jk = tabModel1.getValueAt(bar1, 2).toString();
+            String alamat = tabModel1.getValueAt(bar1, 3).toString();
+            String nohp = tabModel1.getValueAt(bar1, 4).toString();
+            String keperluan = tabModel1.getValueAt(bar1, 5).toString();
             jdata1.setVisible(true);
             jdata1.pack();
             jdata1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -1745,7 +1746,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void btn_hapustamuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapustamuActionPerformed
         // TODO add your handling code here:
         int bar1 = jTableTamu.getSelectedRow();
-        String id = tabModel.getValueAt(bar1, 0).toString();
+        String id = tabModel1.getValueAt(bar1, 0).toString();
 
         if(JOptionPane.showConfirmDialog(null,"Apakah anda yakin akan menghapus data ini?",
             "Informasi",JOptionPane.OK_CANCEL_OPTION,JOptionPane.INFORMATION_MESSAGE)==JOptionPane.OK_OPTION){
