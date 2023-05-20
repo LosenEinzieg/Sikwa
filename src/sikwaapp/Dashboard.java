@@ -11,6 +11,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -22,6 +23,9 @@ import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -366,7 +370,6 @@ public class Dashboard extends javax.swing.JFrame {
         jTextIuranTotal = new javax.swing.JTextField();
         jLabel63 = new javax.swing.JLabel();
         jComboKetIuran = new javax.swing.JComboBox<>();
-        jDateIuran = new com.toedter.calendar.JDateChooser();
         jSeparator3 = new javax.swing.JSeparator();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTableIuran = new javax.swing.JTable();
@@ -384,6 +387,12 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         Label_Role6 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard SIKWA");
@@ -651,7 +660,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel19)
                 .addGap(18, 18, 18)
                 .addComponent(btn_laporan)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Menu_PanelLayout = new javax.swing.GroupLayout(Menu_Panel);
@@ -1801,9 +1810,7 @@ public class Dashboard extends javax.swing.JFrame {
                                     .addComponent(jLabel58)
                                     .addComponent(jLabel57))
                                 .addGap(53, 53, 53)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextNamaIuran)
-                                    .addComponent(jDateIuran, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)))
+                                .addComponent(jTextNamaIuran))
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(jLabel59)
                                 .addGap(11, 11, 11)
@@ -1825,7 +1832,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(btn_editiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_hapusiuran)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
@@ -1837,9 +1844,7 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextNamaIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jDateIuran, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1856,7 +1861,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboKetIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_tambahiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_hapusiuran)
@@ -2034,6 +2039,85 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel47.setForeground(new java.awt.Color(255, 255, 255));
         jLabel47.setText("Cetak Laporan");
         panel_laporan.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, -1));
+
+        jPanel9.setBackground(new java.awt.Color(0, 153, 153));
+
+        jButton1.setBackground(new java.awt.Color(187, 226, 232));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setText("Laporan Daftar Penduduk");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(new java.awt.Color(187, 226, 232));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setText("Laporan Daftar Tamu");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setBackground(new java.awt.Color(187, 226, 232));
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setText("Laporan Iuran Warga");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setBackground(new java.awt.Color(187, 226, 232));
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setText("Laporan Kas Warga");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setBackground(new java.awt.Color(187, 226, 232));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setText("Laporan Berita Acara");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jButton1)
+                .addGap(56, 56, 56)
+                .addComponent(jButton2)
+                .addGap(64, 64, 64)
+                .addComponent(jButton3)
+                .addGap(62, 62, 62)
+                .addComponent(jButton4)
+                .addGap(62, 62, 62)
+                .addComponent(jButton5)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        panel_laporan.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 280, 430));
 
         Main_Panel.add(panel_laporan, "card8");
 
@@ -2722,6 +2806,61 @@ public class Dashboard extends javax.swing.JFrame {
         new About().setVisible(true);
     }//GEN-LAST:event_jLabel9MouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        try {
+            File reportp = new File ("src/sikwaapp/reportpenduduk.jasper");
+            JasperPrint jp = JasperFillManager.fillReport(reportp.getPath(), null, Koneksi.koneksiDB());
+            JasperViewer.viewReport(jp,false);
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        try {
+            File reportp = new File ("src/sikwaapp/reporttamu.jasper");
+            JasperPrint jp = JasperFillManager.fillReport(reportp.getPath(), null, Koneksi.koneksiDB());
+            JasperViewer.viewReport(jp,false);
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        try {
+            File reportp = new File ("src/sikwaapp/reportiuran.jasper");
+            JasperPrint jp = JasperFillManager.fillReport(reportp.getPath(), null, Koneksi.koneksiDB());
+            JasperViewer.viewReport(jp,false);
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        try {
+            File reportp = new File ("src/sikwaapp/reportkas.jasper");
+            JasperPrint jp = JasperFillManager.fillReport(reportp.getPath(), null, Koneksi.koneksiDB());
+            JasperViewer.viewReport(jp,false);
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        try {
+            File reportp = new File ("src/sikwaapp/reportberita.jasper");
+            JasperPrint jp = JasperFillManager.fillReport(reportp.getPath(), null, Koneksi.koneksiDB());
+            JasperViewer.viewReport(jp,false);
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2770,6 +2909,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Jam4;
     private javax.swing.JLabel Jam5;
     private javax.swing.JLabel Jam6;
+    private javax.swing.JLabel Jam7;
+    private javax.swing.JLabel Jam8;
     public static final javax.swing.JLabel Label_Daftar_Akun = new javax.swing.JLabel();
     public static final javax.swing.JLabel Label_Role = new javax.swing.JLabel();
     public static javax.swing.JLabel Label_Role1;
@@ -2788,6 +2929,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Tanggal4;
     private javax.swing.JLabel Tanggal5;
     private javax.swing.JLabel Tanggal6;
+    private javax.swing.JLabel Tanggal7;
+    private javax.swing.JLabel Tanggal8;
     public static javax.swing.JButton btn_berita;
     public static javax.swing.JButton btn_editberita;
     public static javax.swing.JButton btn_editiuran;
@@ -2812,10 +2955,16 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel header_iuran;
     private javax.swing.JPanel header_kas;
     private javax.swing.JPanel header_laporan;
+    private javax.swing.JPanel header_laporan1;
+    private javax.swing.JPanel header_laporan2;
     private javax.swing.JPanel header_penduduk;
     private javax.swing.JPanel header_tamu;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboKetIuran;
-    private com.toedter.calendar.JDateChooser jDateIuran;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2871,8 +3020,12 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -2884,6 +3037,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2907,6 +3061,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel panel_iuran;
     private javax.swing.JPanel panel_kas;
     private javax.swing.JPanel panel_laporan;
+    private javax.swing.JPanel panel_laporan1;
+    private javax.swing.JPanel panel_laporan2;
     private javax.swing.JPanel panel_penduduk;
     private javax.swing.JPanel panel_tamu;
     // End of variables declaration//GEN-END:variables
