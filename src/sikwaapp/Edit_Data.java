@@ -49,8 +49,8 @@ public class Edit_Data extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextThnMsk = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jButtonSimpan = new javax.swing.JButton();
-        jButtonBatal = new javax.swing.JButton();
+        jButtonSimpanPndk = new javax.swing.JButton();
+        jButtonBatalPndk = new javax.swing.JButton();
         jComboUnit = new javax.swing.JComboBox<>();
         jComboBlok = new javax.swing.JComboBox<>();
 
@@ -107,6 +107,11 @@ public class Edit_Data extends javax.swing.JFrame {
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, 30));
 
         jTextNmPnd.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jTextNmPnd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNmPndActionPerformed(evt);
+            }
+        });
         jPanel2.add(jTextNmPnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 157, 30));
 
         jLabel3.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
@@ -130,27 +135,27 @@ public class Edit_Data extends javax.swing.JFrame {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Please-enter-a-title_-001 (1).png"))); // NOI18N
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, -1, -1));
 
-        jButtonSimpan.setBackground(new java.awt.Color(0, 153, 0));
-        jButtonSimpan.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
-        jButtonSimpan.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonSimpan.setText("SIMPAN");
-        jButtonSimpan.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSimpanPndk.setBackground(new java.awt.Color(0, 153, 0));
+        jButtonSimpanPndk.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        jButtonSimpanPndk.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonSimpanPndk.setText("SIMPAN");
+        jButtonSimpanPndk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSimpanActionPerformed(evt);
+                jButtonSimpanPndkActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, -1));
+        jPanel2.add(jButtonSimpanPndk, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, -1));
 
-        jButtonBatal.setBackground(new java.awt.Color(153, 0, 0));
-        jButtonBatal.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
-        jButtonBatal.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonBatal.setText("BATAL");
-        jButtonBatal.addActionListener(new java.awt.event.ActionListener() {
+        jButtonBatalPndk.setBackground(new java.awt.Color(153, 0, 0));
+        jButtonBatalPndk.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
+        jButtonBatalPndk.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonBatalPndk.setText("BATAL");
+        jButtonBatalPndk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBatalActionPerformed(evt);
+                jButtonBatalPndkActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonBatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 100, -1));
+        jPanel2.add(jButtonBatalPndk, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 100, -1));
 
         jComboUnit.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         jComboUnit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pillih Unit-", "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3" }));
@@ -186,7 +191,7 @@ public class Edit_Data extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 499, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,17 +204,13 @@ public class Edit_Data extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimpanActionPerformed
+    private void jButtonSimpanPndkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimpanPndkActionPerformed
         // TODO add your handling code here:
         String nik=jTextNIK.getText();
         String namapnd=jTextNmPnd.getText();
         String unit=jComboUnit.getSelectedItem().toString();
         String blok=jComboBlok.getSelectedItem().toString();
         String tahunmasuk=jTextThnMsk.getText();
-
-        java.util.Date tanggal = new java.util.Date();
-        java.text.SimpleDateFormat TanggalFormat= new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String CreateDate = TanggalFormat.format(tanggal);
 
         if(nik.isEmpty()) {
             JOptionPane.showMessageDialog(null,"NIK tidak boleh kosong");
@@ -242,12 +243,12 @@ public class Edit_Data extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,"Ubah data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
             }
         }
-    }//GEN-LAST:event_jButtonSimpanActionPerformed
+    }//GEN-LAST:event_jButtonSimpanPndkActionPerformed
 
-    private void jButtonBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBatalActionPerformed
+    private void jButtonBatalPndkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBatalPndkActionPerformed
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_jButtonBatalActionPerformed
+    }//GEN-LAST:event_jButtonBatalPndkActionPerformed
 
     private void jTextNIKKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextNIKKeyTyped
         // TODO add your handling code here:
@@ -256,6 +257,10 @@ public class Edit_Data extends javax.swing.JFrame {
     private void jComboUnitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboUnitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboUnitActionPerformed
+
+    private void jTextNmPndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNmPndActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNmPndActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,8 +298,8 @@ public class Edit_Data extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonBatal;
-    private javax.swing.JButton jButtonSimpan;
+    private javax.swing.JButton jButtonBatalPndk;
+    private javax.swing.JButton jButtonSimpanPndk;
     public javax.swing.JComboBox<String> jComboBlok;
     public javax.swing.JComboBox<String> jComboUnit;
     private javax.swing.JLabel jLabel1;

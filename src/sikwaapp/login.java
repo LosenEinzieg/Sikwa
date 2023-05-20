@@ -22,9 +22,12 @@ import static sikwaapp.Dashboard.Label_Role3;
 import static sikwaapp.Dashboard.Label_Role4;
 import static sikwaapp.Dashboard.Label_Role5;
 import static sikwaapp.Dashboard.Label_Role6;
-import static sikwaapp.Dashboard.btn_edit;
-import static sikwaapp.Dashboard.btn_hapus;
-import static sikwaapp.Dashboard.btn_tambah;
+import static sikwaapp.Dashboard.btn_tambahpndk;
+import static sikwaapp.Dashboard.btn_editpndk;
+import static sikwaapp.Dashboard.btn_edittamu;
+import static sikwaapp.Dashboard.btn_hapuspndk;
+import static sikwaapp.Dashboard.btn_hapustamu;
+import static sikwaapp.Dashboard.btn_tambahtamu;
 
 /**
  *
@@ -154,7 +157,9 @@ public class login extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 620, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Footer 1.png"))); // NOI18N
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 620, 50));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pngwing.com (1).png"))); // NOI18N
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, 330));
@@ -208,7 +213,6 @@ public class login extends javax.swing.JFrame {
             String query = "SELECT * FROM login WHERE user='"+user+"'AND pass='"+pass+"'AND role='"+role+"'";
             ResultSet rs = st.executeQuery(query);
             
-
             if (rs.next()) {
                 //membuat label sesuai login role
                 Label_Role.setText(rs.getString(4));
@@ -257,16 +261,19 @@ public class login extends javax.swing.JFrame {
                     a.setVisible(true);
                     btn_home.setEnabled(true);
                     btn_home.setEnabled(true);
-                    btn_tamu.setEnabled(false);
+                    btn_tamu.setEnabled(true);
                     btn_berita.setEnabled(true);
                     btn_kas.setEnabled(false);
                     btn_iuran.setEnabled(true);
                     btn_laporan.setEnabled(false);
                     Label_Daftar_Akun.setVisible(false);
                     Icon_Daftar_Akun.setVisible(false);
-                    btn_tambah.setEnabled(false);
-                    btn_edit.setEnabled(false);
-                    btn_hapus.setEnabled(false);
+                    btn_tambahpndk.setEnabled(false);
+                    btn_editpndk.setEnabled(false);
+                    btn_hapuspndk.setEnabled(false);
+                    btn_tambahtamu.setEnabled(false);
+                    btn_edittamu.setEnabled(false);
+                    btn_hapustamu.setEnabled(false);
                     
                     this.dispose();
             } else {

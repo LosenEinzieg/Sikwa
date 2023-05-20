@@ -41,7 +41,7 @@ public class Dashboard extends javax.swing.JFrame {
     
     public void tampilDataPndk(){
         try{
-            Object[] judul_kolom = {"NIK Penduduk", "Nama Penduduk", "Unit", "Blok", "Tahun Masuk", "Create Date"};
+            Object[] judul_kolom = {"No", "NIK Penduduk", "Nama Penduduk", "Unit", "Blok", "Tahun Masuk", "Waktu Daftar"};
             tabModel=new DefaultTableModel(null,judul_kolom);
             jTablePndk.setModel(tabModel);
             
@@ -52,6 +52,7 @@ public class Dashboard extends javax.swing.JFrame {
             RsDashboard=stt.executeQuery("SELECT * from dft_penduduk ");  
             while(RsDashboard.next()){
                 Object[] data={
+                    RsDashboard.getString("id"),
                     RsDashboard.getString("nik"),
                     RsDashboard.getString("namapnd"),
                     RsDashboard.getString("unit"),
@@ -78,7 +79,7 @@ public class Dashboard extends javax.swing.JFrame {
             
             RsDashboard=stt.executeQuery("SELECT * from dft_tamu ");  
             while(RsDashboard.next()){
-                Object[] data={
+                Object[] data1={
                     RsDashboard.getString("id"),
                     RsDashboard.getString("nama"),
                     RsDashboard.getString("jk"),
@@ -87,7 +88,7 @@ public class Dashboard extends javax.swing.JFrame {
                     RsDashboard.getString("keperluan"),
                     RsDashboard.getString("waktumasuk")
                 };
-               tabModel.addRow(data);
+               tabModel.addRow(data1);
             }                
         } catch (Exception ex) {
         System.err.println(ex.getMessage());
@@ -137,9 +138,8 @@ public class Dashboard extends javax.swing.JFrame {
         Tanggal4.setText(tanggal);
         Tanggal5.setText(tanggal);
         Tanggal6.setText(tanggal);
-    }
-
-    Edit_Data jdata = new Edit_Data();
+    }  
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -183,15 +183,16 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         Tanggal1 = new javax.swing.JLabel();
         Jam1 = new javax.swing.JLabel();
+        Label_Role1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        Filter = new javax.swing.JTextField();
-        btn_tambah = new javax.swing.JButton();
-        btn_edit = new javax.swing.JButton();
-        btn_hapus = new javax.swing.JButton();
+        Filter_Pndk = new javax.swing.JTextField();
+        btn_tambahpndk = new javax.swing.JButton();
+        btn_editpndk = new javax.swing.JButton();
+        btn_hapuspndk = new javax.swing.JButton();
         panel_tamu = new javax.swing.JPanel();
         header_tamu = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
@@ -199,13 +200,17 @@ public class Dashboard extends javax.swing.JFrame {
         Jam2 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        Label_Role2 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
-        Filter1 = new javax.swing.JTextField();
+        Filter_Tamu = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTableTamu = new javax.swing.JTable();
+        btn_tambahtamu = new javax.swing.JButton();
+        btn_edittamu = new javax.swing.JButton();
+        btn_hapustamu = new javax.swing.JButton();
         panel_berita = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         header_berita = new javax.swing.JPanel();
@@ -214,6 +219,7 @@ public class Dashboard extends javax.swing.JFrame {
         Jam3 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
+        Label_Role3 = new javax.swing.JLabel();
         panel_kas = new javax.swing.JPanel();
         header_kas = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
@@ -221,6 +227,7 @@ public class Dashboard extends javax.swing.JFrame {
         Jam4 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
+        Label_Role4 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         panel_iuran = new javax.swing.JPanel();
         header_iuran = new javax.swing.JPanel();
@@ -229,6 +236,7 @@ public class Dashboard extends javax.swing.JFrame {
         Jam5 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
+        Label_Role5 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         panel_laporan = new javax.swing.JPanel();
         header_laporan = new javax.swing.JPanel();
@@ -237,6 +245,7 @@ public class Dashboard extends javax.swing.JFrame {
         Jam6 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
+        Label_Role6 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -465,13 +474,10 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, List_MenuLayout.createSequentialGroup()
                 .addGroup(List_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, List_MenuLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addGroup(List_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(List_MenuLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(List_MenuLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(List_MenuLayout.createSequentialGroup()
                         .addContainerGap()
@@ -788,55 +794,55 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel29.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         panel_penduduk.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, -1, -1));
 
-        Filter.setBackground(new java.awt.Color(0, 153, 153));
-        Filter.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
-        Filter.setForeground(new java.awt.Color(255, 255, 255));
-        Filter.setBorder(null);
-        Filter.setOpaque(false);
-        Filter.addKeyListener(new java.awt.event.KeyAdapter() {
+        Filter_Pndk.setBackground(new java.awt.Color(0, 153, 153));
+        Filter_Pndk.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
+        Filter_Pndk.setForeground(new java.awt.Color(255, 255, 255));
+        Filter_Pndk.setBorder(null);
+        Filter_Pndk.setOpaque(false);
+        Filter_Pndk.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                FilterKeyTyped(evt);
+                Filter_PndkKeyTyped(evt);
             }
         });
-        panel_penduduk.add(Filter, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 165, 130, 20));
+        panel_penduduk.add(Filter_Pndk, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 165, 130, 20));
 
-        btn_tambah.setBackground(new java.awt.Color(0, 153, 0));
-        btn_tambah.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
-        btn_tambah.setForeground(new java.awt.Color(255, 255, 255));
-        btn_tambah.setText("Tambah");
-        btn_tambah.addActionListener(new java.awt.event.ActionListener() {
+        btn_tambahpndk.setBackground(new java.awt.Color(0, 153, 0));
+        btn_tambahpndk.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_tambahpndk.setForeground(new java.awt.Color(255, 255, 255));
+        btn_tambahpndk.setText("Tambah");
+        btn_tambahpndk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_tambahActionPerformed(evt);
+                btn_tambahpndkActionPerformed(evt);
             }
         });
-        panel_penduduk.add(btn_tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 630, 100, -1));
+        panel_penduduk.add(btn_tambahpndk, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 630, 100, -1));
 
-        btn_edit.setBackground(new java.awt.Color(153, 153, 0));
-        btn_edit.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
-        btn_edit.setForeground(new java.awt.Color(255, 255, 255));
-        btn_edit.setText("Edit");
-        btn_edit.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_editpndk.setBackground(new java.awt.Color(153, 153, 0));
+        btn_editpndk.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_editpndk.setForeground(new java.awt.Color(255, 255, 255));
+        btn_editpndk.setText("Edit");
+        btn_editpndk.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_editMouseClicked(evt);
+                btn_editpndkMouseClicked(evt);
             }
         });
-        btn_edit.addActionListener(new java.awt.event.ActionListener() {
+        btn_editpndk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editActionPerformed(evt);
+                btn_editpndkActionPerformed(evt);
             }
         });
-        panel_penduduk.add(btn_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 630, 100, -1));
+        panel_penduduk.add(btn_editpndk, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 630, 100, -1));
 
-        btn_hapus.setBackground(new java.awt.Color(153, 0, 0));
-        btn_hapus.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
-        btn_hapus.setForeground(new java.awt.Color(255, 255, 255));
-        btn_hapus.setText("Hapus");
-        btn_hapus.addActionListener(new java.awt.event.ActionListener() {
+        btn_hapuspndk.setBackground(new java.awt.Color(153, 0, 0));
+        btn_hapuspndk.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_hapuspndk.setForeground(new java.awt.Color(255, 255, 255));
+        btn_hapuspndk.setText("Hapus");
+        btn_hapuspndk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_hapusActionPerformed(evt);
+                btn_hapuspndkActionPerformed(evt);
             }
         });
-        panel_penduduk.add(btn_hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 100, -1));
+        panel_penduduk.add(btn_hapuspndk, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 100, -1));
 
         Main_Panel.add(panel_penduduk, "card3");
 
@@ -935,17 +941,22 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel49.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         panel_tamu.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, -1, -1));
 
-        Filter1.setBackground(new java.awt.Color(0, 153, 153));
-        Filter1.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
-        Filter1.setForeground(new java.awt.Color(255, 255, 255));
-        Filter1.setBorder(null);
-        Filter1.setOpaque(false);
-        Filter1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                Filter1KeyTyped(evt);
+        Filter_Tamu.setBackground(new java.awt.Color(0, 153, 153));
+        Filter_Tamu.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
+        Filter_Tamu.setForeground(new java.awt.Color(255, 255, 255));
+        Filter_Tamu.setBorder(null);
+        Filter_Tamu.setOpaque(false);
+        Filter_Tamu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Filter_TamuActionPerformed(evt);
             }
         });
-        panel_tamu.add(Filter1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 165, 130, 20));
+        Filter_Tamu.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Filter_TamuKeyTyped(evt);
+            }
+        });
+        panel_tamu.add(Filter_Tamu, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 165, 130, 20));
 
         jTableTamu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -961,6 +972,44 @@ public class Dashboard extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTableTamu);
 
         panel_tamu.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 960, 400));
+
+        btn_tambahtamu.setBackground(new java.awt.Color(0, 153, 0));
+        btn_tambahtamu.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_tambahtamu.setForeground(new java.awt.Color(255, 255, 255));
+        btn_tambahtamu.setText("Tambah");
+        btn_tambahtamu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tambahtamuActionPerformed(evt);
+            }
+        });
+        panel_tamu.add(btn_tambahtamu, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 630, 100, -1));
+
+        btn_edittamu.setBackground(new java.awt.Color(153, 153, 0));
+        btn_edittamu.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_edittamu.setForeground(new java.awt.Color(255, 255, 255));
+        btn_edittamu.setText("Edit");
+        btn_edittamu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_edittamuMouseClicked(evt);
+            }
+        });
+        btn_edittamu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_edittamuActionPerformed(evt);
+            }
+        });
+        panel_tamu.add(btn_edittamu, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 630, 100, -1));
+
+        btn_hapustamu.setBackground(new java.awt.Color(153, 0, 0));
+        btn_hapustamu.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_hapustamu.setForeground(new java.awt.Color(255, 255, 255));
+        btn_hapustamu.setText("Hapus");
+        btn_hapustamu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_hapustamuActionPerformed(evt);
+            }
+        });
+        panel_tamu.add(btn_hapustamu, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 630, 100, -1));
 
         Main_Panel.add(panel_tamu, "card4");
 
@@ -1333,11 +1382,11 @@ public class Dashboard extends javax.swing.JFrame {
         new RegisUw().setVisible(true);        
     }//GEN-LAST:event_Icon_Daftar_AkunMouseClicked
 
-    private void FilterKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FilterKeyTyped
+    private void Filter_PndkKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Filter_PndkKeyTyped
         // TODO add your handling code here:
         try{
-            String key = Filter.getText();
-            Object[] judul_kolom = {"NIK Penduduk", "Nama Penduduk", "Unit", "Blok", "Tahun Masuk", "Create Date"};
+            String key = Filter_Pndk.getText();
+            Object[] judul_kolom = {"No", "NIK Penduduk", "Nama Penduduk", "Unit", "Blok", "Tahun Masuk", "Waktu Dibuat"};
             tabModel=new DefaultTableModel(null,judul_kolom);
             jTablePndk.setModel(tabModel);
             
@@ -1348,6 +1397,7 @@ public class Dashboard extends javax.swing.JFrame {
             RsDashboard=stt.executeQuery("SELECT * from dft_penduduk WHERE namapnd LIKE '%"+key+"%'");  
             while(RsDashboard.next()){
                 Object[] data={
+                    RsDashboard.getString("id"),
                     RsDashboard.getString("nik"),
                     RsDashboard.getString("namapnd"),
                     RsDashboard.getString("unit"),
@@ -1360,7 +1410,7 @@ public class Dashboard extends javax.swing.JFrame {
         } catch (Exception ex) {
         System.err.println(ex.getMessage());
         }   
-    }//GEN-LAST:event_FilterKeyTyped
+    }//GEN-LAST:event_Filter_PndkKeyTyped
 
     private void jLabel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseClicked
         // TODO add your handling code here:
@@ -1392,20 +1442,22 @@ public class Dashboard extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel45MouseClicked
 
-    private void btn_tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahActionPerformed
+    private void btn_tambahpndkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahpndkActionPerformed
         // TODO add your handling code here:
         new Input_Data().setVisible(true);
-    }//GEN-LAST:event_btn_tambahActionPerformed
+    }//GEN-LAST:event_btn_tambahpndkActionPerformed
 
-    private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
+    private void btn_editpndkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editpndkActionPerformed
         // TODO add your handling code here:
+        Edit_Data jdata = new Edit_Data();
         try{
             int bar = jTablePndk.getSelectedRow();
-            String nik = tabModel.getValueAt(bar, 0).toString();
-            String namapnd = tabModel.getValueAt(bar, 1).toString();
-            String unit = tabModel.getValueAt(bar, 2).toString();
-            String blok = tabModel.getValueAt(bar, 3).toString();
-            String tahunmasuk = tabModel.getValueAt(bar, 4).toString();
+            String id = tabModel.getValueAt(bar, 0).toString();
+            String nik = tabModel.getValueAt(bar, 1).toString();
+            String namapnd = tabModel.getValueAt(bar, 2).toString();
+            String unit = tabModel.getValueAt(bar, 3).toString();
+            String blok = tabModel.getValueAt(bar, 4).toString();
+            String tahunmasuk = tabModel.getValueAt(bar, 5).toString();
             jdata.setVisible(true);
             jdata.pack();
             jdata.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -1417,12 +1469,12 @@ public class Dashboard extends javax.swing.JFrame {
         }catch(Exception e){
             JOptionPane.showMessageDialog(this,e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btn_editActionPerformed
+    }//GEN-LAST:event_btn_editpndkActionPerformed
 
-    private void btn_hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusActionPerformed
+    private void btn_hapuspndkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapuspndkActionPerformed
         // TODO add your handling code here:
         int bar = jTablePndk.getSelectedRow();
-        String nik = tabModel.getValueAt(bar, 0).toString();
+        String id = tabModel.getValueAt(bar, 0).toString();
 
         if(JOptionPane.showConfirmDialog(null,"Apakah anda yakin akan menghapus data ini?",
             "Informasi",JOptionPane.OK_CANCEL_OPTION,JOptionPane.INFORMATION_MESSAGE)==JOptionPane.OK_OPTION){
@@ -1430,22 +1482,23 @@ public class Dashboard extends javax.swing.JFrame {
             Connection conn=(Connection)
             Koneksi.koneksiDB();
             Statement stt=conn.createStatement();
-            stt.executeUpdate("DELETE FROM dft_penduduk WHERE nik='"+nik+"'");
+            stt.executeUpdate("DELETE FROM dft_penduduk WHERE id='"+id+"'");
             tampilDataPndk();
             JOptionPane.showMessageDialog(this,"Data berhasil di hapus","Success",JOptionPane.INFORMATION_MESSAGE);
         } catch(SQLException e){
             JOptionPane.showMessageDialog(this,"Delete data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
         }
-    }//GEN-LAST:event_btn_hapusActionPerformed
+    }//GEN-LAST:event_btn_hapuspndkActionPerformed
 
-    private void btn_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editMouseClicked
+    private void btn_editpndkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editpndkMouseClicked
         // TODO add your handling code here:      
-    }//GEN-LAST:event_btn_editMouseClicked
+    }//GEN-LAST:event_btn_editpndkMouseClicked
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         tampilDataPndk();
+        tampilDataTamu();
     }//GEN-LAST:event_formWindowActivated
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
@@ -1541,9 +1594,7 @@ public class Dashboard extends javax.swing.JFrame {
         Main_Panel.removeAll();
         Main_Panel.add(panel_tamu);
         Main_Panel.repaint();
-        Main_Panel.revalidate();
-        
-        
+        Main_Panel.revalidate();     
     }//GEN-LAST:event_btn_tamuActionPerformed
 
     private void btn_iuranMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_iuranMouseEntered
@@ -1600,7 +1651,6 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btn_beritaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_beritaMouseClicked
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_btn_beritaMouseClicked
 
     private void btn_kasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_kasMouseClicked
@@ -1619,40 +1669,98 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_tamuFocusLost
 
-    private void Filter1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Filter1KeyTyped
+    private void Filter_TamuKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Filter_TamuKeyTyped
         // TODO add your handling code here:
         try{
-            String key = Filter.getText();
-            Object[] judul_kolom = {"NIK Penduduk", "Nama Penduduk", "Unit", "Blok", "Tahun Masuk", "Create Date"};
-            tabModel=new DefaultTableModel(null,judul_kolom);
-            jTablePndk.setModel(tabModel);
+            String key = Filter_Tamu.getText();
+            Object[] judul_kolom1 = {"No", "Nama Tamu", "Jenis Kelamin", "Alamat", "No. HP", "Keterangan", "Waktu Masuk"};
+            tabModel=new DefaultTableModel(null,judul_kolom1);
+            jTableTamu.setModel(tabModel);
             
             Connection conn=(Connection)Koneksi.koneksiDB();
             Statement stt=conn.createStatement();
             tabModel.getDataVector().removeAllElements();
             
-            RsDashboard=stt.executeQuery("SELECT * from dft_penduduk WHERE namapnd LIKE '%"+key+"%'");  
+            RsDashboard=stt.executeQuery("SELECT * from dft_tamu WHERE nama LIKE '%"+key+"%'");  
             while(RsDashboard.next()){
-                Object[] data={
-                    RsDashboard.getString("nik"),
-                    RsDashboard.getString("namapnd"),
-                    RsDashboard.getString("unit"),
-                    RsDashboard.getString("blok"),
-                    RsDashboard.getString("tahunmasuk"),
-                    RsDashboard.getString("CreateDate")         
+                Object[] data1={
+                    RsDashboard.getString("id"),
+                    RsDashboard.getString("nama"),
+                    RsDashboard.getString("jk"),
+                    RsDashboard.getString("alamat"),
+                    RsDashboard.getString("hp"),
+                    RsDashboard.getString("keperluan"),
+                    RsDashboard.getString("waktumasuk")         
                 };
-               tabModel.addRow(data);
+               tabModel.addRow(data1);
             }                
         } catch (Exception ex) {
         System.err.println(ex.getMessage());
         }
-    }//GEN-LAST:event_Filter1KeyTyped
+    }//GEN-LAST:event_Filter_TamuKeyTyped
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
         new login().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void btn_tambahtamuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahtamuActionPerformed
+        // TODO add your handling code here:
+        new Input_DataTamu().setVisible(true);
+    }//GEN-LAST:event_btn_tambahtamuActionPerformed
+
+    private void Filter_TamuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Filter_TamuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Filter_TamuActionPerformed
+
+    private void btn_edittamuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_edittamuMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_edittamuMouseClicked
+
+    private void btn_edittamuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_edittamuActionPerformed
+        // TODO add your handling code here:
+            Edit_DataTamu jdata1 = new Edit_DataTamu();
+        try{
+            int bar1 = jTableTamu.getSelectedRow();
+            String id = tabModel.getValueAt(bar1, 0).toString();
+            String nama = tabModel.getValueAt(bar1, 1).toString();
+            String jk = tabModel.getValueAt(bar1, 2).toString();
+            String alamat = tabModel.getValueAt(bar1, 3).toString();
+            String nohp = tabModel.getValueAt(bar1, 4).toString();
+            String keperluan = tabModel.getValueAt(bar1, 5).toString();
+            jdata1.setVisible(true);
+            jdata1.pack();
+            jdata1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            jdata1.jTextNmTamu.setText(nama);
+            jdata1.jComboJkTamu.setSelectedItem(jk);
+            jdata1.jTextAlmTamu.setText(alamat);
+            jdata1.jTextNoTamu.setText(nohp);
+            jdata1.jTextKetTamu.setText(keperluan);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this,e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btn_edittamuActionPerformed
+
+    private void btn_hapustamuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapustamuActionPerformed
+        // TODO add your handling code here:
+        int bar1 = jTableTamu.getSelectedRow();
+        String id = tabModel.getValueAt(bar1, 0).toString();
+
+        if(JOptionPane.showConfirmDialog(null,"Apakah anda yakin akan menghapus data ini?",
+            "Informasi",JOptionPane.OK_CANCEL_OPTION,JOptionPane.INFORMATION_MESSAGE)==JOptionPane.OK_OPTION){
+        try{
+            Connection conn=(Connection)
+            Koneksi.koneksiDB();
+            Statement stt=conn.createStatement();
+            stt.executeUpdate("DELETE FROM dft_tamu WHERE id='"+id+"'");
+            tampilDataTamu();
+            JOptionPane.showMessageDialog(this,"Data berhasil di hapus","Success",JOptionPane.INFORMATION_MESSAGE);
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(this,"Delete data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+        }
+        }
+    }//GEN-LAST:event_btn_hapustamuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1690,8 +1798,8 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Filter;
-    private javax.swing.JTextField Filter1;
+    private javax.swing.JTextField Filter_Pndk;
+    private javax.swing.JTextField Filter_Tamu;
     public static final javax.swing.JLabel Icon_Daftar_Akun = new javax.swing.JLabel();
     private javax.swing.JLabel Jam;
     private javax.swing.JLabel Jam1;
@@ -1702,12 +1810,12 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Jam6;
     public static final javax.swing.JLabel Label_Daftar_Akun = new javax.swing.JLabel();
     public static final javax.swing.JLabel Label_Role = new javax.swing.JLabel();
-    public static final javax.swing.JLabel Label_Role1 = new javax.swing.JLabel();
-    public static final javax.swing.JLabel Label_Role2 = new javax.swing.JLabel();
-    public static final javax.swing.JLabel Label_Role3 = new javax.swing.JLabel();
-    public static final javax.swing.JLabel Label_Role4 = new javax.swing.JLabel();
-    public static final javax.swing.JLabel Label_Role5 = new javax.swing.JLabel();
-    public static final javax.swing.JLabel Label_Role6 = new javax.swing.JLabel();
+    public static javax.swing.JLabel Label_Role1;
+    public static javax.swing.JLabel Label_Role2;
+    public static javax.swing.JLabel Label_Role3;
+    public static javax.swing.JLabel Label_Role4;
+    public static javax.swing.JLabel Label_Role5;
+    public static javax.swing.JLabel Label_Role6;
     private javax.swing.JPanel List_Menu;
     private javax.swing.JPanel Main_Panel;
     private javax.swing.JPanel Menu_Panel;
@@ -1719,14 +1827,17 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Tanggal5;
     private javax.swing.JLabel Tanggal6;
     public static javax.swing.JButton btn_berita;
-    public static javax.swing.JButton btn_edit;
-    public static javax.swing.JButton btn_hapus;
+    public static javax.swing.JButton btn_editpndk;
+    public static javax.swing.JButton btn_edittamu;
+    public static javax.swing.JButton btn_hapuspndk;
+    public static javax.swing.JButton btn_hapustamu;
     public static javax.swing.JButton btn_home;
     public static javax.swing.JButton btn_iuran;
     public static javax.swing.JButton btn_kas;
     public static javax.swing.JButton btn_laporan;
     public static javax.swing.JButton btn_penduduk;
-    public static javax.swing.JButton btn_tambah;
+    public static javax.swing.JButton btn_tambahpndk;
+    public static javax.swing.JButton btn_tambahtamu;
     public static javax.swing.JButton btn_tamu;
     private javax.swing.JPanel header_berita;
     private javax.swing.JPanel header_dashboard;
