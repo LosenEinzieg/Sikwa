@@ -269,7 +269,7 @@ public class login extends javax.swing.JFrame {
                     btn_home.setEnabled(true);
                     btn_tamu.setEnabled(true);
                     btn_berita.setEnabled(true);
-                    btn_kas.setEnabled(false);
+                    btn_kas.setEnabled(true);
                     btn_iuran.setEnabled(true);
                     btn_laporan.setEnabled(false);
                     Label_Daftar_Akun.setVisible(false);
