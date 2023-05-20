@@ -31,11 +31,18 @@ public class Dashboard extends javax.swing.JFrame {
     DefaultTableModel tabModel;
     DefaultTableModel tabModel1;
     DefaultTableModel tabModel2;
+    DefaultTableModel tabModel3;
     ResultSet RsDashboard=null;
     
     protected void kosong(){
         jTextBeritaAcara.setText("");
-        jTextKetBerita.setText("");           
+        jTextKetBerita.setText("");
+        jTextNamaIuran.setText("");
+        jDateIuran.setDate(null);
+        jTextIuranB.setText("");
+        jTextIuranT.setText("");
+        jTextIuranTotal.setText("");
+        jComboKetIuran.setSelectedItem("");      
     }
 
     /**
@@ -46,6 +53,7 @@ public class Dashboard extends javax.swing.JFrame {
         tampilDataPndk();
         tampilDataTamu();
         tampilDataBerita();
+        tampilDataIuran();
         Tampil_Jam();
         Tampil_Tanggal();
               
@@ -137,6 +145,37 @@ public class Dashboard extends javax.swing.JFrame {
                     RsDashboard.getString("Keterangan"),
                 };
                tabModel2.addRow(data2);
+            }                
+        } catch (Exception ex) {
+        System.err.println(ex.getMessage());
+        }
+    }
+    
+    public void tampilDataIuran(){
+        try{
+            Object[] judul_kolom3 = {"No", "Nama Warga", "Tanggal", "Iuran Bulanan", "Iuran Tahunan", "Total Bayar", "Keterangan"};
+            tabModel3=new DefaultTableModel(null,judul_kolom3);
+            jTableIuran.setModel(tabModel3);
+            jTableIuran.setRowHeight(25);
+            jTableIuran.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+            jTableIuran.getTableHeader().setForeground(new Color(0,51,51));
+            
+            Connection conn=(Connection)Koneksi.koneksiDB();
+            Statement stt=conn.createStatement();
+            tabModel3.getDataVector().removeAllElements();
+            
+            RsDashboard=stt.executeQuery("SELECT * from dft_iuran ");  
+            while(RsDashboard.next()){
+                Object[] data3={
+                    RsDashboard.getString("id"),
+                    RsDashboard.getString("nama"),
+                    RsDashboard.getString("tanggal"),
+                    RsDashboard.getString("iuran_bulanan"),
+                    RsDashboard.getString("iuran_tahunan"),
+                    RsDashboard.getString("total_bayar"),
+                    RsDashboard.getString("keterangan")
+                };
+               tabModel3.addRow(data3);
             }                
         } catch (Exception ex) {
         System.err.println(ex.getMessage());
@@ -309,6 +348,33 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         Label_Role5 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel52 = new javax.swing.JLabel();
+        btn_tambahiuran = new javax.swing.JButton();
+        btn_editiuran = new javax.swing.JButton();
+        btn_hapusiuran = new javax.swing.JButton();
+        jLabel57 = new javax.swing.JLabel();
+        jTextNamaIuran = new javax.swing.JTextField();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jTextIuranB = new javax.swing.JTextField();
+        jLabel60 = new javax.swing.JLabel();
+        jTextIuranT = new javax.swing.JTextField();
+        jLabel62 = new javax.swing.JLabel();
+        jTextIuranTotal = new javax.swing.JTextField();
+        jLabel63 = new javax.swing.JLabel();
+        jComboKetIuran = new javax.swing.JComboBox<>();
+        jDateIuran = new com.toedter.calendar.JDateChooser();
+        jSeparator3 = new javax.swing.JSeparator();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTableIuran = new javax.swing.JTable();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        Filter_Iuran = new javax.swing.JTextField();
         panel_laporan = new javax.swing.JPanel();
         header_laporan = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
@@ -1600,7 +1666,291 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel43.setFont(new java.awt.Font("Palatino Linotype", 1, 25)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(255, 255, 255));
         jLabel43.setText("Informasi Iuran");
-        panel_iuran.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
+        panel_iuran.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, -1, -1));
+
+        jPanel6.setBackground(new java.awt.Color(0, 51, 51));
+
+        jPanel7.setBackground(new java.awt.Color(0, 153, 153));
+
+        jPanel8.setBackground(new java.awt.Color(187, 226, 232));
+
+        jLabel52.setFont(new java.awt.Font("Palatino Linotype", 1, 23)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel52.setText("Form Input Iuran");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(jLabel52)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        btn_tambahiuran.setBackground(new java.awt.Color(0, 153, 0));
+        btn_tambahiuran.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_tambahiuran.setForeground(new java.awt.Color(255, 255, 255));
+        btn_tambahiuran.setText("Tambah");
+        btn_tambahiuran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tambahiuranActionPerformed(evt);
+            }
+        });
+
+        btn_editiuran.setBackground(new java.awt.Color(153, 153, 0));
+        btn_editiuran.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_editiuran.setForeground(new java.awt.Color(255, 255, 255));
+        btn_editiuran.setText("Edit");
+        btn_editiuran.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_editiuranMouseClicked(evt);
+            }
+        });
+        btn_editiuran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editiuranActionPerformed(evt);
+            }
+        });
+
+        btn_hapusiuran.setBackground(new java.awt.Color(153, 0, 0));
+        btn_hapusiuran.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_hapusiuran.setForeground(new java.awt.Color(255, 255, 255));
+        btn_hapusiuran.setText("Hapus");
+        btn_hapusiuran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_hapusiuranActionPerformed(evt);
+            }
+        });
+
+        jLabel57.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel57.setText("Nama");
+
+        jTextNamaIuran.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jTextNamaIuran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNamaIuranActionPerformed(evt);
+            }
+        });
+
+        jLabel58.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel58.setText("Tanggal");
+
+        jLabel59.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel59.setText("Iuran Bulanan");
+
+        jTextIuranB.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jTextIuranB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIuranBActionPerformed(evt);
+            }
+        });
+
+        jLabel60.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel60.setText("Iuran Tahunan");
+
+        jTextIuranT.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jTextIuranT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIuranTActionPerformed(evt);
+            }
+        });
+
+        jLabel62.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel62.setText("Total Bayar");
+
+        jTextIuranTotal.setEditable(false);
+        jTextIuranTotal.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jTextIuranTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIuranTotalActionPerformed(evt);
+            }
+        });
+
+        jLabel63.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel63.setText("Keterangan");
+
+        jComboKetIuran.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Status-", "Lunas", "Belum Lunas" }));
+        jComboKetIuran.setPreferredSize(new java.awt.Dimension(56, 30));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel58)
+                                    .addComponent(jLabel57))
+                                .addGap(53, 53, 53)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextNamaIuran)
+                                    .addComponent(jDateIuran, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel59)
+                                .addGap(11, 11, 11)
+                                .addComponent(jTextIuranB))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel60)
+                                    .addComponent(jLabel63)
+                                    .addComponent(jLabel62))
+                                .addGap(7, 7, 7)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextIuranT)
+                                    .addComponent(jTextIuranTotal)
+                                    .addComponent(jComboKetIuran, 0, 138, Short.MAX_VALUE)))))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btn_tambahiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_editiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_hapusiuran)))
+                .addContainerGap(28, Short.MAX_VALUE))
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextNamaIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jDateIuran, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextIuranB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextIuranT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextIuranTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboKetIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_tambahiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_hapusiuran)
+                    .addComponent(btn_editiuran))
+                .addGap(27, 27, 27))
+        );
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        panel_iuran.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 340, 440));
+
+        jSeparator3.setBackground(new java.awt.Color(0, 51, 51));
+        jSeparator3.setForeground(new java.awt.Color(0, 51, 51));
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator3.setMinimumSize(new java.awt.Dimension(10, 100));
+        jSeparator3.setPreferredSize(new java.awt.Dimension(100, 10));
+        panel_iuran.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 10, 440));
+
+        jTableIuran.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "No", "Nama Warga", "Tanggal", "Iuran Bulanan", "Iuran Tahunan", "Total Bayar", "Keterangan"
+            }
+        ));
+        jTableIuran.setFocusable(false);
+        jTableIuran.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        jTableIuran.setRowHeight(25);
+        jTableIuran.setSelectionBackground(new java.awt.Color(0, 51, 51));
+        jTableIuran.setShowVerticalLines(false);
+        jTableIuran.getTableHeader().setReorderingAllowed(false);
+        jTableIuran.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableIuranMouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(jTableIuran);
+
+        panel_iuran.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 600, 440));
+
+        jLabel53.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_Money_Transfer_30px.png"))); // NOI18N
+        jLabel53.setText("Daftar Iuran Warga");
+        panel_iuran.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        jLabel54.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel54.setText("Cari / Filter :");
+        panel_iuran.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, -1, -1));
+
+        jLabel55.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel55.setText("___________________");
+        jLabel55.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        panel_iuran.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, -1, -1));
+
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
+        panel_iuran.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
+
+        Filter_Iuran.setBackground(new java.awt.Color(0, 153, 153));
+        Filter_Iuran.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
+        Filter_Iuran.setForeground(new java.awt.Color(255, 255, 255));
+        Filter_Iuran.setBorder(null);
+        Filter_Iuran.setOpaque(false);
+        Filter_Iuran.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Filter_IuranActionPerformed(evt);
+            }
+        });
+        Filter_Iuran.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Filter_IuranKeyTyped(evt);
+            }
+        });
+        panel_iuran.add(Filter_Iuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 165, 130, 20));
 
         Main_Panel.add(panel_iuran, "card7");
 
@@ -1842,6 +2192,7 @@ public class Dashboard extends javax.swing.JFrame {
         tampilDataPndk();
         tampilDataTamu();
         tampilDataBerita();
+        tampilDataIuran();
     }//GEN-LAST:event_formWindowActivated
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
@@ -2110,7 +2461,28 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void Filter_BeritaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Filter_BeritaKeyTyped
         // TODO add your handling code here:
-        
+         try{
+            String key = Filter_Berita.getText();
+            Object[] judul_kolom2 = {"No", "Berita Acara", "Keterangan"};
+            tabModel2=new DefaultTableModel(null,judul_kolom2);
+            jTableBerita.setModel(tabModel2);
+            
+            Connection conn=(Connection)Koneksi.koneksiDB();
+            Statement stt=conn.createStatement();
+            tabModel2.getDataVector().removeAllElements();
+            
+            RsDashboard=stt.executeQuery("SELECT * from dft_berita WHERE Berita_Acara LIKE '%"+key+"%'");  
+            while(RsDashboard.next()){
+                Object[] data2={
+                    RsDashboard.getString("id"),
+                    RsDashboard.getString("Berita_Acara"),
+                    RsDashboard.getString("Keterangan"),    
+                };
+               tabModel2.addRow(data2);
+            }                
+        } catch (Exception ex) {
+        System.err.println(ex.getMessage());
+        }       
     }//GEN-LAST:event_Filter_BeritaKeyTyped
 
     private void btn_tambahberitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahberitaActionPerformed
@@ -2190,6 +2562,160 @@ public class Dashboard extends javax.swing.JFrame {
         jTextKetBerita.setText(Keterangan);
     }//GEN-LAST:event_jTableBeritaMouseClicked
 
+    private void btn_tambahiuranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahiuranActionPerformed
+        // TODO add your handling code here:
+        String tampilan ="yyyy-MM-dd";
+        SimpleDateFormat fm = new SimpleDateFormat(tampilan);
+        String tanggal = String.valueOf(fm.format(jDateIuran.getDate()));
+        
+        //String jTextIuranTotal = jTextIuranB + jTextIuranT;
+        
+        String nama = jTextNamaIuran.getText();
+        String iuran_bulanan = jTextIuranB.getText();
+        String iuran_tahunan = jTextIuranT.getText();
+        String total_bayar = jTextIuranTotal.getText();
+        String keterangan = jComboKetIuran.getSelectedItem().toString();
+        
+         try{
+                Connection conn=(Connection)Koneksi.koneksiDB();
+                Dashboard dashboard = new Dashboard();
+                dashboard.tampilDataIuran();
+                Statement stt=conn.createStatement();
+                stt.executeUpdate("insert into dft_iuran(nama,tanggal,iuran_bulanan,iuran_tahunan,total_bayar,keterangan)"+
+                    "VALUES('"+nama+"','"+tanggal+"','"+iuran_bulanan+"','"+iuran_tahunan+"','"+total_bayar+"','"+keterangan+"')");
+                JOptionPane.showMessageDialog(this,"Data berhasil disimpan","Success",JOptionPane.INFORMATION_MESSAGE);
+                kosong();
+                tampilDataIuran();
+                
+        }catch(SQLException e) {
+            JOptionPane.showMessageDialog(this,"Simpan data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+        }
+       
+    }//GEN-LAST:event_btn_tambahiuranActionPerformed
+
+    private void btn_editiuranMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editiuranMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_editiuranMouseClicked
+
+    private void btn_editiuranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editiuranActionPerformed
+        // TODO add your handling code here:
+        String tampilan ="yyyy-MM-dd";
+        SimpleDateFormat fm = new SimpleDateFormat(tampilan);
+        String tanggal = String.valueOf(fm.format(jDateIuran.getDate()));
+        
+        int ok=JOptionPane.showConfirmDialog(null,"Apakah Yakin Untuk Update Data ini?","Confirmation",JOptionPane.YES_NO_OPTION);{
+        if (ok==0) {
+        try{
+            Connection conn=(Connection)
+            Koneksi.koneksiDB();
+            Statement stt=conn.createStatement();
+            
+            String nama = jTextNamaIuran.getText();
+            String iuran_bulanan = jTextIuranB.getText();
+            String iuran_tahunan = jTextIuranT.getText();
+            String total_bayar = jTextIuranTotal.getText();
+            String keterangan = jComboKetIuran.getSelectedItem().toString();         
+            
+            stt.executeUpdate("UPDATE dft_iuran SET nama='"+nama+"', tanggal='"+tanggal+"', iuran_bulanan='"+iuran_bulanan+"', iuran_tahunan='"+iuran_tahunan+"', total_bayar='"+total_bayar+"', keterangan='"+keterangan+"' WHERE nama='"+nama+"'");         
+            JOptionPane.showMessageDialog(this,"Data berhasil di ubah","Success",JOptionPane.INFORMATION_MESSAGE);
+            kosong();
+            tampilDataIuran();
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(this,"Ubah data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+        }
+        }
+    }
+    }//GEN-LAST:event_btn_editiuranActionPerformed
+
+    private void btn_hapusiuranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapusiuranActionPerformed
+        // TODO add your handling code here:
+         int bar3 = jTableIuran.getSelectedRow();
+        String id = tabModel3.getValueAt(bar3, 0).toString();
+
+        if(JOptionPane.showConfirmDialog(null,"Apakah anda yakin akan menghapus data ini?",
+            "Informasi",JOptionPane.OK_CANCEL_OPTION,JOptionPane.INFORMATION_MESSAGE)==JOptionPane.OK_OPTION){
+        try{
+            Connection conn=(Connection)
+            Koneksi.koneksiDB();
+            Statement stt=conn.createStatement();
+            stt.executeUpdate("DELETE FROM dft_iuran WHERE id='"+id+"'");
+            tampilDataIuran();
+            JOptionPane.showMessageDialog(this,"Data berhasil di hapus","Success",JOptionPane.INFORMATION_MESSAGE);
+            kosong();
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(this,"Delete data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+        }
+        }
+    }//GEN-LAST:event_btn_hapusiuranActionPerformed
+
+    private void jTableIuranMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableIuranMouseClicked
+        // TODO add your handling code here:
+        int bar3 = jTableIuran.getSelectedRow();
+        String nama = tabModel3.getValueAt(bar3, 1).toString();
+        String tanggal = tabModel3.getValueAt(bar3, 2).toString();
+        String iuran_bulanan = tabModel3.getValueAt(bar3, 3).toString();
+        String iuran_tahunan = tabModel3.getValueAt(bar3, 4).toString();
+        String total_bayar = tabModel3.getValueAt(bar3, 5).toString();
+        String keterangan = tabModel3.getValueAt(bar3, 6).toString();
+        
+        jTextNamaIuran.setText(nama);
+        jTextIuranB.setText(iuran_bulanan);
+        jTextIuranT.setText(iuran_tahunan);
+        jTextIuranTotal.setText(total_bayar);
+        jComboKetIuran.setSelectedItem(keterangan);
+    }//GEN-LAST:event_jTableIuranMouseClicked
+
+    private void Filter_IuranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Filter_IuranActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Filter_IuranActionPerformed
+
+    private void Filter_IuranKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Filter_IuranKeyTyped
+        // TODO add your handling code here:
+        try{
+            String key = Filter_Iuran.getText();
+            Object[] judul_kolom3 = {"No", "Nama Warga", "Tanggal", "Iuran Bulanan", "Iuran Tahunan", "Total Bayar", "Keterangan"};
+            tabModel3=new DefaultTableModel(null,judul_kolom3);
+            jTableIuran.setModel(tabModel3);
+            
+            Connection conn=(Connection)Koneksi.koneksiDB();
+            Statement stt=conn.createStatement();
+            tabModel3.getDataVector().removeAllElements();
+            
+            RsDashboard=stt.executeQuery("SELECT * from dft_iuran WHERE nama LIKE '%"+key+"%'");  
+            while(RsDashboard.next()){
+                Object[] data3={
+                    RsDashboard.getString("id"),
+                    RsDashboard.getString("nama"),
+                    RsDashboard.getString("tangal"),
+                    RsDashboard.getString("iuran_bulanan"),
+                    RsDashboard.getString("iuran_tahunan"),
+                    RsDashboard.getString("total_bayar"),
+                    RsDashboard.getString("keterangan")    
+                };
+               tabModel3.addRow(data3);
+            }                
+        } catch (Exception ex) {
+        System.err.println(ex.getMessage());
+        }
+    }//GEN-LAST:event_Filter_IuranKeyTyped
+
+    private void jTextNamaIuranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNamaIuranActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNamaIuranActionPerformed
+
+    private void jTextIuranBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIuranBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIuranBActionPerformed
+
+    private void jTextIuranTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIuranTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIuranTActionPerformed
+
+    private void jTextIuranTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIuranTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIuranTotalActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2227,6 +2753,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Filter_Berita;
+    private javax.swing.JTextField Filter_Iuran;
     private javax.swing.JTextField Filter_Pndk;
     private javax.swing.JTextField Filter_Tamu;
     public static final javax.swing.JLabel Icon_Daftar_Akun = new javax.swing.JLabel();
@@ -2257,9 +2784,11 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Tanggal6;
     public static javax.swing.JButton btn_berita;
     public static javax.swing.JButton btn_editberita;
+    public static javax.swing.JButton btn_editiuran;
     public static javax.swing.JButton btn_editpndk;
     public static javax.swing.JButton btn_edittamu;
     public static javax.swing.JButton btn_hapusberita;
+    public static javax.swing.JButton btn_hapusiuran;
     public static javax.swing.JButton btn_hapuspndk;
     public static javax.swing.JButton btn_hapustamu;
     public static javax.swing.JButton btn_home;
@@ -2268,6 +2797,7 @@ public class Dashboard extends javax.swing.JFrame {
     public static javax.swing.JButton btn_laporan;
     public static javax.swing.JButton btn_penduduk;
     public static javax.swing.JButton btn_tambahberita;
+    public static javax.swing.JButton btn_tambahiuran;
     public static javax.swing.JButton btn_tambahpndk;
     public static javax.swing.JButton btn_tambahtamu;
     public static javax.swing.JButton btn_tamu;
@@ -2278,6 +2808,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel header_laporan;
     private javax.swing.JPanel header_penduduk;
     private javax.swing.JPanel header_tamu;
+    private javax.swing.JComboBox<String> jComboKetIuran;
+    private com.toedter.calendar.JDateChooser jDateIuran;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2323,7 +2855,18 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -2332,17 +2875,27 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTable jTableBerita;
+    private javax.swing.JTable jTableIuran;
     private javax.swing.JTable jTablePndk;
     private javax.swing.JTable jTableTamu;
     private javax.swing.JTextArea jTextBeritaAcara;
+    public javax.swing.JTextField jTextIuranB;
+    public javax.swing.JTextField jTextIuranT;
+    public javax.swing.JTextField jTextIuranTotal;
     private javax.swing.JTextArea jTextKetBerita;
+    public javax.swing.JTextField jTextNamaIuran;
     private javax.swing.JPanel panel_berita;
     private javax.swing.JPanel panel_dashboard;
     private javax.swing.JPanel panel_iuran;

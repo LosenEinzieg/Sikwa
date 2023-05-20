@@ -5,7 +5,9 @@
  */
 package sikwaapp;
 import config.Koneksi;
+import java.awt.Image;
 import java.sql.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static sikwaapp.Dashboard.btn_laporan;
 import static sikwaapp.Dashboard.btn_kas;
@@ -42,6 +44,9 @@ public class login extends javax.swing.JFrame {
         initComponents();
         a = new Dashboard();
         a.setVisible(false);
+        //Menambahkan Icon Aplikasi
+        Image icon = new ImageIcon(this.getClass().getResource("/img/icon.png")).getImage();
+        this.setIconImage(icon);
     }
 
     /**
