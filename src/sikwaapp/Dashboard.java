@@ -36,6 +36,7 @@ public class Dashboard extends javax.swing.JFrame {
     DefaultTableModel tabModel1;
     DefaultTableModel tabModel2;
     DefaultTableModel tabModel3;
+    DefaultTableModel tabModelkas;
     ResultSet RsDashboard=null;
     
     protected void kosong(){
@@ -57,6 +58,7 @@ public class Dashboard extends javax.swing.JFrame {
         tampilDataPndk();
         tampilDataTamu();
         tampilDataBerita();
+        tampilDataKas();
         tampilDataIuran();
         Tampil_Jam();
         Tampil_Tanggal();
@@ -150,6 +152,60 @@ public class Dashboard extends javax.swing.JFrame {
                 };
                tabModel2.addRow(data2);
             }                
+        } catch (Exception ex) {
+        System.err.println(ex.getMessage());
+        }
+    }
+    
+    public void tampilDataKas(){
+        try{
+            Object[] judul_kolom_kas = {"No", "Deskripsi", "Jenis Kas", "Nominal"};
+            tabModelkas=new DefaultTableModel(null,judul_kolom_kas);
+            jTableKas.setModel(tabModelkas);
+            jTableKas.setRowHeight(25);
+            jTableKas.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+            jTableKas.getTableHeader().setForeground(new Color(0,51,51));
+            
+            Connection conn=(Connection)Koneksi.koneksiDB();
+            Statement stt=conn.createStatement();
+            tabModelkas.getDataVector().removeAllElements();
+            
+//            long masuk = 0;
+//            long keluar = 0;
+            String masuk = ""; 
+            String keluar = ""; 
+            RsDashboard=stt.executeQuery("SELECT * from dft_kas ");  
+            while(RsDashboard.next()){
+                Object[] data2={
+                    RsDashboard.getString("id"),
+                    RsDashboard.getString("deskripsi"),
+                    RsDashboard.getString("jenis"),
+                    RsDashboard.getString("nominal"),
+//                    long = long + Integer.parseInt(RsDashboard.getString("nominal")),
+                };
+               tabModelkas.addRow(data2);
+            }      
+            RsDashboard=stt.executeQuery("SELECT sum(nominal) as masuk FROM `dft_kas` WHERE jenis = 'Masuk'");  
+            while(RsDashboard.next()){
+                Object[] data2={
+                    masuk = RsDashboard.getString("masuk"),
+//                    long = long + Integer.parseInt(RsDashboard.getString("nominal")),
+                };
+            }         
+            jTextTotalKasMasuk.setText(masuk);
+            RsDashboard=stt.executeQuery("SELECT sum(nominal) as keluar FROM `dft_kas` WHERE jenis = 'Keluar'");  
+            while(RsDashboard.next()){
+                Object[] data2={
+                    keluar = RsDashboard.getString("keluar"),
+//                    long = long + Integer.parseInt(RsDashboard.getString("nominal")),
+                };
+            }         
+            jTextTotalKasKeluar.setText(keluar);
+            int tot_masuk = Integer.parseInt(masuk);
+            int tot_keluar = Integer.parseInt(keluar);
+            int tot_kas = tot_masuk - tot_keluar;
+            String total_kas = Integer.toString(tot_kas);
+            jTextTotalKas.setText(total_kas);
         } catch (Exception ex) {
         System.err.println(ex.getMessage());
         }
@@ -343,6 +399,32 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         Label_Role4 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel68 = new javax.swing.JLabel();
+        btn_tambahkas = new javax.swing.JButton();
+        btn_editkas = new javax.swing.JButton();
+        btn_hapuskas = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jTextDeskripsiKas = new javax.swing.JTextField();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel70 = new javax.swing.JLabel();
+        jTextNominalKas = new javax.swing.JTextField();
+        jComboBoxJenisKas = new javax.swing.JComboBox<>();
+        jTextIdKas = new javax.swing.JTextField();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        Filter_Berita1 = new javax.swing.JTextField();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTableKas = new javax.swing.JTable();
+        jLabel73 = new javax.swing.JLabel();
+        jTextTotalKasMasuk = new javax.swing.JTextField();
+        jLabel74 = new javax.swing.JLabel();
+        jTextTotalKasKeluar = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jTextTotalKas = new javax.swing.JTextField();
         panel_iuran = new javax.swing.JPanel();
         header_iuran = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
@@ -1594,6 +1676,292 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel39.setForeground(new java.awt.Color(255, 255, 255));
         jLabel39.setText("Informasi Kas");
         panel_kas.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, -1, -1));
+
+        jLabel67.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_news_30px.png"))); // NOI18N
+        jLabel67.setText("Daftar Kas");
+        panel_kas.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        jPanel10.setBackground(new java.awt.Color(0, 51, 51));
+
+        jPanel11.setBackground(new java.awt.Color(0, 153, 153));
+
+        jPanel12.setBackground(new java.awt.Color(187, 226, 232));
+
+        jLabel68.setFont(new java.awt.Font("Palatino Linotype", 1, 25)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel68.setText("Ubah Data Kas");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(119, 119, 119)
+                .addComponent(jLabel68)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel68)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        btn_tambahkas.setBackground(new java.awt.Color(0, 153, 0));
+        btn_tambahkas.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_tambahkas.setForeground(new java.awt.Color(255, 255, 255));
+        btn_tambahkas.setText("Tambah");
+        btn_tambahkas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_tambahkasActionPerformed(evt);
+            }
+        });
+
+        btn_editkas.setBackground(new java.awt.Color(153, 153, 0));
+        btn_editkas.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_editkas.setForeground(new java.awt.Color(255, 255, 255));
+        btn_editkas.setText("Edit");
+        btn_editkas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_editkasMouseClicked(evt);
+            }
+        });
+        btn_editkas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editkasActionPerformed(evt);
+            }
+        });
+
+        btn_hapuskas.setBackground(new java.awt.Color(153, 0, 0));
+        btn_hapuskas.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
+        btn_hapuskas.setForeground(new java.awt.Color(255, 255, 255));
+        btn_hapuskas.setText("Hapus");
+        btn_hapuskas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_hapuskasActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Deskripsi Kas");
+
+        jTextDeskripsiKas.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+
+        jLabel69.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel69.setText("Jenis Kas");
+
+        jLabel70.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel70.setText("Nominal");
+
+        jTextNominalKas.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jTextNominalKas.setText("0");
+        jTextNominalKas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNominalKasActionPerformed(evt);
+            }
+        });
+        jTextNominalKas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextNominalKasKeyReleased(evt);
+            }
+        });
+
+        jComboBoxJenisKas.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jComboBoxJenisKas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih", "Masuk", "Keluar" }));
+
+        jTextIdKas.setEditable(false);
+        jTextIdKas.setBackground(new java.awt.Color(0, 153, 153));
+        jTextIdKas.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jTextIdKas.setForeground(new java.awt.Color(0, 153, 153));
+        jTextIdKas.setBorder(null);
+        jTextIdKas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIdKasActionPerformed(evt);
+            }
+        });
+        jTextIdKas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextIdKasKeyReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(btn_tambahkas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(btn_editkas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(btn_hapuskas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(65, 65, 65)
+                                .addComponent(jTextDeskripsiKas))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel70)
+                                    .addComponent(jLabel69))
+                                .addGap(107, 107, 107)
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextNominalKas)
+                                    .addComponent(jComboBoxJenisKas, 0, 140, Short.MAX_VALUE)
+                                    .addComponent(jTextIdKas))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(27, 27, 27))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextDeskripsiKas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBoxJenisKas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextNominalKas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(jTextIdKas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_tambahkas)
+                    .addComponent(btn_editkas)
+                    .addComponent(btn_hapuskas))
+                .addGap(19, 19, 19))
+        );
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        panel_kas.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 440, 440));
+
+        jLabel71.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel71.setText("Cari / Filter :");
+        panel_kas.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, -1, -1));
+
+        jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
+        panel_kas.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
+
+        Filter_Berita1.setBackground(new java.awt.Color(0, 153, 153));
+        Filter_Berita1.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
+        Filter_Berita1.setForeground(new java.awt.Color(255, 255, 255));
+        Filter_Berita1.setBorder(null);
+        Filter_Berita1.setOpaque(false);
+        Filter_Berita1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Filter_Berita1ActionPerformed(evt);
+            }
+        });
+        Filter_Berita1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Filter_Berita1KeyTyped(evt);
+            }
+        });
+        panel_kas.add(Filter_Berita1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 165, 130, 20));
+
+        jTableKas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "No", "Deskripsi", "Jenis Kas", "Nominal"
+            }
+        ));
+        jTableKas.setFocusable(false);
+        jTableKas.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        jTableKas.setRowHeight(25);
+        jTableKas.setSelectionBackground(new java.awt.Color(0, 51, 51));
+        jTableKas.setShowVerticalLines(false);
+        jTableKas.getTableHeader().setReorderingAllowed(false);
+        jTableKas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableKasMouseClicked(evt);
+            }
+        });
+        jScrollPane9.setViewportView(jTableKas);
+
+        panel_kas.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 480, 350));
+
+        jLabel73.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel73.setText("Kas Masuk");
+        panel_kas.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 570, -1, -1));
+
+        jTextTotalKasMasuk.setEditable(false);
+        jTextTotalKasMasuk.setBackground(new java.awt.Color(0, 153, 153));
+        jTextTotalKasMasuk.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jTextTotalKasMasuk.setForeground(new java.awt.Color(255, 255, 255));
+        jTextTotalKasMasuk.setText("0");
+        jTextTotalKasMasuk.setBorder(null);
+        jTextTotalKasMasuk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextTotalKasMasukActionPerformed(evt);
+            }
+        });
+        panel_kas.add(jTextTotalKasMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 610, 130, -1));
+
+        jLabel74.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel74.setText("Kas Keluar");
+        panel_kas.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 570, -1, -1));
+
+        jTextTotalKasKeluar.setEditable(false);
+        jTextTotalKasKeluar.setBackground(new java.awt.Color(0, 153, 153));
+        jTextTotalKasKeluar.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jTextTotalKasKeluar.setForeground(new java.awt.Color(255, 255, 255));
+        jTextTotalKasKeluar.setText("0");
+        jTextTotalKasKeluar.setBorder(null);
+        panel_kas.add(jTextTotalKasKeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 610, 130, -1));
+
+        jLabel17.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Total Kas");
+        panel_kas.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 570, -1, -1));
+
+        jTextTotalKas.setEditable(false);
+        jTextTotalKas.setBackground(new java.awt.Color(0, 153, 153));
+        jTextTotalKas.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jTextTotalKas.setForeground(new java.awt.Color(255, 255, 255));
+        jTextTotalKas.setText("0");
+        jTextTotalKas.setBorder(null);
+        panel_kas.add(jTextTotalKas, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 610, 130, -1));
 
         Main_Panel.add(panel_kas, "card6");
 
@@ -2861,6 +3229,146 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void btn_tambahkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahkasActionPerformed
+        // TODO add your handling code here:
+        //        jTextIdKas.setText("");
+        //        jTextDeskripsiKas.setText("");
+        //        jTextNominalKas.setText("0");
+        //        jComboBoxJenisKas.setSelectedIndex(0);
+        String deskripsi =jTextDeskripsiKas.getText();
+        String nominal = jTextNominalKas.getText();
+        String jenis =jComboBoxJenisKas.getSelectedItem().toString();
+
+        try{
+            Connection conn=(Connection)Koneksi.koneksiDB();
+            Dashboard dashboard = new Dashboard();
+            dashboard.tampilDataBerita();
+            Statement stt=conn.createStatement();
+            stt.executeUpdate("insert into dft_kas(deskripsi,nominal,jenis)"+
+                "VALUES('"+deskripsi+"','"+nominal+"','"+jenis+"')");
+            JOptionPane.showMessageDialog(this,"Data berhasil disimpan","Success",JOptionPane.INFORMATION_MESSAGE);
+            kosong();
+            tampilDataKas();
+            //                dashboard.tampilDataBerita();
+
+        }catch(SQLException e) {
+            JOptionPane.showMessageDialog(this,"Simpan data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btn_tambahkasActionPerformed
+
+    private void btn_editkasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editkasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_editkasMouseClicked
+
+    private void btn_editkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editkasActionPerformed
+        // TODO add your handling code here:
+        int ok=JOptionPane.showConfirmDialog(null,"Apakah Yakin Untuk Update Data ini?","Confirmation",JOptionPane.YES_NO_OPTION);{
+            if (ok==0) {
+                try{
+                    Connection conn=(Connection)
+                    Koneksi.koneksiDB();
+                    Statement stt=conn.createStatement();
+                    //            jTextIdKas.setText("");
+                    //        jTextDeskripsiKas.setText("");
+                    //        jTextNominalKas.setText("0");
+                    //        jComboBoxJenisKas.setSelectedIndex(0);
+                    String id = jTextIdKas.getText();
+                    String deskripsi =jTextDeskripsiKas.getText();
+                    String nominal = jTextNominalKas.getText();
+                    String jenis =jComboBoxJenisKas.getSelectedItem().toString();
+                    stt.executeUpdate("UPDATE dft_kas SET deskripsi='"+deskripsi+"', nominal='"+nominal+"', jenis='"+jenis+"' WHERE id='"+id+"'");
+                    JOptionPane.showMessageDialog(this,"Data berhasil di ubah","Success",JOptionPane.INFORMATION_MESSAGE);
+                    kosong();
+                    tampilDataKas();
+                } catch(SQLException e){
+                    JOptionPane.showMessageDialog(this,"Ubah data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+    }//GEN-LAST:event_btn_editkasActionPerformed
+
+    private void btn_hapuskasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hapuskasActionPerformed
+        // TODO add your handling code here:
+        int bar_kas = jTableKas.getSelectedRow();
+        String id = tabModelkas.getValueAt(bar_kas, 0).toString();
+
+        if(JOptionPane.showConfirmDialog(null,"Apakah anda yakin akan menghapus data ini?",
+            "Informasi",JOptionPane.OK_CANCEL_OPTION,JOptionPane.INFORMATION_MESSAGE)==JOptionPane.OK_OPTION){
+        try{
+            Connection conn=(Connection)
+            Koneksi.koneksiDB();
+            Statement stt=conn.createStatement();
+            stt.executeUpdate("DELETE FROM dft_kas WHERE id='"+id+"'");
+            tampilDataKas();
+            JOptionPane.showMessageDialog(this,"Data berhasil di hapus","Success",JOptionPane.INFORMATION_MESSAGE);
+            kosong();
+
+            tampilDataKas();
+        } catch(SQLException e){
+            JOptionPane.showMessageDialog(this,"Delete data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+        }
+        }
+    }//GEN-LAST:event_btn_hapuskasActionPerformed
+
+    private void jTextNominalKasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNominalKasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNominalKasActionPerformed
+
+    private void jTextNominalKasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextNominalKasKeyReleased
+        // TODO add your handling code here:
+        //        StringTokenizer token;
+        //        String ganti = "";
+        //        long angka;
+        //
+        //        angka = Integer.parseInt(jTextNominalKas.getText());
+        //        ganti = NumberFormat.getNumberInstance(Locale.US).format(angka);
+        //        token = new StringTokenizer(ganti, ".");
+        //        ganti = token.nextToken();
+        //        ganti = ganti.replace(',', '.');
+        //        jTextNominalKas.setText(String.format(ganti));
+    }//GEN-LAST:event_jTextNominalKasKeyReleased
+
+    private void jTextIdKasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIdKasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIdKasActionPerformed
+
+    private void jTextIdKasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextIdKasKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIdKasKeyReleased
+
+    private void Filter_Berita1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Filter_Berita1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Filter_Berita1ActionPerformed
+
+    private void Filter_Berita1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Filter_Berita1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Filter_Berita1KeyTyped
+
+    private void jTableKasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableKasMouseClicked
+        // TODO add your handling code here:
+        //        jTextIdKas.setText("");
+        //        jTextDeskripsiKas.setText("");
+        //        jTextNominalKas.setText("0");
+        //        jComboBoxJenisKas.setSelectedIndex(0);
+        //String id = jTextIdKas.getText();
+        //            String deskripsi =jTextDeskripsiKas.getText();
+        //            String nominal = jTextNominalKas.getText();
+        //            String jenis =jComboBoxJenisKas.getSelectedItem().toString();
+        int bar2 = jTableKas.getSelectedRow();
+        String id = tabModelkas.getValueAt(bar2, 0).toString();
+        String deskripsi = tabModelkas.getValueAt(bar2, 1).toString();
+        String jenis = tabModelkas.getValueAt(bar2, 2).toString();
+        String nominal = tabModelkas.getValueAt(bar2, 3).toString();
+        jTextIdKas.setText(id);
+        jTextDeskripsiKas.setText(deskripsi);
+        jTextNominalKas.setText(nominal);
+        jComboBoxJenisKas.setSelectedItem(jenis);
+    }//GEN-LAST:event_jTableKasMouseClicked
+
+    private void jTextTotalKasMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextTotalKasMasukActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextTotalKasMasukActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2898,6 +3406,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Filter_Berita;
+    private javax.swing.JTextField Filter_Berita1;
     private javax.swing.JTextField Filter_Iuran;
     private javax.swing.JTextField Filter_Pndk;
     private javax.swing.JTextField Filter_Tamu;
@@ -2909,8 +3418,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Jam4;
     private javax.swing.JLabel Jam5;
     private javax.swing.JLabel Jam6;
-    private javax.swing.JLabel Jam7;
-    private javax.swing.JLabel Jam8;
     public static final javax.swing.JLabel Label_Daftar_Akun = new javax.swing.JLabel();
     public static final javax.swing.JLabel Label_Role = new javax.swing.JLabel();
     public static javax.swing.JLabel Label_Role1;
@@ -2929,15 +3436,15 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Tanggal4;
     private javax.swing.JLabel Tanggal5;
     private javax.swing.JLabel Tanggal6;
-    private javax.swing.JLabel Tanggal7;
-    private javax.swing.JLabel Tanggal8;
     public static javax.swing.JButton btn_berita;
     public static javax.swing.JButton btn_editberita;
     public static javax.swing.JButton btn_editiuran;
+    public static javax.swing.JButton btn_editkas;
     public static javax.swing.JButton btn_editpndk;
     public static javax.swing.JButton btn_edittamu;
     public static javax.swing.JButton btn_hapusberita;
     public static javax.swing.JButton btn_hapusiuran;
+    public static javax.swing.JButton btn_hapuskas;
     public static javax.swing.JButton btn_hapuspndk;
     public static javax.swing.JButton btn_hapustamu;
     public static javax.swing.JButton btn_home;
@@ -2947,6 +3454,7 @@ public class Dashboard extends javax.swing.JFrame {
     public static javax.swing.JButton btn_penduduk;
     public static javax.swing.JButton btn_tambahberita;
     public static javax.swing.JButton btn_tambahiuran;
+    public static javax.swing.JButton btn_tambahkas;
     public static javax.swing.JButton btn_tambahpndk;
     public static javax.swing.JButton btn_tambahtamu;
     public static javax.swing.JButton btn_tamu;
@@ -2955,8 +3463,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel header_iuran;
     private javax.swing.JPanel header_kas;
     private javax.swing.JPanel header_laporan;
-    private javax.swing.JPanel header_laporan1;
-    private javax.swing.JPanel header_laporan2;
     private javax.swing.JPanel header_penduduk;
     private javax.swing.JPanel header_tamu;
     private javax.swing.JButton jButton1;
@@ -2964,6 +3470,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox<String> jComboBoxJenisKas;
     private javax.swing.JComboBox<String> jComboKetIuran;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2973,6 +3480,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -3020,16 +3529,23 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -3044,25 +3560,31 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTable jTableBerita;
     private javax.swing.JTable jTableIuran;
+    private javax.swing.JTable jTableKas;
     private javax.swing.JTable jTablePndk;
     private javax.swing.JTable jTableTamu;
     private javax.swing.JTextArea jTextBeritaAcara;
+    private javax.swing.JTextField jTextDeskripsiKas;
+    private javax.swing.JTextField jTextIdKas;
     public javax.swing.JTextField jTextIuranB;
     public javax.swing.JTextField jTextIuranT;
     public javax.swing.JTextField jTextIuranTotal;
     private javax.swing.JTextArea jTextKetBerita;
     public javax.swing.JTextField jTextNamaIuran;
+    private javax.swing.JTextField jTextNominalKas;
+    private javax.swing.JTextField jTextTotalKas;
+    private javax.swing.JTextField jTextTotalKasKeluar;
+    private javax.swing.JTextField jTextTotalKasMasuk;
     private javax.swing.JPanel panel_berita;
     private javax.swing.JPanel panel_dashboard;
     private javax.swing.JPanel panel_iuran;
     private javax.swing.JPanel panel_kas;
     private javax.swing.JPanel panel_laporan;
-    private javax.swing.JPanel panel_laporan1;
-    private javax.swing.JPanel panel_laporan2;
     private javax.swing.JPanel panel_penduduk;
     private javax.swing.JPanel panel_tamu;
     // End of variables declaration//GEN-END:variables
