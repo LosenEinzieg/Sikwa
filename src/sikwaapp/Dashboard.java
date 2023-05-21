@@ -42,11 +42,15 @@ public class Dashboard extends javax.swing.JFrame {
     protected void kosong(){
         jTextBeritaAcara.setText("");
         jTextKetBerita.setText("");
+        jTextIdKas.setText("");     
+        jTextDeskripsiKas.setText("");    
+        jTextNominalKas.setText("0");      
+        jComboBoxJenisKas.setSelectedIndex(0);   
         jTextNamaIuran.setText("");
         jDateIuran.setDate(null);
-        jTextIuranB.setText("");
-        jTextIuranT.setText("");
-        jTextIuranTotal.setText("");
+        jTextIuranB.setText("0");
+        jTextIuranT.setText("0");
+        jTextIuranTotal.setText("0");
         jComboKetIuran.setSelectedItem("");      
     }
 
@@ -241,6 +245,15 @@ public class Dashboard extends javax.swing.JFrame {
         System.err.println(ex.getMessage());
         }
     }
+    public void hitung_total_iuran() {
+        String iuranb = jTextIuranB.getText(); 
+        String iurant = jTextIuranT.getText();
+        int iuran_bulan = Integer.parseInt(iuranb);
+        int iuran_tahun = Integer.parseInt(iurant);
+        int tot_iuran = iuran_bulan + iuran_tahun;
+        String total_iuran = Integer.toString(tot_iuran);
+        jTextIuranTotal.setText(total_iuran);
+    } 
       
     public void Tampil_Jam(){
         ActionListener taskPerformer = new ActionListener() {
@@ -2129,9 +2142,15 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel59.setText("Iuran Bulanan");
 
         jTextIuranB.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jTextIuranB.setText("0");
         jTextIuranB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextIuranBActionPerformed(evt);
+            }
+        });
+        jTextIuranB.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextIuranBKeyReleased(evt);
             }
         });
 
@@ -2140,9 +2159,15 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel60.setText("Iuran Tahunan");
 
         jTextIuranT.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jTextIuranT.setText("0");
         jTextIuranT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextIuranTActionPerformed(evt);
+            }
+        });
+        jTextIuranT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextIuranTKeyReleased(evt);
             }
         });
 
@@ -2152,6 +2177,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jTextIuranTotal.setEditable(false);
         jTextIuranTotal.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jTextIuranTotal.setText("0");
         jTextIuranTotal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextIuranTotalActionPerformed(evt);
@@ -3375,6 +3401,16 @@ public class Dashboard extends javax.swing.JFrame {
     private void jTextTotalKasMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextTotalKasMasukActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextTotalKasMasukActionPerformed
+
+    private void jTextIuranBKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextIuranBKeyReleased
+        // TODO add your handling code here:
+        hitung_total_iuran();
+    }//GEN-LAST:event_jTextIuranBKeyReleased
+
+    private void jTextIuranTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextIuranTKeyReleased
+        // TODO add your handling code here:
+        hitung_total_iuran();
+    }//GEN-LAST:event_jTextIuranTKeyReleased
 
     /**
      * @param args the command line arguments
