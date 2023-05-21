@@ -452,6 +452,7 @@ public class Dashboard extends javax.swing.JFrame {
         jTextIuranTotal = new javax.swing.JTextField();
         jLabel63 = new javax.swing.JLabel();
         jComboKetIuran = new javax.swing.JComboBox<>();
+        jDateIuran = new com.toedter.calendar.JDateChooser();
         jSeparator3 = new javax.swing.JSeparator();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTableIuran = new javax.swing.JTable();
@@ -2164,6 +2165,8 @@ public class Dashboard extends javax.swing.JFrame {
         jComboKetIuran.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Status-", "Lunas", "Belum Lunas" }));
         jComboKetIuran.setPreferredSize(new java.awt.Dimension(56, 30));
 
+        jDateIuran.setFont(new java.awt.Font("Palatino Linotype", 0, 13)); // NOI18N
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -2178,7 +2181,9 @@ public class Dashboard extends javax.swing.JFrame {
                                     .addComponent(jLabel58)
                                     .addComponent(jLabel57))
                                 .addGap(53, 53, 53)
-                                .addComponent(jTextNamaIuran))
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextNamaIuran)
+                                    .addComponent(jDateIuran, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)))
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addComponent(jLabel59)
                                 .addGap(11, 11, 11)
@@ -2212,7 +2217,9 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextNamaIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(jDateIuran, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2229,7 +2236,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboKetIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_tambahiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_hapusiuran)
@@ -3472,6 +3479,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBoxJenisKas;
     private javax.swing.JComboBox<String> jComboKetIuran;
+    private com.toedter.calendar.JDateChooser jDateIuran;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
