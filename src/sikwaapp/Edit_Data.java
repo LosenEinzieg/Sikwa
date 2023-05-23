@@ -59,6 +59,7 @@ public class Edit_Data extends javax.swing.JFrame {
         jButtonBatalPndk = new javax.swing.JButton();
         jComboUnit = new javax.swing.JComboBox<>();
         jComboBlok = new javax.swing.JComboBox<>();
+        jTextIdPndk = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Edit Data Penduduk");
@@ -178,6 +179,15 @@ public class Edit_Data extends javax.swing.JFrame {
         jComboBlok.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Blok-", "Anggrek", "Mawar", "Tulip", "Teratai", "Edelweiss" }));
         jPanel2.add(jComboBlok, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 157, 30));
 
+        jTextIdPndk.setEditable(false);
+        jTextIdPndk.setBorder(null);
+        jTextIdPndk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIdPndkActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextIdPndk, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -214,6 +224,7 @@ public class Edit_Data extends javax.swing.JFrame {
 
     private void jButtonSimpanPndkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimpanPndkActionPerformed
         // TODO add your handling code here:
+        String id=jTextIdPndk.getText();
         String nik=jTextNIK.getText();
         String namapnd=jTextNmPnd.getText();
         String unit=jComboUnit.getSelectedItem().toString();
@@ -243,7 +254,7 @@ public class Edit_Data extends javax.swing.JFrame {
                 dashboard.tampilDataPndk();
                 Statement stt=conn.createStatement();
                 stt.executeUpdate("UPDATE dft_penduduk SET namapnd='"+namapnd+"', unit='"+unit+"', blok='"+blok+"',"+
-                    "tahunmasuk='"+tahunmasuk+"' WHERE nik='"+nik+"'");
+                    "tahunmasuk='"+tahunmasuk+"' WHERE id='"+id+"'");
                 JOptionPane.showMessageDialog(this,"Data berhasil diubah","Success",JOptionPane.INFORMATION_MESSAGE);
                 dashboard.tampilDataPndk();
                 this.dispose();
@@ -269,6 +280,10 @@ public class Edit_Data extends javax.swing.JFrame {
     private void jTextNmPndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNmPndActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextNmPndActionPerformed
+
+    private void jTextIdPndkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIdPndkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIdPndkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -320,6 +335,7 @@ public class Edit_Data extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField jTextIdPndk;
     public javax.swing.JTextField jTextNIK;
     public javax.swing.JTextField jTextNmPnd;
     public javax.swing.JTextField jTextThnMsk;

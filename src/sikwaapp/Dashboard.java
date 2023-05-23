@@ -311,9 +311,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         Menu_Panel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        Logo_Sikwa = new javax.swing.JLabel();
+        sikwa = new javax.swing.JLabel();
+        sikwa_full = new javax.swing.JLabel();
         List_Menu = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -334,6 +334,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         Tanggal = new javax.swing.JLabel();
         Jam = new javax.swing.JLabel();
+        Label_Role = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         panel_penduduk = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
@@ -403,6 +404,7 @@ public class Dashboard extends javax.swing.JFrame {
         jTextKetBerita = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
+        jTextIdBerita = new javax.swing.JTextField();
         panel_kas = new javax.swing.JPanel();
         header_kas = new javax.swing.JPanel();
         jLabel36 = new javax.swing.JLabel();
@@ -429,6 +431,7 @@ public class Dashboard extends javax.swing.JFrame {
         jTextIdKas = new javax.swing.JTextField();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
         Filter_Berita1 = new javax.swing.JTextField();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTableKas = new javax.swing.JTable();
@@ -438,6 +441,7 @@ public class Dashboard extends javax.swing.JFrame {
         jTextTotalKasKeluar = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jTextTotalKas = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
         panel_iuran = new javax.swing.JPanel();
         header_iuran = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
@@ -474,6 +478,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         Filter_Iuran = new javax.swing.JTextField();
+        jTextIdIuran = new javax.swing.JTextField();
         panel_laporan = new javax.swing.JPanel();
         header_laporan = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
@@ -505,17 +510,17 @@ public class Dashboard extends javax.swing.JFrame {
         Menu_Panel.setBackground(new java.awt.Color(0, 153, 153));
         Menu_Panel.setPreferredSize(new java.awt.Dimension(250, 804));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_neighbour_120px.png"))); // NOI18N
+        Logo_Sikwa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_neighbour_120px.png"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Palatino Linotype", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("SIKWA");
+        sikwa.setFont(new java.awt.Font("Palatino Linotype", 1, 24)); // NOI18N
+        sikwa.setForeground(new java.awt.Color(255, 255, 255));
+        sikwa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sikwa.setText("SIKWA");
 
-        jLabel3.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Sistem Aplikasi Keamanan Warga");
+        sikwa_full.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
+        sikwa_full.setForeground(new java.awt.Color(255, 255, 255));
+        sikwa_full.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sikwa_full.setText("Sistem Aplikasi Keamanan Warga");
 
         List_Menu.setBackground(new java.awt.Color(0, 51, 51));
         List_Menu.setForeground(new java.awt.Color(255, 255, 255));
@@ -756,7 +761,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel19)
                 .addGap(18, 18, 18)
                 .addComponent(btn_laporan)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Menu_PanelLayout = new javax.swing.GroupLayout(Menu_Panel);
@@ -772,23 +777,23 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGroup(Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(Menu_PanelLayout.createSequentialGroup()
                                 .addGap(83, 83, 83)
-                                .addComponent(jLabel1))
+                                .addComponent(sikwa))
                             .addGroup(Menu_PanelLayout.createSequentialGroup()
                                 .addGap(65, 65, 65)
-                                .addComponent(jLabel2)))
+                                .addComponent(Logo_Sikwa)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sikwa_full, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Menu_PanelLayout.setVerticalGroup(
             Menu_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Menu_PanelLayout.createSequentialGroup()
                 .addGap(7, 7, 7)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Logo_Sikwa, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sikwa, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sikwa_full, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(List_Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -866,11 +871,11 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Label_Role, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(108, 108, 108)
+                .addGap(170, 170, 170)
                 .addComponent(Tanggal)
                 .addGap(18, 18, 18)
                 .addComponent(Jam)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
                 .addGroup(header_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, header_dashboardLayout.createSequentialGroup()
                         .addComponent(Icon_Daftar_Akun)
@@ -1609,6 +1614,10 @@ public class Dashboard extends javax.swing.JFrame {
 
         panel_berita.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 479, -1));
 
+        jTextIdBerita.setEditable(false);
+        jTextIdBerita.setBorder(null);
+        panel_berita.add(jTextIdBerita, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, -1, -1));
+
         Main_Panel.add(panel_berita, "card5");
 
         panel_kas.setBackground(new java.awt.Color(0, 153, 153));
@@ -1700,6 +1709,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(0, 51, 51));
 
         jPanel11.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel12.setBackground(new java.awt.Color(187, 226, 232));
 
@@ -1724,6 +1734,8 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        jPanel11.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 416, -1));
+
         btn_tambahkas.setBackground(new java.awt.Color(0, 153, 0));
         btn_tambahkas.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
         btn_tambahkas.setForeground(new java.awt.Color(255, 255, 255));
@@ -1733,6 +1745,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btn_tambahkasActionPerformed(evt);
             }
         });
+        jPanel11.add(btn_tambahkas, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 364, 100, -1));
 
         btn_editkas.setBackground(new java.awt.Color(153, 153, 0));
         btn_editkas.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
@@ -1748,6 +1761,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btn_editkasActionPerformed(evt);
             }
         });
+        jPanel11.add(btn_editkas, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 364, 100, -1));
 
         btn_hapuskas.setBackground(new java.awt.Color(153, 0, 0));
         btn_hapuskas.setFont(new java.awt.Font("Palatino Linotype", 1, 16)); // NOI18N
@@ -1758,22 +1772,27 @@ public class Dashboard extends javax.swing.JFrame {
                 btn_hapuskasActionPerformed(evt);
             }
         });
+        jPanel11.add(btn_hapuskas, new org.netbeans.lib.awtextra.AbsoluteConstraints(289, 364, 100, -1));
 
         jLabel18.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Deskripsi Kas");
+        jPanel11.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, 30));
 
-        jTextDeskripsiKas.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jTextDeskripsiKas.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
+        jPanel11.add(jTextDeskripsiKas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 140, -1));
 
         jLabel69.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jLabel69.setForeground(new java.awt.Color(255, 255, 255));
         jLabel69.setText("Jenis Kas");
+        jPanel11.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 30));
 
         jLabel70.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jLabel70.setForeground(new java.awt.Color(255, 255, 255));
         jLabel70.setText("Nominal");
+        jPanel11.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, 30));
 
-        jTextNominalKas.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jTextNominalKas.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jTextNominalKas.setText("0");
         jTextNominalKas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1785,9 +1804,11 @@ public class Dashboard extends javax.swing.JFrame {
                 jTextNominalKasKeyReleased(evt);
             }
         });
+        jPanel11.add(jTextNominalKas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 140, -1));
 
-        jComboBoxJenisKas.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jComboBoxJenisKas.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jComboBoxJenisKas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih", "Masuk", "Keluar" }));
+        jPanel11.add(jComboBoxJenisKas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 140, -1));
 
         jTextIdKas.setEditable(false);
         jTextIdKas.setBackground(new java.awt.Color(0, 153, 153));
@@ -1804,64 +1825,7 @@ public class Dashboard extends javax.swing.JFrame {
                 jTextIdKasKeyReleased(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(btn_tambahkas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(btn_editkas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addComponent(btn_hapuskas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jLabel18)
-                                .addGap(65, 65, 65)
-                                .addComponent(jTextDeskripsiKas))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel70)
-                                    .addComponent(jLabel69))
-                                .addGap(107, 107, 107)
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextNominalKas)
-                                    .addComponent(jComboBoxJenisKas, 0, 140, Short.MAX_VALUE)
-                                    .addComponent(jTextIdKas))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(27, 27, 27))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextDeskripsiKas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBoxJenisKas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextNominalKas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(jTextIdKas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_tambahkas)
-                    .addComponent(btn_editkas)
-                    .addComponent(btn_hapuskas))
-                .addGap(19, 19, 19))
-        );
+        jPanel11.add(jTextIdKas, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 298, 140, -1));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1889,6 +1853,12 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
         panel_kas.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
+
+        jLabel61.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel61.setText("___________________");
+        jLabel61.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        panel_kas.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, -1, -1));
 
         Filter_Berita1.setBackground(new java.awt.Color(0, 153, 153));
         Filter_Berita1.setFont(new java.awt.Font("Palatino Linotype", 0, 15)); // NOI18N
@@ -1976,6 +1946,13 @@ public class Dashboard extends javax.swing.JFrame {
         jTextTotalKas.setText("0");
         jTextTotalKas.setBorder(null);
         panel_kas.add(jTextTotalKas, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 610, 130, -1));
+
+        jSeparator4.setBackground(new java.awt.Color(0, 51, 51));
+        jSeparator4.setForeground(new java.awt.Color(0, 51, 51));
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator4.setMinimumSize(new java.awt.Dimension(10, 100));
+        jSeparator4.setPreferredSize(new java.awt.Dimension(100, 10));
+        panel_kas.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 10, 440));
 
         Main_Panel.add(panel_kas, "card6");
 
@@ -2077,7 +2054,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(jLabel52)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2198,41 +2175,40 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(41, 41, 41)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel58)
+                            .addComponent(jLabel57))
+                        .addGap(53, 53, 53)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextNamaIuran)
+                            .addComponent(jDateIuran, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel59)
+                        .addGap(11, 11, 11)
+                        .addComponent(jTextIuranB))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel60)
+                            .addComponent(jLabel63)
+                            .addComponent(jLabel62))
+                        .addGap(7, 7, 7)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel58)
-                                    .addComponent(jLabel57))
-                                .addGap(53, 53, 53)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextNamaIuran)
-                                    .addComponent(jDateIuran, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(jLabel59)
-                                .addGap(11, 11, 11)
-                                .addComponent(jTextIuranB))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel60)
-                                    .addComponent(jLabel63)
-                                    .addComponent(jLabel62))
-                                .addGap(7, 7, 7)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextIuranT)
-                                    .addComponent(jTextIuranTotal)
-                                    .addComponent(jComboKetIuran, 0, 138, Short.MAX_VALUE)))))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(btn_tambahiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_editiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_hapusiuran)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                            .addComponent(jTextIuranT)
+                            .addComponent(jTextIuranTotal)
+                            .addComponent(jComboKetIuran, 0, 138, Short.MAX_VALUE))))
+                .addContainerGap(28, Short.MAX_VALUE))
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_tambahiuran)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_editiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_hapusiuran, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2262,7 +2238,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboKetIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_tambahiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_hapusiuran)
@@ -2358,6 +2334,12 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
         panel_iuran.add(Filter_Iuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 165, 130, 20));
+
+        jTextIdIuran.setEditable(false);
+        jTextIdIuran.setBackground(new java.awt.Color(0, 153, 153));
+        jTextIdIuran.setBorder(null);
+        jTextIdIuran.setOpaque(false);
+        panel_iuran.add(jTextIdIuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 40, -1));
 
         Main_Panel.add(panel_iuran, "card7");
 
@@ -3005,9 +2987,10 @@ public class Dashboard extends javax.swing.JFrame {
             Koneksi.koneksiDB();
             Statement stt=conn.createStatement();
             
+            String id = jTextIdBerita.getText();
             String Berita_Acara = jTextBeritaAcara.getText();
             String Keterangan =jTextKetBerita.getText();
-            stt.executeUpdate("UPDATE dft_berita SET Berita_Acara='"+Berita_Acara+"', Keterangan='"+Keterangan+"' WHERE Berita_Acara='"+Berita_Acara+"'");         
+            stt.executeUpdate("UPDATE dft_berita SET Berita_Acara='"+Berita_Acara+"', Keterangan='"+Keterangan+"' WHERE id='"+id+"'");         
             JOptionPane.showMessageDialog(this,"Data berhasil di ubah","Success",JOptionPane.INFORMATION_MESSAGE);
             kosong();
             tampilDataBerita();
@@ -3086,9 +3069,6 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btn_editiuranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editiuranActionPerformed
         // TODO add your handling code here:
-        String tampilan ="yyyy-MM-dd";
-        SimpleDateFormat fm = new SimpleDateFormat(tampilan);
-        String tanggal = String.valueOf(fm.format(jDateIuran.getDate()));
         
         int ok=JOptionPane.showConfirmDialog(null,"Apakah Yakin Untuk Update Data ini?","Confirmation",JOptionPane.YES_NO_OPTION);{
         if (ok==0) {
@@ -3097,13 +3077,17 @@ public class Dashboard extends javax.swing.JFrame {
             Koneksi.koneksiDB();
             Statement stt=conn.createStatement();
             
+            String tampilan ="yyyy-MM-dd";
+            SimpleDateFormat fm = new SimpleDateFormat(tampilan);
+            String tanggal = String.valueOf(fm.format(jDateIuran.getDate()));
+            String id = jTextIdIuran.getText();
             String nama = jTextNamaIuran.getText();
             String iuran_bulanan = jTextIuranB.getText();
             String iuran_tahunan = jTextIuranT.getText();
             String total_bayar = jTextIuranTotal.getText();
             String keterangan = jComboKetIuran.getSelectedItem().toString();         
             
-            stt.executeUpdate("UPDATE dft_iuran SET nama='"+nama+"', tanggal='"+tanggal+"', iuran_bulanan='"+iuran_bulanan+"', iuran_tahunan='"+iuran_tahunan+"', total_bayar='"+total_bayar+"', keterangan='"+keterangan+"' WHERE nama='"+nama+"'");         
+            stt.executeUpdate("UPDATE dft_iuran SET nama='"+nama+"', tanggal='"+tanggal+"', iuran_bulanan='"+iuran_bulanan+"', iuran_tahunan='"+iuran_tahunan+"', total_bayar='"+total_bayar+"', keterangan='"+keterangan+"' WHERE id='"+id+"'");         
             JOptionPane.showMessageDialog(this,"Data berhasil di ubah","Success",JOptionPane.INFORMATION_MESSAGE);
             kosong();
             tampilDataIuran();
@@ -3137,6 +3121,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jTableIuranMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableIuranMouseClicked
         // TODO add your handling code here:
+        
         int bar3 = jTableIuran.getSelectedRow();
         String nama = tabModel3.getValueAt(bar3, 1).toString();
         String tanggal = tabModel3.getValueAt(bar3, 2).toString();
@@ -3146,6 +3131,7 @@ public class Dashboard extends javax.swing.JFrame {
         String keterangan = tabModel3.getValueAt(bar3, 6).toString();
         
         jTextNamaIuran.setText(nama);
+        //jDateiuran.setDate(tanggal);
         jTextIuranB.setText(iuran_bulanan);
         jTextIuranT.setText(iuran_tahunan);
         jTextIuranTotal.setText(total_bayar);
@@ -3264,10 +3250,6 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btn_tambahkasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahkasActionPerformed
         // TODO add your handling code here:
-        //        jTextIdKas.setText("");
-        //        jTextDeskripsiKas.setText("");
-        //        jTextNominalKas.setText("0");
-        //        jComboBoxJenisKas.setSelectedIndex(0);
         String deskripsi =jTextDeskripsiKas.getText();
         String nominal = jTextNominalKas.getText();
         String jenis =jComboBoxJenisKas.getSelectedItem().toString();
@@ -3282,7 +3264,6 @@ public class Dashboard extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Data berhasil disimpan","Success",JOptionPane.INFORMATION_MESSAGE);
             kosong();
             tampilDataKas();
-            //                dashboard.tampilDataBerita();
 
         }catch(SQLException e) {
             JOptionPane.showMessageDialog(this,"Simpan data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
@@ -3301,10 +3282,7 @@ public class Dashboard extends javax.swing.JFrame {
                     Connection conn=(Connection)
                     Koneksi.koneksiDB();
                     Statement stt=conn.createStatement();
-                    //            jTextIdKas.setText("");
-                    //        jTextDeskripsiKas.setText("");
-                    //        jTextNominalKas.setText("0");
-                    //        jComboBoxJenisKas.setSelectedIndex(0);
+                    
                     String id = jTextIdKas.getText();
                     String deskripsi =jTextDeskripsiKas.getText();
                     String nominal = jTextNominalKas.getText();
@@ -3349,16 +3327,6 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jTextNominalKasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextNominalKasKeyReleased
         // TODO add your handling code here:
-        //        StringTokenizer token;
-        //        String ganti = "";
-        //        long angka;
-        //
-        //        angka = Integer.parseInt(jTextNominalKas.getText());
-        //        ganti = NumberFormat.getNumberInstance(Locale.US).format(angka);
-        //        token = new StringTokenizer(ganti, ".");
-        //        ganti = token.nextToken();
-        //        ganti = ganti.replace(',', '.');
-        //        jTextNominalKas.setText(String.format(ganti));
     }//GEN-LAST:event_jTextNominalKasKeyReleased
 
     private void jTextIdKasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIdKasActionPerformed
@@ -3379,14 +3347,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jTableKasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableKasMouseClicked
         // TODO add your handling code here:
-        //        jTextIdKas.setText("");
-        //        jTextDeskripsiKas.setText("");
-        //        jTextNominalKas.setText("0");
-        //        jComboBoxJenisKas.setSelectedIndex(0);
-        //String id = jTextIdKas.getText();
-        //            String deskripsi =jTextDeskripsiKas.getText();
-        //            String nominal = jTextNominalKas.getText();
-        //            String jenis =jComboBoxJenisKas.getSelectedItem().toString();
+       
         int bar2 = jTableKas.getSelectedRow();
         String id = tabModelkas.getValueAt(bar2, 0).toString();
         String deskripsi = tabModelkas.getValueAt(bar2, 1).toString();
@@ -3462,7 +3423,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Jam5;
     private javax.swing.JLabel Jam6;
     public static final javax.swing.JLabel Label_Daftar_Akun = new javax.swing.JLabel();
-    public static final javax.swing.JLabel Label_Role = new javax.swing.JLabel();
+    public static javax.swing.JLabel Label_Role;
     public static javax.swing.JLabel Label_Role1;
     public static javax.swing.JLabel Label_Role2;
     public static javax.swing.JLabel Label_Role3;
@@ -3470,6 +3431,7 @@ public class Dashboard extends javax.swing.JFrame {
     public static javax.swing.JLabel Label_Role5;
     public static javax.swing.JLabel Label_Role6;
     private javax.swing.JPanel List_Menu;
+    private javax.swing.JLabel Logo_Sikwa;
     private javax.swing.JPanel Main_Panel;
     private javax.swing.JPanel Menu_Panel;
     private javax.swing.JLabel Tanggal;
@@ -3516,7 +3478,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxJenisKas;
     private javax.swing.JComboBox<String> jComboKetIuran;
     private com.toedter.calendar.JDateChooser jDateIuran;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -3527,7 +3488,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -3538,7 +3498,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -3573,6 +3532,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel67;
@@ -3607,6 +3567,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTable jTableBerita;
     private javax.swing.JTable jTableIuran;
     private javax.swing.JTable jTableKas;
@@ -3614,6 +3575,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTable jTableTamu;
     private javax.swing.JTextArea jTextBeritaAcara;
     private javax.swing.JTextField jTextDeskripsiKas;
+    private javax.swing.JTextField jTextIdBerita;
+    private javax.swing.JTextField jTextIdIuran;
     private javax.swing.JTextField jTextIdKas;
     public javax.swing.JTextField jTextIuranB;
     public javax.swing.JTextField jTextIuranT;
@@ -3631,5 +3594,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel panel_laporan;
     private javax.swing.JPanel panel_penduduk;
     private javax.swing.JPanel panel_tamu;
+    private javax.swing.JLabel sikwa;
+    private javax.swing.JLabel sikwa_full;
     // End of variables declaration//GEN-END:variables
 }

@@ -42,6 +42,7 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
+        jTextIdPndk = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jTextNmTamu = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -57,6 +58,7 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         jComboJkTamu = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAlmTamu = new javax.swing.JTextArea();
+        jTextIdTamu = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Edit Data Tamu");
@@ -74,6 +76,14 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         jLabel25.setForeground(new java.awt.Color(0, 153, 153));
         jLabel25.setText("Edit Data Tamu");
 
+        jTextIdPndk.setEditable(false);
+        jTextIdPndk.setBorder(null);
+        jTextIdPndk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIdPndkActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -82,6 +92,11 @@ public class Edit_DataTamu extends javax.swing.JFrame {
                 .addContainerGap(154, Short.MAX_VALUE)
                 .addComponent(jLabel25)
                 .addGap(125, 125, 125))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jTextIdPndk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,6 +104,11 @@ public class Edit_DataTamu extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel25)
                 .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jTextIdPndk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jLabel1.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
@@ -159,6 +179,9 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         jTextAlmTamu.setRows(3);
         jScrollPane2.setViewportView(jTextAlmTamu);
 
+        jTextIdTamu.setEditable(false);
+        jTextIdTamu.setBorder(null);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -202,12 +225,18 @@ public class Edit_DataTamu extends javax.swing.JFrame {
                         .addComponent(jButtonBatalTamu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(197, 197, 197)
+                .addComponent(jTextIdTamu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(11, 11, 11)
+                .addComponent(jTextIdTamu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextNmTamu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -237,7 +266,7 @@ public class Edit_DataTamu extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonBatalTamu)
                     .addComponent(jButtonSimpanTamu))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -318,6 +347,10 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboJkTamuActionPerformed
 
+    private void jTextIdPndkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIdPndkActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIdPndkActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -370,6 +403,8 @@ public class Edit_DataTamu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTextArea jTextAlmTamu;
+    private javax.swing.JTextField jTextIdPndk;
+    private javax.swing.JTextField jTextIdTamu;
     public javax.swing.JTextArea jTextKetTamu;
     public javax.swing.JTextField jTextNmTamu;
     public javax.swing.JTextField jTextNoTamu;
