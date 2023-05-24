@@ -97,7 +97,7 @@ public class login extends javax.swing.JFrame {
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 113, -1, -1));
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_users_20px.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Username.png"))); // NOI18N
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 30, 30));
 
         txtuser.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
@@ -114,7 +114,7 @@ public class login extends javax.swing.JFrame {
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 180, -1, -1));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_password_20px.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Password.png"))); // NOI18N
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 30, 30));
 
         txtpass.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
@@ -164,10 +164,10 @@ public class login extends javax.swing.JFrame {
         });
         jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Footer 1.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Footer.png"))); // NOI18N
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 620, 50));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pngwing.com (1).png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BG_Login.png"))); // NOI18N
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, 330));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

@@ -132,7 +132,7 @@
             <Component class="javax.swing.JLabel" name="Logo_Sikwa">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/icons8_neighbour_120px.png"/>
+                  <Image iconType="3" name="/img/Logo_Aplikasi.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -221,7 +221,7 @@
                           <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btn_laporan" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="17" max="32767" attributes="0"/>
+                          <EmptySpace pref="25" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -261,7 +261,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_print_30px.png"/>
+                      <Image iconType="3" name="/img/Icon_Cetak.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Laporan"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
@@ -292,7 +292,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_home_30px_1.png"/>
+                      <Image iconType="3" name="/img/Icon_Home.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Halaman Utama"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
@@ -323,7 +323,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_news_30px.png"/>
+                      <Image iconType="3" name="/img/Icon_Berita.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Berita"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
@@ -354,7 +354,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_info_30px_1.png"/>
+                      <Image iconType="3" name="/img/Icon_Informasi.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Informasi Kas"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
@@ -385,7 +385,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_list_30px.png"/>
+                      <Image iconType="3" name="/img/Icon_Daftar.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Daftar Tamu"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
@@ -418,7 +418,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_info_30px_1.png"/>
+                      <Image iconType="3" name="/img/Icon_Informasi.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Informasi Iuran"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
@@ -449,7 +449,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_list_30px.png"/>
+                      <Image iconType="3" name="/img/Icon_Daftar.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Daftar Penduduk"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
@@ -624,7 +624,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel8">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/img/icons8_logout_40px.png"/>
+                          <Image iconType="3" name="/img/Icon_Logout.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value=" "/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -638,7 +638,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel9">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/img/icons8_about_40px.png"/>
+                          <Image iconType="3" name="/img/Icon_About.png"/>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                           <Color id="Hand Cursor"/>
@@ -673,7 +673,7 @@
                     <Component class="javax.swing.JLabel" name="Icon_Daftar_Akun">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/img/icons8_account_40px.png"/>
+                          <Image iconType="3" name="/img/Icon_Register.png"/>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                           <Color id="Hand Cursor"/>
@@ -721,7 +721,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel4">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/pngwing.com (5).png"/>
+                      <Image iconType="3" name="/img/BG_Dashboard.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -823,7 +823,7 @@
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
                                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
@@ -884,7 +884,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel12">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/img/icons8_logout_40px.png"/>
+                          <Image iconType="3" name="/img/Icon_Logout.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value=" "/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -920,7 +920,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_User_Groups_30px_1.png"/>
+                      <Image iconType="3" name="/img/Icon_Penduduk.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Daftar Penduduk"/>
                   </Properties>
@@ -933,7 +933,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel11">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_search_30px_1.png"/>
+                      <Image iconType="3" name="/img/Icon_Search.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1255,7 +1255,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel31">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/img/icons8_logout_40px.png"/>
+                          <Image iconType="3" name="/img/Icon_Logout.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value=" "/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -1304,7 +1304,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_User_Groups_30px_1.png"/>
+                      <Image iconType="3" name="/img/Icon_Penduduk.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Daftar Tamu"/>
                   </Properties>
@@ -1333,7 +1333,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel10">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_search_30px_1.png"/>
+                      <Image iconType="3" name="/img/Icon_Search.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -1675,7 +1675,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel34">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/img/icons8_logout_40px.png"/>
+                          <Image iconType="3" name="/img/Icon_Logout.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value=" "/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -1724,7 +1724,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_news_30px.png"/>
+                      <Image iconType="3" name="/img/Icon_Berita.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Daftar Berita"/>
                   </Properties>
@@ -1753,7 +1753,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_search_30px_1.png"/>
+                      <Image iconType="3" name="/img/Icon_Search.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -2330,7 +2330,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel37">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/img/icons8_logout_40px.png"/>
+                          <Image iconType="3" name="/img/Icon_Logout.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value=" "/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -2395,7 +2395,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_news_30px.png"/>
+                      <Image iconType="3" name="/img/Icon_Iuran.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Daftar Kas"/>
                   </Properties>
@@ -2719,7 +2719,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel72">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_search_30px_1.png"/>
+                      <Image iconType="3" name="/img/Icon_Search.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -3096,7 +3096,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel41">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/img/icons8_logout_40px.png"/>
+                          <Image iconType="3" name="/img/Icon_Logout.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value=" "/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -3656,7 +3656,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_Money_Transfer_30px.png"/>
+                      <Image iconType="3" name="/img/Icon_Iuran.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Daftar Iuran Warga"/>
                   </Properties>
@@ -3702,7 +3702,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel56">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/icons8_search_30px_1.png"/>
+                      <Image iconType="3" name="/img/Icon_Search.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -3869,7 +3869,7 @@
                     <Component class="javax.swing.JLabel" name="jLabel45">
                       <Properties>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/img/icons8_logout_40px.png"/>
+                          <Image iconType="3" name="/img/Icon_Logout.png"/>
                         </Property>
                         <Property name="text" type="java.lang.String" value=" "/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -4067,7 +4067,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/img/pngwing.com (2)_1.png"/>
+                      <Image iconType="3" name="/img/BG_Cetak.png"/>
                     </Property>
                   </Properties>
                   <Constraints>

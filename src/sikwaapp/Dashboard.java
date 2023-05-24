@@ -513,7 +513,7 @@ public class Dashboard extends javax.swing.JFrame {
         Menu_Panel.setBackground(new java.awt.Color(0, 153, 153));
         Menu_Panel.setPreferredSize(new java.awt.Dimension(250, 804));
 
-        Logo_Sikwa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_neighbour_120px.png"))); // NOI18N
+        Logo_Sikwa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Logo_Aplikasi.png"))); // NOI18N
 
         sikwa.setFont(new java.awt.Font("Palatino Linotype", 1, 24)); // NOI18N
         sikwa.setForeground(new java.awt.Color(255, 255, 255));
@@ -539,7 +539,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_laporan.setBackground(new java.awt.Color(0, 51, 51));
         btn_laporan.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         btn_laporan.setForeground(new java.awt.Color(255, 255, 255));
-        btn_laporan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_print_30px.png"))); // NOI18N
+        btn_laporan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Cetak.png"))); // NOI18N
         btn_laporan.setText("Laporan");
         btn_laporan.setBorderPainted(false);
         btn_laporan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -564,7 +564,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_home.setBackground(new java.awt.Color(0, 51, 51));
         btn_home.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         btn_home.setForeground(new java.awt.Color(255, 255, 255));
-        btn_home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_home_30px_1.png"))); // NOI18N
+        btn_home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Home.png"))); // NOI18N
         btn_home.setText("Halaman Utama");
         btn_home.setBorderPainted(false);
         btn_home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -589,7 +589,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_berita.setBackground(new java.awt.Color(0, 51, 51));
         btn_berita.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         btn_berita.setForeground(new java.awt.Color(255, 255, 255));
-        btn_berita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_news_30px.png"))); // NOI18N
+        btn_berita.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Berita.png"))); // NOI18N
         btn_berita.setText("Berita");
         btn_berita.setBorderPainted(false);
         btn_berita.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -614,7 +614,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_kas.setBackground(new java.awt.Color(0, 51, 51));
         btn_kas.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         btn_kas.setForeground(new java.awt.Color(255, 255, 255));
-        btn_kas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_info_30px_1.png"))); // NOI18N
+        btn_kas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Informasi.png"))); // NOI18N
         btn_kas.setText("Informasi Kas");
         btn_kas.setBorderPainted(false);
         btn_kas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -639,7 +639,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_tamu.setBackground(new java.awt.Color(0, 51, 51));
         btn_tamu.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         btn_tamu.setForeground(new java.awt.Color(255, 255, 255));
-        btn_tamu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_list_30px.png"))); // NOI18N
+        btn_tamu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Daftar.png"))); // NOI18N
         btn_tamu.setText("Daftar Tamu");
         btn_tamu.setBorderPainted(false);
         btn_tamu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -672,7 +672,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_iuran.setBackground(new java.awt.Color(0, 51, 51));
         btn_iuran.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         btn_iuran.setForeground(new java.awt.Color(255, 255, 255));
-        btn_iuran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_info_30px_1.png"))); // NOI18N
+        btn_iuran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Informasi.png"))); // NOI18N
         btn_iuran.setText("Informasi Iuran");
         btn_iuran.setBorderPainted(false);
         btn_iuran.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -697,7 +697,7 @@ public class Dashboard extends javax.swing.JFrame {
         btn_penduduk.setBackground(new java.awt.Color(0, 51, 51));
         btn_penduduk.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         btn_penduduk.setForeground(new java.awt.Color(255, 255, 255));
-        btn_penduduk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_list_30px.png"))); // NOI18N
+        btn_penduduk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Daftar.png"))); // NOI18N
         btn_penduduk.setText("Daftar Penduduk");
         btn_penduduk.setBorderPainted(false);
         btn_penduduk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -764,7 +764,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel19)
                 .addGap(18, 18, 18)
                 .addComponent(btn_laporan)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Menu_PanelLayout = new javax.swing.GroupLayout(Menu_Panel);
@@ -824,7 +824,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel7.setText("Keluar");
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_logout_40px.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel8.setText(" ");
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -833,7 +833,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_about_40px.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_About.png"))); // NOI18N
         jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -849,7 +849,7 @@ public class Dashboard extends javax.swing.JFrame {
         Jam.setForeground(new java.awt.Color(0, 153, 153));
         Jam.setText(".");
 
-        Icon_Daftar_Akun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_account_40px.png"))); // NOI18N
+        Icon_Daftar_Akun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Register.png"))); // NOI18N
         Icon_Daftar_Akun.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Icon_Daftar_Akun.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -925,7 +925,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         panel_dashboard.add(header_dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 90));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pngwing.com (5).png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BG_Dashboard.png"))); // NOI18N
         panel_dashboard.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
 
         Main_Panel.add(panel_dashboard, "card2");
@@ -955,7 +955,7 @@ public class Dashboard extends javax.swing.JFrame {
         Label_Role1.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
         Label_Role1.setForeground(new java.awt.Color(0, 153, 153));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_logout_40px.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel12.setText(" ");
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1008,7 +1008,7 @@ public class Dashboard extends javax.swing.JFrame {
                                 .addComponent(Jam1)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, header_pendudukLayout.createSequentialGroup()
-                        .addGap(0, 12, Short.MAX_VALUE)
+                        .addGap(0, 13, Short.MAX_VALUE)
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel13)))
@@ -1019,11 +1019,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel28.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_User_Groups_30px_1.png"))); // NOI18N
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Penduduk.png"))); // NOI18N
         jLabel28.setText("Daftar Penduduk");
         panel_penduduk.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Search.png"))); // NOI18N
         panel_penduduk.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -1128,7 +1128,7 @@ public class Dashboard extends javax.swing.JFrame {
         Jam2.setForeground(new java.awt.Color(0, 153, 153));
         Jam2.setText(".");
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_logout_40px.png"))); // NOI18N
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel31.setText(" ");
         jLabel31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel31.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1188,7 +1188,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel48.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_User_Groups_30px_1.png"))); // NOI18N
+        jLabel48.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Penduduk.png"))); // NOI18N
         jLabel48.setText("Daftar Tamu");
         panel_tamu.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
@@ -1197,7 +1197,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel22.setText("Cari / Filter :");
         panel_tamu.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, -1, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Search.png"))); // NOI18N
         panel_tamu.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
 
         jLabel49.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -1313,7 +1313,7 @@ public class Dashboard extends javax.swing.JFrame {
         Jam3.setForeground(new java.awt.Color(0, 153, 153));
         Jam3.setText(".");
 
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_logout_40px.png"))); // NOI18N
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel34.setText(" ");
         jLabel34.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel34.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1373,7 +1373,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel50.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
         jLabel50.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_news_30px.png"))); // NOI18N
+        jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Berita.png"))); // NOI18N
         jLabel50.setText("Daftar Berita");
         panel_berita.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
@@ -1382,7 +1382,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel23.setText("Cari / Filter :");
         panel_berita.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, -1, -1));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Search.png"))); // NOI18N
         panel_berita.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
 
         jLabel51.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -1640,7 +1640,7 @@ public class Dashboard extends javax.swing.JFrame {
         Jam4.setForeground(new java.awt.Color(0, 153, 153));
         Jam4.setText(".");
 
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_logout_40px.png"))); // NOI18N
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel37.setText(" ");
         jLabel37.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel37.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1705,7 +1705,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel67.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
         jLabel67.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_news_30px.png"))); // NOI18N
+        jLabel67.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Iuran.png"))); // NOI18N
         jLabel67.setText("Daftar Kas");
         panel_kas.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
@@ -1854,7 +1854,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel71.setText("Cari / Filter :");
         panel_kas.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, -1, -1));
 
-        jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
+        jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Search.png"))); // NOI18N
         panel_kas.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
 
         jLabel61.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -1977,7 +1977,7 @@ public class Dashboard extends javax.swing.JFrame {
         Jam5.setForeground(new java.awt.Color(0, 153, 153));
         Jam5.setText(".");
 
-        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_logout_40px.png"))); // NOI18N
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel41.setText(" ");
         jLabel41.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel41.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2303,7 +2303,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel53.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_Money_Transfer_30px.png"))); // NOI18N
+        jLabel53.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Iuran.png"))); // NOI18N
         jLabel53.setText("Daftar Iuran Warga");
         panel_iuran.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
@@ -2318,7 +2318,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel55.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         panel_iuran.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, -1, -1));
 
-        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_search_30px_1.png"))); // NOI18N
+        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Search.png"))); // NOI18N
         panel_iuran.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, -1, -1));
 
         Filter_Iuran.setBackground(new java.awt.Color(0, 153, 153));
@@ -2363,7 +2363,7 @@ public class Dashboard extends javax.swing.JFrame {
         Jam6.setForeground(new java.awt.Color(0, 153, 153));
         Jam6.setText(".");
 
-        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8_logout_40px.png"))); // NOI18N
+        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel45.setText(" ");
         jLabel45.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel45.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2515,7 +2515,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         panel_laporan.add(Panel_Laporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 960, 510));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pngwing.com (2)_1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BG_Cetak.png"))); // NOI18N
         panel_laporan.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 148, -1, 540));
 
         Main_Panel.add(panel_laporan, "card8");
