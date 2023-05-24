@@ -70,6 +70,8 @@ public class Dashboard extends javax.swing.JFrame {
         //Menambahkan Icon Aplikasi
         Image icon = new ImageIcon(this.getClass().getResource("/img/icon.png")).getImage();
         this.setIconImage(icon);
+        
+        Panel_Laporan.setBackground(new Color(0,51,51,70));
     }
     
     public void tampilDataPndk(){
@@ -488,12 +490,13 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel46 = new javax.swing.JLabel();
         Label_Role6 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
+        Panel_Laporan = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard SIKWA");
@@ -2423,11 +2426,13 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel47.setText("Cetak Laporan");
         panel_laporan.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, -1));
 
-        jPanel9.setBackground(new java.awt.Color(0, 153, 153));
+        Panel_Laporan.setBackground(new java.awt.Color(0, 51, 51));
 
         jButton1.setBackground(new java.awt.Color(187, 226, 232));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jButton1.setText("Laporan Daftar Penduduk");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusPainted(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -2435,8 +2440,10 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(187, 226, 232));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jButton2.setText("Laporan Daftar Tamu");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setFocusPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -2444,8 +2451,10 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jButton3.setBackground(new java.awt.Color(187, 226, 232));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jButton3.setText("Laporan Iuran Warga");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setFocusPainted(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -2453,8 +2462,10 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jButton4.setBackground(new java.awt.Color(187, 226, 232));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jButton4.setText("Laporan Kas Warga");
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.setFocusPainted(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -2462,45 +2473,50 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jButton5.setBackground(new java.awt.Color(187, 226, 232));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jButton5.setText("Laporan Berita Acara");
+        jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.setFocusPainted(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+        javax.swing.GroupLayout Panel_LaporanLayout = new javax.swing.GroupLayout(Panel_Laporan);
+        Panel_Laporan.setLayout(Panel_LaporanLayout);
+        Panel_LaporanLayout.setHorizontalGroup(
+            Panel_LaporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_LaporanLayout.createSequentialGroup()
+                .addGap(363, 363, 363)
+                .addGroup(Panel_LaporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(385, Short.MAX_VALUE))
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jButton1)
-                .addGap(56, 56, 56)
-                .addComponent(jButton2)
-                .addGap(64, 64, 64)
-                .addComponent(jButton3)
-                .addGap(62, 62, 62)
-                .addComponent(jButton4)
-                .addGap(62, 62, 62)
-                .addComponent(jButton5)
-                .addContainerGap(28, Short.MAX_VALUE))
+        Panel_LaporanLayout.setVerticalGroup(
+            Panel_LaporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_LaporanLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76))
         );
 
-        panel_laporan.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 280, 430));
+        panel_laporan.add(Panel_Laporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 960, 510));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pngwing.com (2)_1.png"))); // NOI18N
+        panel_laporan.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 148, -1, 540));
 
         Main_Panel.add(panel_laporan, "card8");
 
@@ -3434,6 +3450,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel Logo_Sikwa;
     private javax.swing.JPanel Main_Panel;
     private javax.swing.JPanel Menu_Panel;
+    private javax.swing.JPanel Panel_Laporan;
     private javax.swing.JLabel Tanggal;
     private javax.swing.JLabel Tanggal1;
     private javax.swing.JLabel Tanggal2;
@@ -3478,6 +3495,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxJenisKas;
     private javax.swing.JComboBox<String> jComboKetIuran;
     private com.toedter.calendar.JDateChooser jDateIuran;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -3557,7 +3575,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
