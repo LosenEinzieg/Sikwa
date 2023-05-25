@@ -62,10 +62,10 @@ public class Edit_DataTamu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Edit Data Tamu");
+        setPreferredSize(new java.awt.Dimension(484, 644));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(460, 680));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setForeground(new java.awt.Color(0, 153, 153));
@@ -89,14 +89,14 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(151, Short.MAX_VALUE)
                 .addComponent(jLabel25)
                 .addGap(125, 125, 125))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 235, Short.MAX_VALUE)
+                    .addGap(0, 228, Short.MAX_VALUE)
                     .addComponent(jTextIdPndk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 235, Short.MAX_VALUE)))
+                    .addGap(0, 228, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +115,7 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nama");
 
-        jTextNmTamu.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jTextNmTamu.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
         jTextNmTamu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextNmTamuActionPerformed(evt);
@@ -126,7 +126,7 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Jenis Kelamin");
 
-        jTextNoTamu.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
+        jTextNoTamu.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -146,6 +146,7 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         jButtonSimpanTamu.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         jButtonSimpanTamu.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSimpanTamu.setText("SIMPAN");
+        jButtonSimpanTamu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonSimpanTamu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSimpanTamuActionPerformed(evt);
@@ -156,6 +157,7 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         jButtonBatalTamu.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         jButtonBatalTamu.setForeground(new java.awt.Color(255, 255, 255));
         jButtonBatalTamu.setText("BATAL");
+        jButtonBatalTamu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonBatalTamu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonBatalTamuActionPerformed(evt);
@@ -163,10 +165,13 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         });
 
         jTextKetTamu.setColumns(20);
-        jTextKetTamu.setRows(3);
+        jTextKetTamu.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
+        jTextKetTamu.setLineWrap(true);
+        jTextKetTamu.setRows(2);
         jTextKetTamu.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane1.setViewportView(jTextKetTamu);
 
+        jComboJkTamu.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
         jComboJkTamu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih-", "Laki - Laki", "Perempuan" }));
         jComboJkTamu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,39 +180,45 @@ public class Edit_DataTamu extends javax.swing.JFrame {
         });
 
         jTextAlmTamu.setColumns(20);
+        jTextAlmTamu.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
         jTextAlmTamu.setLineWrap(true);
-        jTextAlmTamu.setRows(3);
+        jTextAlmTamu.setRows(2);
         jScrollPane2.setViewportView(jTextAlmTamu);
 
         jTextIdTamu.setEditable(false);
+        jTextIdTamu.setBackground(new java.awt.Color(0, 153, 153));
+        jTextIdTamu.setForeground(new java.awt.Color(0, 153, 153));
         jTextIdTamu.setBorder(null);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(80, 80, 80)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel4)
                                             .addComponent(jLabel3))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(70, 70, 70)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jScrollPane2)
-                                            .addComponent(jTextNoTamu)))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                            .addComponent(jTextNoTamu, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel2)
@@ -215,22 +226,18 @@ public class Edit_DataTamu extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel1)
                                         .addGap(83, 83, 83)))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextNmTamu)
-                                    .addComponent(jComboJkTamu, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                    .addComponent(jComboJkTamu, 0, 160, Short.MAX_VALUE)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
+                        .addGap(106, 106, 106)
                         .addComponent(jButtonSimpanTamu)
                         .addGap(35, 35, 35)
-                        .addComponent(jButtonBatalTamu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(197, 197, 197)
-                .addComponent(jTextIdTamu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonBatalTamu, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jTextIdTamu, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,30 +271,44 @@ public class Edit_DataTamu extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonBatalTamu)
                     .addComponent(jButtonSimpanTamu))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 470, 620));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextNmTamuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNmTamuActionPerformed
@@ -296,6 +317,7 @@ public class Edit_DataTamu extends javax.swing.JFrame {
 
     private void jButtonSimpanTamuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSimpanTamuActionPerformed
         // TODO add your handling code here:
+        String id=jTextIdTamu.getText();
         String nama=jTextNmTamu.getText();
         String jk=jComboJkTamu.getSelectedItem().toString();
         String alamat=jTextAlmTamu.getText();
@@ -321,7 +343,7 @@ public class Edit_DataTamu extends javax.swing.JFrame {
                 dashboard.tampilDataTamu();
                 Statement stt=conn.createStatement();
                 stt.executeUpdate("UPDATE dft_tamu SET nama='"+nama+"', jk='"+jk+"', alamat='"+alamat+"',"+
-                    "hp='"+hp+"', keperluan='"+keperluan+"' WHERE nama='"+nama+"'");
+                    "hp='"+hp+"', keperluan='"+keperluan+"' WHERE id='"+id+"'");
                 JOptionPane.showMessageDialog(this,"Data berhasil diubah","Success",JOptionPane.INFORMATION_MESSAGE);
                 dashboard.tampilDataTamu();
                 this.dispose();
@@ -398,7 +420,7 @@ public class Edit_DataTamu extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTextArea jTextAlmTamu;
     private javax.swing.JTextField jTextIdPndk;
-    private javax.swing.JTextField jTextIdTamu;
+    public static javax.swing.JTextField jTextIdTamu;
     public javax.swing.JTextArea jTextKetTamu;
     public javax.swing.JTextField jTextNmTamu;
     public javax.swing.JTextField jTextNoTamu;

@@ -63,14 +63,13 @@ public class Edit_Data extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Edit Data Penduduk");
-        setPreferredSize(new java.awt.Dimension(480, 640));
+        setPreferredSize(new java.awt.Dimension(484, 644));
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(460, 680));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setForeground(new java.awt.Color(0, 153, 153));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(187, 226, 232));
 
@@ -95,12 +94,9 @@ public class Edit_Data extends javax.swing.JFrame {
                 .addGap(25, 25, 25))
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 479, -1));
-
         jLabel1.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("NIK");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, 30));
 
         jTextNIK.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         jTextNIK.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -108,12 +104,10 @@ public class Edit_Data extends javax.swing.JFrame {
                 jTextNIKKeyTyped(evt);
             }
         });
-        jPanel2.add(jTextNIK, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 157, 30));
 
         jLabel2.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nama");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, 30));
 
         jTextNmPnd.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         jTextNmPnd.addActionListener(new java.awt.event.ActionListener() {
@@ -121,50 +115,44 @@ public class Edit_Data extends javax.swing.JFrame {
                 jTextNmPndActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextNmPnd, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 157, 30));
 
         jLabel3.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Unit");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, 30));
 
         jLabel4.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Blok");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, -1, 30));
 
         jLabel5.setFont(new java.awt.Font("Palatino Linotype", 0, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Tahun Masuk");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, 30));
 
         jTextThnMsk.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
-        jPanel2.add(jTextThnMsk, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 157, 30));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Footer_1.png"))); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, -1, -1));
 
         jButtonSimpanPndk.setBackground(new java.awt.Color(0, 153, 0));
         jButtonSimpanPndk.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         jButtonSimpanPndk.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSimpanPndk.setText("SIMPAN");
+        jButtonSimpanPndk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonSimpanPndk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSimpanPndkActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonSimpanPndk, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, -1, -1));
 
         jButtonBatalPndk.setBackground(new java.awt.Color(153, 0, 0));
         jButtonBatalPndk.setFont(new java.awt.Font("Palatino Linotype", 0, 14)); // NOI18N
         jButtonBatalPndk.setForeground(new java.awt.Color(255, 255, 255));
         jButtonBatalPndk.setText("BATAL");
+        jButtonBatalPndk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonBatalPndk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonBatalPndkActionPerformed(evt);
             }
         });
-        jPanel2.add(jButtonBatalPndk, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 100, -1));
 
         jComboUnit.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         jComboUnit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pillih Unit-", "A1", "A2", "A3", "B1", "B2", "B3", "C1", "C2", "C3" }));
@@ -173,20 +161,93 @@ public class Edit_Data extends javax.swing.JFrame {
                 jComboUnitActionPerformed(evt);
             }
         });
-        jPanel2.add(jComboUnit, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 157, 30));
 
         jComboBlok.setFont(new java.awt.Font("Palatino Linotype", 0, 18)); // NOI18N
         jComboBlok.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Pilih Blok-", "Anggrek", "Mawar", "Tulip", "Teratai", "Edelweiss" }));
-        jPanel2.add(jComboBlok, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 157, 30));
 
         jTextIdPndk.setEditable(false);
+        jTextIdPndk.setBackground(new java.awt.Color(0, 153, 153));
+        jTextIdPndk.setForeground(new java.awt.Color(0, 153, 153));
         jTextIdPndk.setBorder(null);
         jTextIdPndk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextIdPndkActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextIdPndk, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel1)
+                .addGap(91, 91, 91)
+                .addComponent(jTextNIK, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel2)
+                .addGap(75, 75, 75)
+                .addComponent(jTextNmPnd, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel3)
+                .addGap(90, 90, 90)
+                .addComponent(jComboUnit, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel4)
+                .addGap(90, 90, 90)
+                .addComponent(jComboBlok, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel5)
+                .addGap(7, 7, 7)
+                .addComponent(jTextThnMsk, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(jButtonSimpanPndk)
+                .addGap(38, 38, 38)
+                .addComponent(jButtonBatalPndk, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel6)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addComponent(jTextIdPndk, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextIdPndk, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextNIK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextNmPnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboUnit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBlok, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextThnMsk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonSimpanPndk)
+                    .addComponent(jButtonBatalPndk))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(jLabel6))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -194,28 +255,26 @@ public class Edit_Data extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
         );
 
         pack();
@@ -254,7 +313,7 @@ public class Edit_Data extends javax.swing.JFrame {
                 dashboard.tampilDataPndk();
                 Statement stt=conn.createStatement();
                 stt.executeUpdate("UPDATE dft_penduduk SET namapnd='"+namapnd+"', unit='"+unit+"', blok='"+blok+"',"+
-                    "tahunmasuk='"+tahunmasuk+"' WHERE id='"+id+"'");
+                    "tahunmasuk='"+tahunmasuk+"', nik='"+nik+"' WHERE id='"+id+"'");
                 JOptionPane.showMessageDialog(this,"Data berhasil diubah","Success",JOptionPane.INFORMATION_MESSAGE);
                 dashboard.tampilDataPndk();
                 this.dispose();
@@ -335,7 +394,7 @@ public class Edit_Data extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextIdPndk;
+    public static javax.swing.JTextField jTextIdPndk;
     public javax.swing.JTextField jTextNIK;
     public javax.swing.JTextField jTextNmPnd;
     public javax.swing.JTextField jTextThnMsk;
