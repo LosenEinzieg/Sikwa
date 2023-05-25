@@ -52,7 +52,7 @@ public class Dashboard extends javax.swing.JFrame {
         jTextIuranB.setText("0");
         jTextIuranT.setText("0");
         jTextIuranTotal.setText("0");
-        jComboKetIuran.setSelectedItem("");      
+        jComboKetIuran.setSelectedItem("-Pilih Status-");      
     }
 
     /**
@@ -367,9 +367,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         Tanggal2 = new javax.swing.JLabel();
         Jam2 = new javax.swing.JLabel();
+        Label_Role2 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        Label_Role2 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -386,9 +386,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         Tanggal3 = new javax.swing.JLabel();
         Jam3 = new javax.swing.JLabel();
+        Label_Role3 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        Label_Role3 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -419,8 +419,8 @@ public class Dashboard extends javax.swing.JFrame {
         Tanggal4 = new javax.swing.JLabel();
         Jam4 = new javax.swing.JLabel();
         Label_Role4 = new javax.swing.JLabel();
-        jLabel66 = new javax.swing.JLabel();
-        jLabel71 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
@@ -459,9 +459,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         Tanggal5 = new javax.swing.JLabel();
         Jam5 = new javax.swing.JLabel();
+        Label_Role5 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
-        Label_Role5 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -496,9 +496,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         Tanggal6 = new javax.swing.JLabel();
         Jam6 = new javax.swing.JLabel();
+        Label_Role6 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
-        Label_Role6 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         Panel_Laporan = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -774,7 +774,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel19)
                 .addGap(18, 18, 18)
                 .addComponent(btn_laporan)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Menu_PanelLayout = new javax.swing.GroupLayout(Menu_Panel);
@@ -819,32 +819,42 @@ public class Dashboard extends javax.swing.JFrame {
         panel_dashboard.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         header_dashboard.setBackground(new java.awt.Color(187, 226, 232));
+        header_dashboard.setPreferredSize(new java.awt.Dimension(1000, 90));
 
         jLabel5.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 153, 153));
         jLabel5.setText("Halaman Utama >> ");
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         jLabel6.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Info");
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel7.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Keluar");
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel8.setText(" ");
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
             }
         });
 
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_About.png"))); // NOI18N
         jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel9MouseClicked(evt);
@@ -853,14 +863,21 @@ public class Dashboard extends javax.swing.JFrame {
 
         Tanggal.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         Tanggal.setForeground(new java.awt.Color(0, 153, 153));
+        Tanggal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Tanggal.setText(".");
+        Tanggal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Tanggal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Jam.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         Jam.setForeground(new java.awt.Color(0, 153, 153));
+        Jam.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Jam.setText(".");
+        Jam.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        Icon_Daftar_Akun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Icon_Daftar_Akun.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Register.png"))); // NOI18N
         Icon_Daftar_Akun.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Icon_Daftar_Akun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Icon_Daftar_Akun.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Icon_Daftar_AkunMouseClicked(evt);
@@ -869,11 +886,14 @@ public class Dashboard extends javax.swing.JFrame {
 
         Label_Daftar_Akun.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         Label_Daftar_Akun.setForeground(new java.awt.Color(0, 153, 153));
+        Label_Daftar_Akun.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Label_Daftar_Akun.setText("Daftar Akun");
         Label_Daftar_Akun.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Label_Daftar_Akun.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Label_Role.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
         Label_Role.setForeground(new java.awt.Color(0, 153, 153));
+        Label_Role.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         javax.swing.GroupLayout header_dashboardLayout = new javax.swing.GroupLayout(header_dashboard);
         header_dashboard.setLayout(header_dashboardLayout);
@@ -886,51 +906,51 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(Label_Role, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 261, Short.MAX_VALUE)
                 .addComponent(Tanggal)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Jam)
-                .addGap(134, 134, 134)
+                .addGap(173, 173, 173)
                 .addGroup(header_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(header_dashboardLayout.createSequentialGroup()
-                        .addComponent(Label_Daftar_Akun)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel7))
+                        .addGap(7, 7, 7))
                     .addGroup(header_dashboardLayout.createSequentialGroup()
                         .addComponent(Icon_Daftar_Akun)
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel9)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel8)))
-                .addGap(25, 25, 25))
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel9)))
+                .addGap(18, 18, 18)
+                .addGroup(header_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(header_dashboardLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel7))
+                    .addComponent(jLabel8))
+                .addGap(20, 20, 20))
+            .addGroup(header_dashboardLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Label_Daftar_Akun)
+                .addGap(130, 130, 130))
         );
         header_dashboardLayout.setVerticalGroup(
             header_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(header_dashboardLayout.createSequentialGroup()
-                .addGroup(header_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(header_dashboardLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addGroup(header_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(Label_Role, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(header_dashboardLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(header_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(Icon_Daftar_Akun))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(header_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(Label_Daftar_Akun))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, header_dashboardLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(header_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Icon_Daftar_Akun, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(header_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Label_Daftar_Akun, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
+            .addGroup(header_dashboardLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(header_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel5)
+                    .addComponent(Label_Role, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Tanggal)
                     .addComponent(Jam))
-                .addGap(30, 30, 30))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panel_dashboard.add(header_dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 90));
@@ -949,25 +969,34 @@ public class Dashboard extends javax.swing.JFrame {
         panel_penduduk.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, -1, -1));
 
         header_penduduk.setBackground(new java.awt.Color(187, 226, 232));
+        header_penduduk.setPreferredSize(new java.awt.Dimension(1000, 90));
 
         jLabel25.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 153, 153));
         jLabel25.setText("Daftar Penduduk >>");
+        jLabel25.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         Tanggal1.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         Tanggal1.setForeground(new java.awt.Color(0, 153, 153));
+        Tanggal1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Tanggal1.setText(".");
+        Tanggal1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Jam1.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         Jam1.setForeground(new java.awt.Color(0, 153, 153));
+        Jam1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Jam1.setText(".");
+        Jam1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Label_Role1.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
         Label_Role1.setForeground(new java.awt.Color(0, 153, 153));
+        Label_Role1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel12.setText(" ");
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel12MouseClicked(evt);
@@ -976,8 +1005,10 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Keluar");
         jLabel13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel13.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout header_pendudukLayout = new javax.swing.GroupLayout(header_penduduk);
         header_penduduk.setLayout(header_pendudukLayout);
@@ -988,41 +1019,32 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel25)
                 .addGap(6, 6, 6)
                 .addComponent(Label_Role1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(155, 155, 155)
+                .addGap(157, 157, 157)
                 .addComponent(Tanggal1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Jam1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 372, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 400, Short.MAX_VALUE)
                 .addGroup(header_pendudukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
+                    .addGroup(header_pendudukLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel13))
                     .addComponent(jLabel12))
-                .addGap(37, 37, 37))
+                .addGap(20, 20, 20))
         );
         header_pendudukLayout.setVerticalGroup(
             header_pendudukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(header_pendudukLayout.createSequentialGroup()
-                .addGroup(header_pendudukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(15, 15, 15)
+                .addGroup(header_pendudukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel25)
+                    .addComponent(Label_Role1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tanggal1)
+                    .addComponent(Jam1)
                     .addGroup(header_pendudukLayout.createSequentialGroup()
-                        .addGroup(header_pendudukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(header_pendudukLayout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel25))
-                            .addGroup(header_pendudukLayout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(Label_Role1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(header_pendudukLayout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(Tanggal1))
-                            .addGroup(header_pendudukLayout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(Jam1)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, header_pendudukLayout.createSequentialGroup()
-                        .addGap(0, 13, Short.MAX_VALUE)
                         .addComponent(jLabel12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13)))
-                .addContainerGap())
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         panel_penduduk.add(header_penduduk, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 90));
@@ -1125,22 +1147,34 @@ public class Dashboard extends javax.swing.JFrame {
         panel_tamu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         header_tamu.setBackground(new java.awt.Color(187, 226, 232));
+        header_tamu.setPreferredSize(new java.awt.Dimension(1000, 90));
 
         jLabel30.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 153, 153));
         jLabel30.setText("Daftar Tamu >>");
+        jLabel30.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         Tanggal2.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         Tanggal2.setForeground(new java.awt.Color(0, 153, 153));
+        Tanggal2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Tanggal2.setText(".");
+        Tanggal2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Jam2.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         Jam2.setForeground(new java.awt.Color(0, 153, 153));
+        Jam2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Jam2.setText(".");
+        Jam2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        Label_Role2.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
+        Label_Role2.setForeground(new java.awt.Color(0, 153, 153));
+        Label_Role2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel31.setText(" ");
         jLabel31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel31.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel31.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel31MouseClicked(evt);
@@ -1149,11 +1183,10 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel32.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel32.setText("Keluar");
         jLabel32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        Label_Role2.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
-        Label_Role2.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel32.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout header_tamuLayout = new javax.swing.GroupLayout(header_tamu);
         header_tamu.setLayout(header_tamuLayout);
@@ -1164,33 +1197,31 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel30)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Label_Role2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
+                .addGap(197, 197, 197)
                 .addComponent(Tanggal2)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Jam2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 513, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 400, Short.MAX_VALUE)
                 .addGroup(header_tamuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel32)
+                    .addGroup(header_tamuLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel32))
                     .addComponent(jLabel31))
-                .addGap(33, 33, 33))
+                .addGap(20, 20, 20))
         );
         header_tamuLayout.setVerticalGroup(
             header_tamuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(header_tamuLayout.createSequentialGroup()
-                .addGroup(header_tamuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(15, 15, 15)
+                .addGroup(header_tamuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel30)
+                    .addComponent(Label_Role2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tanggal2)
+                    .addComponent(Jam2)
                     .addGroup(header_tamuLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel32))
-                    .addGroup(header_tamuLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(header_tamuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Label_Role2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(header_tamuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel30)
-                                .addComponent(Tanggal2)
-                                .addComponent(Jam2)))))
+                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1310,6 +1341,7 @@ public class Dashboard extends javax.swing.JFrame {
         panel_berita.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, -1, -1));
 
         header_berita.setBackground(new java.awt.Color(187, 226, 232));
+        header_berita.setPreferredSize(new java.awt.Dimension(1000, 90));
 
         jLabel33.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(0, 153, 153));
@@ -1323,9 +1355,14 @@ public class Dashboard extends javax.swing.JFrame {
         Jam3.setForeground(new java.awt.Color(0, 153, 153));
         Jam3.setText(".");
 
+        Label_Role3.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
+        Label_Role3.setForeground(new java.awt.Color(0, 153, 153));
+
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel34.setText(" ");
         jLabel34.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel34.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel34.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel34MouseClicked(evt);
@@ -1334,11 +1371,10 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel35.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setText("Keluar");
         jLabel35.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        Label_Role3.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
-        Label_Role3.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel35.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout header_beritaLayout = new javax.swing.GroupLayout(header_berita);
         header_berita.setLayout(header_beritaLayout);
@@ -1349,34 +1385,32 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel33)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Label_Role3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(257, 257, 257)
+                .addGap(262, 262, 262)
                 .addComponent(Tanggal3)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Jam3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 379, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 400, Short.MAX_VALUE)
                 .addGroup(header_beritaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel35)
+                    .addGroup(header_beritaLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel35))
                     .addComponent(jLabel34))
-                .addGap(33, 33, 33))
+                .addGap(20, 20, 20))
         );
         header_beritaLayout.setVerticalGroup(
             header_beritaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(header_beritaLayout.createSequentialGroup()
-                .addGroup(header_beritaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(15, 15, 15)
+                .addGroup(header_beritaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel33)
+                    .addComponent(Label_Role3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tanggal3)
+                    .addComponent(Jam3)
                     .addGroup(header_beritaLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel34)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel35))
-                    .addGroup(header_beritaLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(header_beritaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Label_Role3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(header_beritaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel33)
-                                .addComponent(Tanggal3)
-                                .addComponent(Jam3)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         panel_berita.add(header_berita, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 90));
@@ -1655,19 +1689,23 @@ public class Dashboard extends javax.swing.JFrame {
         Label_Role4.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
         Label_Role4.setForeground(new java.awt.Color(0, 153, 153));
 
-        jLabel66.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
-        jLabel66.setText(" ");
-        jLabel66.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel66.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
+        jLabel37.setText(" ");
+        jLabel37.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel37.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel37.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel66MouseClicked(evt);
+                jLabel37MouseClicked(evt);
             }
         });
 
-        jLabel71.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
-        jLabel71.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel71.setText("Keluar");
-        jLabel71.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel38.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel38.setText("Keluar");
+        jLabel38.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel38.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout header_kasLayout = new javax.swing.GroupLayout(header_kas);
         header_kas.setLayout(header_kasLayout);
@@ -1678,41 +1716,32 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel36)
                 .addGap(6, 6, 6)
                 .addComponent(Label_Role4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170)
+                .addGap(187, 187, 187)
                 .addComponent(Tanggal4)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Jam4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 392, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 400, Short.MAX_VALUE)
                 .addGroup(header_kasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel71)
-                    .addComponent(jLabel66))
-                .addGap(32, 32, 32))
+                    .addGroup(header_kasLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel38))
+                    .addComponent(jLabel37))
+                .addGap(20, 20, 20))
         );
         header_kasLayout.setVerticalGroup(
             header_kasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(header_kasLayout.createSequentialGroup()
-                .addGroup(header_kasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(15, 15, 15)
+                .addGroup(header_kasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel36)
+                    .addComponent(Label_Role4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tanggal4)
+                    .addComponent(Jam4)
                     .addGroup(header_kasLayout.createSequentialGroup()
-                        .addGroup(header_kasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(header_kasLayout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel36))
-                            .addGroup(header_kasLayout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(Label_Role4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(header_kasLayout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(Tanggal4))
-                            .addGroup(header_kasLayout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(Jam4)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, header_kasLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel66, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel71)))
-                .addContainerGap())
+                        .addComponent(jLabel37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         panel_kas.add(header_kas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 90));
@@ -2066,6 +2095,7 @@ public class Dashboard extends javax.swing.JFrame {
         panel_iuran.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         header_iuran.setBackground(new java.awt.Color(187, 226, 232));
+        header_iuran.setPreferredSize(new java.awt.Dimension(1000, 90));
 
         jLabel40.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(0, 153, 153));
@@ -2079,9 +2109,14 @@ public class Dashboard extends javax.swing.JFrame {
         Jam5.setForeground(new java.awt.Color(0, 153, 153));
         Jam5.setText(".");
 
+        Label_Role5.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
+        Label_Role5.setForeground(new java.awt.Color(0, 153, 153));
+
+        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel41.setText(" ");
         jLabel41.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel41.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel41.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel41MouseClicked(evt);
@@ -2090,11 +2125,10 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel42.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel42.setText("Keluar");
         jLabel42.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        Label_Role5.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
-        Label_Role5.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel42.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout header_iuranLayout = new javax.swing.GroupLayout(header_iuran);
         header_iuran.setLayout(header_iuranLayout);
@@ -2105,34 +2139,32 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel40)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Label_Role5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148)
+                .addGap(171, 171, 171)
                 .addComponent(Tanggal5)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Jam5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 397, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 400, Short.MAX_VALUE)
                 .addGroup(header_iuranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel42)
+                    .addGroup(header_iuranLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel42))
                     .addComponent(jLabel41))
-                .addGap(33, 33, 33))
+                .addGap(20, 20, 20))
         );
         header_iuranLayout.setVerticalGroup(
             header_iuranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(header_iuranLayout.createSequentialGroup()
-                .addGroup(header_iuranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(15, 15, 15)
+                .addGroup(header_iuranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel40)
+                    .addComponent(Label_Role5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tanggal5)
+                    .addComponent(Jam5)
                     .addGroup(header_iuranLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel41)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel42))
-                    .addGroup(header_iuranLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(header_iuranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Label_Role5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(header_iuranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel40)
-                                .addComponent(Tanggal5)
-                                .addComponent(Jam5)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         panel_iuran.add(header_iuran, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 90));
@@ -2159,7 +2191,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(jLabel52)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2280,41 +2312,43 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel58)
-                            .addComponent(jLabel57))
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateIuran, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                            .addComponent(jTextNamaIuran)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel59)
-                        .addGap(11, 11, 11)
-                        .addComponent(jTextIuranB))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel60)
-                            .addComponent(jLabel63)
-                            .addComponent(jLabel62))
-                        .addGap(7, 7, 7)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextIuranT)
-                            .addComponent(jTextIuranTotal)
-                            .addComponent(jComboKetIuran, 0, 138, Short.MAX_VALUE))))
-                .addContainerGap(27, Short.MAX_VALUE))
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_tambahiuran)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_editiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_hapusiuran, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel58)
+                                    .addComponent(jLabel57))
+                                .addGap(53, 53, 53)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jDateIuran, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                                    .addComponent(jTextNamaIuran)))
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
+                                    .addComponent(jLabel59)
+                                    .addGap(11, 11, 11)
+                                    .addComponent(jTextIuranB))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
+                                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel60)
+                                        .addComponent(jLabel63)
+                                        .addComponent(jLabel62))
+                                    .addGap(7, 7, 7)
+                                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextIuranT)
+                                        .addComponent(jTextIuranTotal)
+                                        .addComponent(jComboKetIuran, 0, 138, Short.MAX_VALUE))))))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(btn_tambahiuran)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_editiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_hapusiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2344,7 +2378,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboKetIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_tambahiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_hapusiuran)
@@ -2466,9 +2500,14 @@ public class Dashboard extends javax.swing.JFrame {
         Jam6.setForeground(new java.awt.Color(0, 153, 153));
         Jam6.setText(".");
 
+        Label_Role6.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
+        Label_Role6.setForeground(new java.awt.Color(0, 153, 153));
+
+        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Icon_Logout.png"))); // NOI18N
         jLabel45.setText(" ");
         jLabel45.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel45.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel45.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel45MouseClicked(evt);
@@ -2477,11 +2516,10 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel46.setFont(new java.awt.Font("Palatino Linotype", 1, 14)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel46.setText("Keluar");
         jLabel46.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        Label_Role6.setFont(new java.awt.Font("Palatino Linotype", 1, 20)); // NOI18N
-        Label_Role6.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel46.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout header_laporanLayout = new javax.swing.GroupLayout(header_laporan);
         header_laporan.setLayout(header_laporanLayout);
@@ -2492,34 +2530,32 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel44)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Label_Role6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(170, 170, 170)
+                .addGap(183, 183, 183)
                 .addComponent(Tanggal6)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Jam6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 387, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 400, Short.MAX_VALUE)
                 .addGroup(header_laporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel46)
+                    .addGroup(header_laporanLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jLabel46))
                     .addComponent(jLabel45))
-                .addGap(33, 33, 33))
+                .addGap(20, 20, 20))
         );
         header_laporanLayout.setVerticalGroup(
             header_laporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(header_laporanLayout.createSequentialGroup()
-                .addGroup(header_laporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(15, 15, 15)
+                .addGroup(header_laporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel44)
+                    .addComponent(Label_Role6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tanggal6)
+                    .addComponent(Jam6)
                     .addGroup(header_laporanLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel45)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel46))
-                    .addGroup(header_laporanLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(header_laporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Label_Role6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(header_laporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel44)
-                                .addComponent(Tanggal6)
-                                .addComponent(Jam6)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         panel_laporan.add(header_laporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 90));
@@ -2603,9 +2639,9 @@ public class Dashboard extends javax.swing.JFrame {
         Panel_LaporanLayout.setVerticalGroup(
             Panel_LaporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_LaporanLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addGap(75, 75, 75)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2613,10 +2649,10 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76))
+                .addGap(75, 75, 75))
         );
 
-        panel_laporan.add(Panel_Laporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 960, 510));
+        panel_laporan.add(Panel_Laporan, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 960, 520));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BG_Cetak.png"))); // NOI18N
         panel_laporan.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 148, -1, 540));
@@ -2691,30 +2727,6 @@ public class Dashboard extends javax.swing.JFrame {
         System.err.println(ex.getMessage());
         }   
     }//GEN-LAST:event_Filter_PndkKeyTyped
-
-    private void jLabel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseClicked
-        // TODO add your handling code here:
-        new login().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel31MouseClicked
-
-    private void jLabel34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel34MouseClicked
-        // TODO add your handling code here:
-        new login().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel34MouseClicked
-
-    private void jLabel41MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel41MouseClicked
-        // TODO add your handling code here:
-        new login().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel41MouseClicked
-
-    private void jLabel45MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel45MouseClicked
-        // TODO add your handling code here:
-        new login().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel45MouseClicked
 
     private void btn_tambahpndkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahpndkActionPerformed
         // TODO add your handling code here:
@@ -2976,12 +2988,6 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Filter_TamuKeyTyped
 
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
-        // TODO add your handling code here:
-        new login().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel12MouseClicked
-
     private void btn_tambahtamuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_tambahtamuActionPerformed
         // TODO add your handling code here:
         new Input_DataTamu().setVisible(true);
@@ -3183,8 +3189,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_tambahiuranActionPerformed
 
     private void btn_editiuranMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_editiuranMouseClicked
-        // TODO add your handling code here:
-        
+        // TODO add your handling code here:      
     }//GEN-LAST:event_btn_editiuranMouseClicked
 
     private void btn_editiuranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editiuranActionPerformed
@@ -3207,10 +3212,11 @@ public class Dashboard extends javax.swing.JFrame {
             String total_bayar = jTextIuranTotal.getText();
             String keterangan = jComboKetIuran.getSelectedItem().toString();         
             
-            stt.executeUpdate("UPDATE dft_iuran SET nama='"+nama+"', tanggal='"+tanggal+"', iuran_bulanan='"+iuran_bulanan+"', iuran_tahunan='"+iuran_tahunan+"', total_bayar='"+total_bayar+"', keterangan='"+keterangan+"' WHERE id='"+id+"'");         
+            stt.executeUpdate("UPDATE dft_iuran SET nama='"+nama+"', tanggal='"+tanggal+"', iuran_bulanan='"+iuran_bulanan+"', iuran_tahunan='"+iuran_tahunan+"',total_bayar='"+total_bayar+"', keterangan='"+keterangan+"' WHERE id='"+id+"'");         
             JOptionPane.showMessageDialog(this,"Data berhasil di ubah","Success",JOptionPane.INFORMATION_MESSAGE);
+            kosong();
             tampilDataIuran();
-            kosong();          
+                      
         } catch(SQLException e){
             JOptionPane.showMessageDialog(this,"Ubah data gagal\n"+e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
@@ -3243,16 +3249,16 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         int bar3 = jTableIuran.getSelectedRow();
+        String id = tabModel3.getValueAt(bar3, 0).toString();
         String nama = tabModel3.getValueAt(bar3, 1).toString();
-        jDateIuran.setDate(Date.valueOf(tabModel3.getValueAt(bar3, 2).toString()));
+        Date tanggal = Date.valueOf(tabModel3.getValueAt(bar3, 2).toString());
         String iuran_bulanan = tabModel3.getValueAt(bar3, 3).toString();
         String iuran_tahunan = tabModel3.getValueAt(bar3, 4).toString();
         String total_bayar = tabModel3.getValueAt(bar3, 5).toString();
         String keterangan = tabModel3.getValueAt(bar3, 6).toString();
         
-       
         jTextNamaIuran.setText(nama);
-        //jDateIuran.setDate(tanggal);
+        jDateIuran.setDate(tanggal);
         jTextIuranB.setText(iuran_bulanan);
         jTextIuranT.setText(iuran_tahunan);
         jTextIuranTotal.setText(total_bayar);
@@ -3466,10 +3472,12 @@ public class Dashboard extends javax.swing.JFrame {
         String deskripsi = tabModelkas.getValueAt(bar2, 1).toString();
         String jenis = tabModelkas.getValueAt(bar2, 2).toString();
         String nominal = tabModelkas.getValueAt(bar2, 3).toString();
+        
         jTextIdKas.setText(id);
         jTextDeskripsiKas.setText(deskripsi);
         jTextNominalKas.setText(nominal);
         jComboBoxJenisKas.setSelectedItem(jenis);
+        
     }//GEN-LAST:event_jTableKasMouseClicked
 
     private void jTextTotalKasMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextTotalKasMasukActionPerformed
@@ -3516,9 +3524,41 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Filter_KasKeyTyped
 
-    private void jLabel66MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel66MouseClicked
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel66MouseClicked
+        new login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jLabel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseClicked
+        // TODO add your handling code here:
+        new login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel31MouseClicked
+
+    private void jLabel34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel34MouseClicked
+        // TODO add your handling code here:
+        new login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel34MouseClicked
+
+    private void jLabel37MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel37MouseClicked
+        // TODO add your handling code here:
+        new login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel37MouseClicked
+
+    private void jLabel41MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel41MouseClicked
+        // TODO add your handling code here:
+        new login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel41MouseClicked
+
+    private void jLabel45MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel45MouseClicked
+        // TODO add your handling code here:
+        new login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel45MouseClicked
 
     /**
      * @param args the command line arguments
@@ -3658,6 +3698,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
@@ -3688,13 +3730,11 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel8;

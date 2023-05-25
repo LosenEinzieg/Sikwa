@@ -4,14 +4,15 @@
  * and open the template in the editor.
  */
 package sikwaapp;
+
 import config.Koneksi;
 import java.awt.Color;
 import java.awt.Image;
 import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import static sikwaapp.Dashboard.btn_laporan;
 import static sikwaapp.Dashboard.btn_kas;
+import static sikwaapp.Dashboard.btn_penduduk;
 import static sikwaapp.Dashboard.btn_tamu;
 import static sikwaapp.Dashboard.btn_berita;
 import static sikwaapp.Dashboard.btn_iuran;
@@ -25,12 +26,18 @@ import static sikwaapp.Dashboard.Label_Role3;
 import static sikwaapp.Dashboard.Label_Role4;
 import static sikwaapp.Dashboard.Label_Role5;
 import static sikwaapp.Dashboard.Label_Role6;
+import static sikwaapp.Dashboard.btn_editberita;
+import static sikwaapp.Dashboard.btn_editiuran;
 import static sikwaapp.Dashboard.btn_tambahpndk;
 import static sikwaapp.Dashboard.btn_editpndk;
 import static sikwaapp.Dashboard.btn_edittamu;
+import static sikwaapp.Dashboard.btn_hapusberita;
+import static sikwaapp.Dashboard.btn_hapusiuran;
 import static sikwaapp.Dashboard.btn_hapuspndk;
 import static sikwaapp.Dashboard.btn_hapustamu;
 import static sikwaapp.Dashboard.btn_laporan;
+import static sikwaapp.Dashboard.btn_tambahberita;
+import static sikwaapp.Dashboard.btn_tambahiuran;
 import static sikwaapp.Dashboard.btn_tambahtamu;
 
 /**
@@ -46,6 +53,7 @@ public class login extends javax.swing.JFrame {
         initComponents();
         a = new Dashboard();
         a.setVisible(false);
+        
         //Menambahkan Icon Aplikasi
         Image icon = new ImageIcon(this.getClass().getResource("/img/icon.png")).getImage();
         this.setIconImage(icon);
@@ -251,7 +259,7 @@ public class login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
                     a.setVisible(true);
                     btn_home.setEnabled(true);
-                    btn_home.setEnabled(true);
+                    btn_penduduk.setEnabled(true);
                     btn_tamu.setEnabled(true);
                     btn_berita.setEnabled(true);
                     btn_kas.setEnabled(true);
@@ -262,19 +270,22 @@ public class login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
                     a.setVisible(true);
                     btn_home.setEnabled(true);
-                    btn_home.setEnabled(true);
+                    btn_penduduk.setEnabled(true);
                     btn_tamu.setEnabled(true);
                     btn_berita.setEnabled(true);
-                    btn_kas.setEnabled(true);
-                    btn_iuran.setEnabled(true);
-                    btn_laporan.setEnabled(true);
+                    btn_kas.setEnabled(false);
+                    btn_iuran.setEnabled(false);
+                    btn_laporan.setEnabled(false);
                     this.dispose();
                 } else if (role.equals("RT/RW")) {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
                     a.setVisible(true);
                     btn_home.setEnabled(true);
-                    btn_home.setEnabled(true);
+                    btn_penduduk.setEnabled(true);
                     btn_tamu.setEnabled(true);
+                    btn_tambahtamu.setEnabled(false);
+                    btn_edittamu.setEnabled(false);
+                    btn_hapustamu.setEnabled(false);
                     btn_berita.setEnabled(true);
                     btn_kas.setEnabled(true);
                     btn_iuran.setEnabled(true);
@@ -284,20 +295,20 @@ public class login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
                     a.setVisible(true);
                     btn_home.setEnabled(true);
-                    btn_home.setEnabled(true);
-                    btn_tamu.setEnabled(true);
+                    btn_penduduk.setEnabled(false);
+                    btn_tamu.setEnabled(false);
                     btn_berita.setEnabled(true);
-                    btn_kas.setEnabled(true);
+                    btn_tambahberita.setEnabled(false);
+                    btn_editberita.setEnabled(false);
+                    btn_hapusberita.setEnabled(false);
+                    btn_kas.setEnabled(false);
                     btn_iuran.setEnabled(true);
+                    btn_tambahiuran.setEnabled(false);
+                    btn_editiuran.setEnabled(false);
+                    btn_hapusiuran.setEnabled(false);
                     btn_laporan.setEnabled(false);
                     Label_Daftar_Akun.setVisible(false);
                     Icon_Daftar_Akun.setVisible(false);
-                    btn_tambahpndk.setEnabled(false);
-                    btn_editpndk.setEnabled(false);
-                    btn_hapuspndk.setEnabled(false);
-                    btn_tambahtamu.setEnabled(false);
-                    btn_edittamu.setEnabled(false);
-                    btn_hapustamu.setEnabled(false);
                     
                     this.dispose();
             } else {
