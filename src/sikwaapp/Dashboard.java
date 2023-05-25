@@ -74,12 +74,6 @@ public class Dashboard extends javax.swing.JFrame {
         this.setIconImage(icon);
         
         Panel_Laporan.setBackground(new Color(0,51,51,70));
-        Card_Masuk.setBackground(new Color(0,51,51,70));
-        //Card_Keluar.setBackground(new Color(0,51,51,70));
-        //Card_Total.setBackground(new Color(0,51,51,70));
-        jTextTotalKasMasuk.setBackground(new Color(0,51,51,70));
-        //jTextTotalKasKeluar.setBackground(new Color(0,51,51,70));
-        //jTextTotalKas.setBackground(new Color(0,51,51,70));*/
         
     }
     
@@ -203,9 +197,9 @@ public class Dashboard extends javax.swing.JFrame {
                     masuk = RsDashboard.getString("masuk"),
                 };
             }         
-            jTextTotalKasMasuk1.setText(masuk);
-            jTextTotalKasMasuk1.repaint();
-            jTextTotalKasMasuk1.revalidate();
+            jTextTotalKasMasuk.setText(masuk);
+            jTextTotalKasMasuk.repaint();
+            jTextTotalKasMasuk.revalidate();
             RsDashboard=stt.executeQuery("SELECT sum(nominal) as keluar FROM `dft_kas` WHERE jenis = 'Keluar'");  
             while(RsDashboard.next()){
                 Object[] data2={
@@ -447,14 +441,15 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel64 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
         Filter_Kas = new javax.swing.JTextField();
-        jTextTotalKasKeluar = new javax.swing.JTextField();
-        jLabel74 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jTextTotalKas = new javax.swing.JTextField();
         Card_Masuk = new javax.swing.JPanel();
         jLabel73 = new javax.swing.JLabel();
-        jTextTotalKasMasuk = new javax.swing.JLabel();
-        jTextTotalKasMasuk1 = new javax.swing.JTextField();
+        jTextTotalKasMasuk = new javax.swing.JTextField();
+        Card_Total = new javax.swing.JPanel();
+        jLabel75 = new javax.swing.JLabel();
+        jTextTotalKas = new javax.swing.JTextField();
+        Card_Keluar = new javax.swing.JPanel();
+        jLabel76 = new javax.swing.JLabel();
+        jTextTotalKasKeluar = new javax.swing.JTextField();
         panel_iuran = new javax.swing.JPanel();
         header_iuran = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
@@ -483,7 +478,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         jComboKetIuran = new javax.swing.JComboBox<>();
         jDateIuran = new com.toedter.calendar.JDateChooser();
-        jTextIdIuran = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTableIuran = new javax.swing.JTable();
@@ -775,7 +769,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel19)
                 .addGap(18, 18, 18)
                 .addComponent(btn_laporan)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Menu_PanelLayout = new javax.swing.GroupLayout(Menu_Panel);
@@ -1463,7 +1457,15 @@ public class Dashboard extends javax.swing.JFrame {
             new String [] {
                 "No", "Berita Acara", "Keterangan"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jTableBerita.setFocusable(false);
         jTableBerita.setIntercellSpacing(new java.awt.Dimension(0, 0));
         jTableBerita.setRowHeight(25);
@@ -1476,6 +1478,11 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
         jScrollPane5.setViewportView(jTableBerita);
+        if (jTableBerita.getColumnModel().getColumnCount() > 0) {
+            jTableBerita.getColumnModel().getColumn(0).setMinWidth(30);
+            jTableBerita.getColumnModel().getColumn(0).setPreferredWidth(30);
+            jTableBerita.getColumnModel().getColumn(0).setMaxWidth(30);
+        }
 
         panel_berita.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 480, 440));
 
@@ -1892,7 +1899,7 @@ public class Dashboard extends javax.swing.JFrame {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1963,49 +1970,26 @@ public class Dashboard extends javax.swing.JFrame {
         });
         panel_kas.add(Filter_Kas, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 165, 130, 20));
 
-        jTextTotalKasKeluar.setEditable(false);
-        jTextTotalKasKeluar.setBackground(new java.awt.Color(0, 153, 153));
-        jTextTotalKasKeluar.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
-        jTextTotalKasKeluar.setForeground(new java.awt.Color(255, 255, 255));
-        jTextTotalKasKeluar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextTotalKasKeluar.setBorder(null);
-        jTextTotalKasKeluar.setOpaque(false);
-        panel_kas.add(jTextTotalKasKeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 600, 133, -1));
+        Card_Masuk.setBackground(new java.awt.Color(187, 226, 232));
 
-        jLabel74.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
-        jLabel74.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel74.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel74.setText("Kas Keluar");
-        panel_kas.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 560, 133, -1));
-
-        jLabel17.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Total Kas");
-        panel_kas.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 133, -1));
-
-        jTextTotalKas.setEditable(false);
-        jTextTotalKas.setBackground(new java.awt.Color(0, 153, 153));
-        jTextTotalKas.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
-        jTextTotalKas.setForeground(new java.awt.Color(255, 255, 255));
-        jTextTotalKas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextTotalKas.setBorder(null);
-        jTextTotalKas.setOpaque(false);
-        jTextTotalKas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextTotalKasActionPerformed(evt);
-            }
-        });
-        panel_kas.add(jTextTotalKas, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 600, 133, -1));
-
+        jLabel73.setBackground(new java.awt.Color(0, 102, 102));
         jLabel73.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
-        jLabel73.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel73.setForeground(new java.awt.Color(0, 102, 102));
         jLabel73.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel73.setText("Kas Masuk");
 
+        jTextTotalKasMasuk.setEditable(false);
+        jTextTotalKasMasuk.setBackground(new java.awt.Color(0, 102, 102));
         jTextTotalKasMasuk.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
         jTextTotalKasMasuk.setForeground(new java.awt.Color(255, 255, 255));
+        jTextTotalKasMasuk.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextTotalKasMasuk.setText("0");
+        jTextTotalKasMasuk.setBorder(null);
+        jTextTotalKasMasuk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextTotalKasMasukActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Card_MasukLayout = new javax.swing.GroupLayout(Card_Masuk);
         Card_Masuk.setLayout(Card_MasukLayout);
@@ -2013,34 +1997,110 @@ public class Dashboard extends javax.swing.JFrame {
             Card_MasukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_MasukLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Card_MasukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                    .addComponent(jTextTotalKasMasuk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(Card_MasukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                    .addComponent(jTextTotalKasMasuk))
+                .addContainerGap())
         );
         Card_MasukLayout.setVerticalGroup(
             Card_MasukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card_MasukLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(jLabel73)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextTotalKasMasuk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextTotalKasMasuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panel_kas.add(Card_Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 560, 130, 80));
+        panel_kas.add(Card_Masuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 560, 150, 80));
 
-        jTextTotalKasMasuk1.setEditable(false);
-        jTextTotalKasMasuk1.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
-        jTextTotalKasMasuk1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextTotalKasMasuk1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextTotalKasMasuk1.setBorder(null);
-        jTextTotalKasMasuk1.addActionListener(new java.awt.event.ActionListener() {
+        Card_Total.setBackground(new java.awt.Color(187, 226, 232));
+
+        jLabel75.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel75.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jLabel75.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel75.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel75.setText("Total Kas");
+
+        jTextTotalKas.setEditable(false);
+        jTextTotalKas.setBackground(new java.awt.Color(0, 102, 102));
+        jTextTotalKas.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jTextTotalKas.setForeground(new java.awt.Color(255, 255, 255));
+        jTextTotalKas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextTotalKas.setText("0");
+        jTextTotalKas.setBorder(null);
+        jTextTotalKas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextTotalKasMasuk1ActionPerformed(evt);
+                jTextTotalKasActionPerformed(evt);
             }
         });
-        panel_kas.add(jTextTotalKasMasuk1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 650, 110, -1));
+
+        javax.swing.GroupLayout Card_TotalLayout = new javax.swing.GroupLayout(Card_Total);
+        Card_Total.setLayout(Card_TotalLayout);
+        Card_TotalLayout.setHorizontalGroup(
+            Card_TotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Card_TotalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Card_TotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel75, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                    .addComponent(jTextTotalKas))
+                .addContainerGap())
+        );
+        Card_TotalLayout.setVerticalGroup(
+            Card_TotalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Card_TotalLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel75)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextTotalKas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panel_kas.add(Card_Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 150, 80));
+
+        Card_Keluar.setBackground(new java.awt.Color(187, 226, 232));
+
+        jLabel76.setBackground(new java.awt.Color(0, 102, 102));
+        jLabel76.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jLabel76.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel76.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel76.setText("Kas Keluar");
+
+        jTextTotalKasKeluar.setEditable(false);
+        jTextTotalKasKeluar.setBackground(new java.awt.Color(0, 102, 102));
+        jTextTotalKasKeluar.setFont(new java.awt.Font("Monospaced", 0, 20)); // NOI18N
+        jTextTotalKasKeluar.setForeground(new java.awt.Color(255, 255, 255));
+        jTextTotalKasKeluar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextTotalKasKeluar.setText("0");
+        jTextTotalKasKeluar.setBorder(null);
+        jTextTotalKasKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextTotalKasKeluarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Card_KeluarLayout = new javax.swing.GroupLayout(Card_Keluar);
+        Card_Keluar.setLayout(Card_KeluarLayout);
+        Card_KeluarLayout.setHorizontalGroup(
+            Card_KeluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Card_KeluarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Card_KeluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                    .addComponent(jTextTotalKasKeluar))
+                .addContainerGap())
+        );
+        Card_KeluarLayout.setVerticalGroup(
+            Card_KeluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Card_KeluarLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel76)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextTotalKasKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panel_kas.add(Card_Keluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 560, 160, 80));
 
         Main_Panel.add(panel_kas, "card6");
 
@@ -2262,11 +2322,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jDateIuran.setFont(new java.awt.Font("Palatino Linotype", 0, 16)); // NOI18N
 
-        jTextIdIuran.setEditable(false);
-        jTextIdIuran.setBackground(new java.awt.Color(0, 153, 153));
-        jTextIdIuran.setBorder(null);
-        jTextIdIuran.setOpaque(false);
-
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -2284,8 +2339,6 @@ public class Dashboard extends javax.swing.JFrame {
                                         .addGap(53, 53, 53))
                                     .addGroup(jPanel7Layout.createSequentialGroup()
                                         .addComponent(jLabel57)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextIdIuran, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextNamaIuran, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2317,15 +2370,10 @@ public class Dashboard extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextNamaIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jTextIdIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextNamaIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
@@ -2346,7 +2394,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboKetIuran, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_tambahiuran, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_hapusiuran)
@@ -2358,7 +2406,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -3166,7 +3214,6 @@ public class Dashboard extends javax.swing.JFrame {
             Koneksi.koneksiDB();
             Statement stt=conn.createStatement();
             
-            String id = jTextIdIuran.getText();
             String nama = jTextNamaIuran.getText();
             String tanggal = String.valueOf(fm.format(jDateIuran.getDate()));
             String iuran_bulanan = jTextIuranB.getText();
@@ -3174,7 +3221,7 @@ public class Dashboard extends javax.swing.JFrame {
             String total_bayar = jTextIuranTotal.getText();
             String keterangan = jComboKetIuran.getSelectedItem().toString();         
             
-            stt.executeUpdate("UPDATE dft_iuran SET nama='"+nama+"', tanggal='"+tanggal+"', iuran_bulanan='"+iuran_bulanan+"', iuran_tahunan='"+iuran_tahunan+"',total_bayar='"+total_bayar+"', keterangan='"+keterangan+"' WHERE id='"+id+"'");         
+            stt.executeUpdate("UPDATE dft_iuran SET nama='"+nama+"', tanggal='"+tanggal+"', iuran_bulanan='"+iuran_bulanan+"', iuran_tahunan='"+iuran_tahunan+"',total_bayar='"+total_bayar+"', keterangan='"+keterangan+"' WHERE nama='"+nama+"'");         
             JOptionPane.showMessageDialog(this,"Data berhasil di ubah","Success",JOptionPane.INFORMATION_MESSAGE);
             kosong();
             tampilDataIuran();
@@ -3290,7 +3337,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try {
-            File reportp = new File ("src/sikwaapp/reportpenduduk.jasper");
+            File reportp = new File ("src/laporan/reportpenduduk.jasper");
             JasperPrint jp = JasperFillManager.fillReport(reportp.getPath(), null, Koneksi.koneksiDB());
             JasperViewer.viewReport(jp,false);
         }catch (Exception e) {
@@ -3301,7 +3348,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         try {
-            File reportp = new File ("src/sikwaapp/reporttamu.jasper");
+            File reportp = new File ("src/laporan/reporttamu.jasper");
             JasperPrint jp = JasperFillManager.fillReport(reportp.getPath(), null, Koneksi.koneksiDB());
             JasperViewer.viewReport(jp,false);
         }catch (Exception e) {
@@ -3312,7 +3359,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         try {
-            File reportp = new File ("src/sikwaapp/reportiuran.jasper");
+            File reportp = new File ("src/laporan/reportiuran.jasper");
             JasperPrint jp = JasperFillManager.fillReport(reportp.getPath(), null, Koneksi.koneksiDB());
             JasperViewer.viewReport(jp,false);
         }catch (Exception e) {
@@ -3323,7 +3370,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         try {
-            File reportp = new File ("src/sikwaapp/reportkas.jasper");
+            File reportp = new File ("src/laporan/reportkas.jasper");
             JasperPrint jp = JasperFillManager.fillReport(reportp.getPath(), null, Koneksi.koneksiDB());
             JasperViewer.viewReport(jp,false);
         }catch (Exception e) {
@@ -3334,7 +3381,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         try {
-            File reportp = new File ("src/sikwaapp/reportberita.jasper");
+            File reportp = new File ("src/laporan/reportberita.jasper");
             JasperPrint jp = JasperFillManager.fillReport(reportp.getPath(), null, Koneksi.koneksiDB());
             JasperViewer.viewReport(jp,false);
         }catch (Exception e) {
@@ -3447,9 +3494,9 @@ public class Dashboard extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTableKasMouseClicked
 
-    private void jTextTotalKasMasuk1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextTotalKasMasuk1ActionPerformed
+    private void jTextTotalKasMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextTotalKasMasukActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextTotalKasMasuk1ActionPerformed
+    }//GEN-LAST:event_jTextTotalKasMasukActionPerformed
 
     private void jTextIuranBKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextIuranBKeyReleased
         // TODO add your handling code here:
@@ -3531,6 +3578,10 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextTotalKasActionPerformed
 
+    private void jTextTotalKasKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextTotalKasKeluarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextTotalKasKeluarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3567,7 +3618,9 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Card_Keluar;
     private javax.swing.JPanel Card_Masuk;
+    private javax.swing.JPanel Card_Total;
     private javax.swing.JTextField Filter_Berita;
     private javax.swing.JTextField Filter_Iuran;
     private javax.swing.JTextField Filter_Kas;
@@ -3646,7 +3699,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
@@ -3704,7 +3756,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -3736,7 +3789,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextBeritaAcara;
     private javax.swing.JTextField jTextDeskripsiKas;
     private javax.swing.JTextField jTextIdBerita;
-    private javax.swing.JTextField jTextIdIuran;
     private javax.swing.JTextField jTextIdKas;
     public javax.swing.JTextField jTextIuranB;
     public javax.swing.JTextField jTextIuranT;
@@ -3746,8 +3798,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextField jTextNominalKas;
     private javax.swing.JTextField jTextTotalKas;
     private javax.swing.JTextField jTextTotalKasKeluar;
-    private javax.swing.JLabel jTextTotalKasMasuk;
-    private javax.swing.JTextField jTextTotalKasMasuk1;
+    private javax.swing.JTextField jTextTotalKasMasuk;
     private javax.swing.JPanel panel_berita;
     private javax.swing.JPanel panel_dashboard;
     private javax.swing.JPanel panel_iuran;
