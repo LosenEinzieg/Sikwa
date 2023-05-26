@@ -251,10 +251,10 @@ public class RegistUw extends javax.swing.JFrame {
         try {
             Connection Connect = Koneksi.koneksiDB();
             Statement st = (Statement) Connect.createStatement();
-            String query = "SELECT * FROM login WHERE id='"+nikuw+"'";
+            String query = "SELECT * FROM login WHERE nik='"+nikuw+"'";
             ResultSet rs = st.executeQuery(query);
             while(rs.next()){
-                cekid=rs.getString("id");
+                cekid=rs.getString("nik");
             }
             rs.close();
             rs.close();
@@ -280,7 +280,7 @@ public class RegistUw extends javax.swing.JFrame {
                 dispose();
                 new login().show();
             }catch (SQLException e) {
-
+                JOptionPane.showMessageDialog(null, e,"Kesalahan",JOptionPane.INFORMATION_MESSAGE);
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

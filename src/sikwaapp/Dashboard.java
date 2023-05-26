@@ -198,8 +198,7 @@ public class Dashboard extends javax.swing.JFrame {
                 };
             }         
             jTextTotalKasMasuk.setText(masuk);
-            jTextTotalKasMasuk.repaint();
-            jTextTotalKasMasuk.revalidate();
+
             RsDashboard=stt.executeQuery("SELECT sum(nominal) as keluar FROM `dft_kas` WHERE jenis = 'Keluar'");  
             while(RsDashboard.next()){
                 Object[] data2={
@@ -213,6 +212,7 @@ public class Dashboard extends javax.swing.JFrame {
             int tot_kas = tot_masuk - tot_keluar;
             String total_kas = Integer.toString(tot_kas);
             jTextTotalKas.setText(total_kas);
+            
         } catch (Exception ex) {
         System.err.println(ex.getMessage());
         }
@@ -3618,9 +3618,9 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Card_Keluar;
-    private javax.swing.JPanel Card_Masuk;
-    private javax.swing.JPanel Card_Total;
+    public static javax.swing.JPanel Card_Keluar;
+    public static javax.swing.JPanel Card_Masuk;
+    public static javax.swing.JPanel Card_Total;
     private javax.swing.JTextField Filter_Berita;
     private javax.swing.JTextField Filter_Iuran;
     private javax.swing.JTextField Filter_Kas;
@@ -3683,11 +3683,11 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel header_laporan;
     private javax.swing.JPanel header_penduduk;
     private javax.swing.JPanel header_tamu;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    public static javax.swing.JButton jButton1;
+    public static javax.swing.JButton jButton2;
+    public static javax.swing.JButton jButton3;
+    public static javax.swing.JButton jButton4;
+    public static javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBoxJenisKas;
     private javax.swing.JComboBox<String> jComboKetIuran;
     private com.toedter.calendar.JDateChooser jDateIuran;
@@ -3755,9 +3755,9 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
+    public static javax.swing.JLabel jLabel73;
+    public static javax.swing.JLabel jLabel75;
+    public static javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

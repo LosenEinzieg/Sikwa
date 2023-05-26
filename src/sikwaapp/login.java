@@ -11,6 +11,9 @@ import java.awt.Image;
 import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import static sikwaapp.Dashboard.Card_Keluar;
+import static sikwaapp.Dashboard.Card_Masuk;
+import static sikwaapp.Dashboard.Card_Total;
 import static sikwaapp.Dashboard.btn_kas;
 import static sikwaapp.Dashboard.btn_penduduk;
 import static sikwaapp.Dashboard.btn_tamu;
@@ -28,16 +31,16 @@ import static sikwaapp.Dashboard.Label_Role5;
 import static sikwaapp.Dashboard.Label_Role6;
 import static sikwaapp.Dashboard.btn_editberita;
 import static sikwaapp.Dashboard.btn_editiuran;
-import static sikwaapp.Dashboard.btn_tambahpndk;
-import static sikwaapp.Dashboard.btn_editpndk;
+import static sikwaapp.Dashboard.btn_editkas;
 import static sikwaapp.Dashboard.btn_edittamu;
 import static sikwaapp.Dashboard.btn_hapusberita;
 import static sikwaapp.Dashboard.btn_hapusiuran;
-import static sikwaapp.Dashboard.btn_hapuspndk;
+import static sikwaapp.Dashboard.btn_hapuskas;
 import static sikwaapp.Dashboard.btn_hapustamu;
 import static sikwaapp.Dashboard.btn_laporan;
 import static sikwaapp.Dashboard.btn_tambahberita;
 import static sikwaapp.Dashboard.btn_tambahiuran;
+import static sikwaapp.Dashboard.btn_tambahkas;
 import static sikwaapp.Dashboard.btn_tambahtamu;
 
 /**
@@ -264,7 +267,9 @@ public class login extends javax.swing.JFrame {
                     btn_berita.setEnabled(true);
                     btn_kas.setEnabled(true);
                     btn_iuran.setEnabled(true);
-                    btn_laporan.setEnabled(true);                   
+                    btn_laporan.setEnabled(true);
+                    Label_Daftar_Akun.setVisible(true);
+                    Icon_Daftar_Akun.setVisible(true);
                     this.dispose();
                 } else if (role.equals("Security")) {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
@@ -276,6 +281,8 @@ public class login extends javax.swing.JFrame {
                     btn_kas.setEnabled(false);
                     btn_iuran.setEnabled(false);
                     btn_laporan.setEnabled(false);
+                    Label_Daftar_Akun.setVisible(false);
+                    Icon_Daftar_Akun.setVisible(false);
                     this.dispose();
                 } else if (role.equals("RT/RW")) {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
@@ -289,7 +296,9 @@ public class login extends javax.swing.JFrame {
                     btn_berita.setEnabled(true);
                     btn_kas.setEnabled(true);
                     btn_iuran.setEnabled(true);
-                    btn_laporan.setEnabled(false);
+                    btn_laporan.setEnabled(true);   
+                    Label_Daftar_Akun.setVisible(false);
+                    Icon_Daftar_Akun.setVisible(false);
                     this.dispose();
                 }else if (role.equals("Warga")) {
                     JOptionPane.showMessageDialog(null,"Login Berhasil");
@@ -301,8 +310,14 @@ public class login extends javax.swing.JFrame {
                     btn_tambahberita.setEnabled(false);
                     btn_editberita.setEnabled(false);
                     btn_hapusberita.setEnabled(false);
-                    btn_kas.setEnabled(false);
+                    btn_kas.setEnabled(true);
+                    btn_tambahkas.setEnabled(false);
+                    btn_editkas.setEnabled(false);
+                    btn_hapuskas.setEnabled(false);
                     btn_iuran.setEnabled(true);
+                    Card_Masuk.setVisible(false);
+                    Card_Keluar.setVisible(false);
+                    Card_Total.setVisible(false);
                     btn_tambahiuran.setEnabled(false);
                     btn_editiuran.setEnabled(false);
                     btn_hapusiuran.setEnabled(false);
